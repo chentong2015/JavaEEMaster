@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 这里的名称空间和<mappers>引用的名称空间必须一致 -->
+<mapper namespace="org.ctong.main.BlogMapper">
+
+    <!-- 定义了一个名为selectBlog的映射语句 -->
+    <select id="selectBlog" resultType="Blog">
+        select *
+        from blog
+        where id = #{id}
+    </select>
+</mapper>
+
