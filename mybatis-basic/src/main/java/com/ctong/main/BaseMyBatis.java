@@ -23,11 +23,13 @@ import java.io.InputStream;
  * 2. "半自动化"的ORM实现, 需要写SQL, 增加了程序的灵活性(作为ORM的一种补充)
  * 3. iBatis是把"实体类"和"sql语句"之间建立映射关系 !!
  * .
- * MyBatis: 持久层框架，它支持自定义 SQL、存储过程以及高级映射         ====> https://mybatis.org/mybatis-3/zh/getting-started.html
+ * MyBatis: 持久层框架，它支持自定义 SQL、存储过程以及高级映射         ====>
  * 1. 取消JDBC代码以及设置参数和获取结果集的代码
  * 2. MyBatis提供的所有特性都可以利用基于XML映射来实现或者使用Java注解
  * 3. MyBatis的强大在于它的语句映射, 省掉了相同功能的JDBC的很多代码
  */
+// 官网: https://mybatis.org/mybatis-3/zh/getting-started.html
+// APIs: https://mybatis.org/mybatis-3/es/apidocs/index.html?org/apache/ibatis
 public class BaseMyBatis {
 
     public static void main(String[] args) throws IOException {
