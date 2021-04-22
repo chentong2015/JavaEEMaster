@@ -6,8 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mybatis-basic" />
+        <module name="big-data-processing-system" />
+        <module name="message-middleware" />
         <module name="hibernate-basic" />
+        <module name="mybatis-basic" />
+        <module name="distributed-load-balancing" />
+        <module name="container-severless-framework" />
+        <module name="redis-basic" />
       </profile>
     </annotationProcessing>
   </component>

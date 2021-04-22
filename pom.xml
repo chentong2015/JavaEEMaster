@@ -11,6 +11,11 @@
     <modules>
         <module>mybatis-basic</module>
         <module>hibernate-basic</module>
+        <module>redis-basic</module>
+        <module>message-middleware</module>
+        <module>distributed-load-balancing</module>
+        <module>big-data-processing-system</module>
+        <module>container-severless-framework</module>
     </modules>
 
     <properties>
