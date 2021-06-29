@@ -26,6 +26,23 @@
         </environment>
     </environments>
 
+    <!--
+    整体的XML的配置
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    类型别名可为 Java 类型设置一个缩写名字
+    <typeAliases>
+        <typeAlias alias="Author" type="domain.blog.Author"/>
+    </typeAliases>
+
+    添加自定义的类型处理器：将从PreparedStatement结果集中取出的值转换成Java类型
+    <typeHandlers>
+        <typeHandler handler="org.mybatis.example.ExampleTypeHandler"/>
+    </typeHandlers>
+    -->
+
     <mappers>
         <!-- 使用相对于类路径的资源引用, 默认的资源路径/resources -->
         <mapper resource="BlogMapper.xml"/>

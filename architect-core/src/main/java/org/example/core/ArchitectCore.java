@@ -1,12 +1,14 @@
 package org.example.core;
 
+// 互联网架构师全教程 https://mikechen.cc/
 public class ArchitectCore {
 
-    // 互联网架构师全教程 https://mikechen.cc/
+    // 1. 多线程和高并发
+    // 2. 分布式和负载均衡
+    // 3. 数据库
+    // 4. Redis / Serverless Framework
 
-    // Database 数据库高级设计
-    // TODO: optimistic locking and pessimistic locking 乐观锁，悲观锁
-    // https://docs.oracle.com/javaee/7/tutorial/persistence-locking001.htm
-    // https://www.objectdb.com/java/jpa/persistence/lock#Optimistic_Locking
-    // https://docs.jboss.org/hibernate/orm/4.0/devguide/en-US/html/ch05.html   ===> 在执行transactions操作的时候所使用的两种锁的策略 !!!
+    // 5. 消息中间件
+    // 6. 容器技术
+    // 7. 大数据数据处理
 }

@@ -7,17 +7,23 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="big-data-processing-system" />
-        <module name="message-middleware" />
-        <module name="container-serverless-framework" />
+        <module name="database" />
+        <module name="middleware-message" />
         <module name="hibernate-basic" />
         <module name="mybatis-basic" />
         <module name="distributed-load-balancing" />
+        <module name="container-docker" />
         <module name="redis-basic" />
         <module name="architect-core" />
+        <module name="serverless-framework" />
+        <module name="concurrency" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="container-serverless-framework" target="15" />
       <module name="container-severless-framework" target="15" />
+      <module name="message-middleware" target="15" />
+      <module name="multi-threads-concurrency" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
