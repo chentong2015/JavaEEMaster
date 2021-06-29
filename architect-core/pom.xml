@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>container-severless-framework</artifactId>
+    <artifactId>architect-core</artifactId>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>

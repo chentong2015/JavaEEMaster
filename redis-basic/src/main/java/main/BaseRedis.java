@@ -11,6 +11,8 @@ import org.springframework.data.redis.core.RedisTemplate;
  */
 public class BaseRedis {
 
+    // Redis的本质: key-value存储，内存中一张巨大的hash表，依赖于hash function，查询的效率很高 接近O(1)
+
     /**
      * redis 入门 ===> https://github.com/spring-projects/spring-data-redis
      * 1. NoSQL数据库
@@ -30,4 +32,18 @@ public class BaseRedis {
      public void addLink(String userId, URL url) {
      listOps.leftPush(userId, url.toExternalForm());
      } */
+
+    /**
+     * redis数据结构有哪些？
+     * Redis缓存穿透，缓存雪崩？
+     * 如何使用Redis来实现分布式锁？
+     * Redis的并发竞争问题如何解决？
+     * Redis持久化的几种方式，优缺点是什么，怎么实现的？
+     * Redis的缓存失效策略？
+     * Redis集群，高可用，原理？
+     * Redis缓存分片？
+     * Redis的数据淘汰策略？
+     * redis队列应用场景？
+     * 分布式使用场景（储存session）？
+     */
 }

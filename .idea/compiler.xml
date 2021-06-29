@@ -8,12 +8,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="big-data-processing-system" />
         <module name="message-middleware" />
+        <module name="container-serverless-framework" />
         <module name="hibernate-basic" />
         <module name="mybatis-basic" />
         <module name="distributed-load-balancing" />
-        <module name="container-severless-framework" />
         <module name="redis-basic" />
+        <module name="architect-core" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="container-severless-framework" target="15" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -15,12 +15,12 @@
         <module>message-middleware</module>
         <module>distributed-load-balancing</module>
         <module>big-data-processing-system</module>
-        <module>container-severless-framework</module>
+        <module>container-serverless-framework</module>
+        <module>architect-core</module>
     </modules>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
-
 </project>
