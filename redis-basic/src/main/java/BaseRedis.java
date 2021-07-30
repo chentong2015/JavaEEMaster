@@ -2,34 +2,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 
-/**
- * Spring Data Redis: part of Spring Data, offers low-level and high-level abstractions
- * 1. RedisTemplate: 高级抽象，用于执行Redis operations, 异常转换和序列化支持
- * 2. "Lettuce" and "Jedis": two popular open-source Java libraries for Redis.
- */
+// Redis is a cache, message broker, and richly-featured key-value store. Redis是一个缓存，消息代理和功能丰富的键值存储
+// Redis的本质: key-value存储，内存中一张巨大的hash表，依赖于hash function，查询的效率很高 接近O(1)
+// redis数据结构的底层实现
+// redis如何实现高可用
+// redis的性能为何如此高
+
+// Redis集群搭建及原理   https://juejin.cn/post/6971243764765425677
+// Redis与MySQL双写一致性如何保证？ https://juejin.cn/post/6964531365643550751
+// Redis Cluster 原理实践篇 https://xie.infoq.cn/article/b272c96e7346ccbb402109ff2
 public class BaseRedis {
 
-    // Redis的本质: key-value存储，内存中一张巨大的hash表，依赖于hash function，查询的效率很高 接近O(1)
-
     /**
-     * redis 入门 ===> https://github.com/spring-projects/spring-data-redis
-     * 1. NoSQL数据库
-     * 2. Redis is a cache, message broker, and richly-featured key-value store. Redis是一个缓存，消息代理和功能丰富的键值存储
+     * TODO: 如何在Spring中使用Redis https://github.com/spring-projects/spring-data-redis
+     * Spring Data Redis: part of Spring Data, offers low-level and high-level abstractions
+     * 1. RedisTemplate: 高级抽象，用于执行Redis operations, 异常转换和序列化支持
+     * 2. "Lettuce" and "Jedis": two popular open-source Java libraries for Redis.
      */
-
-    // inject the actual template
+    // Inject the actual template
     @Autowired
     private RedisTemplate<String, String> template;
 
-    // inject the template as ListOperations
+    // Inject the template as ListOperations
     // @Resource(name = "redisTemplate")
     private ListOperations<String, String> listOps;
-
-    /**
-     *
-     public void addLink(String userId, URL url) {
-     listOps.leftPush(userId, url.toExternalForm());
-     } */
+    // listOps.leftPush(String userId, URL url.toExternalForm());
 
     /**
      * redis数据结构有哪些？

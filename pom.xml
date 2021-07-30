@@ -15,7 +15,7 @@
         <module>redis-basic</module>
         <module>distributed-load-balancing</module>
         <module>big-data-processing-system</module>
-        <module>architect-core</module>
+        <module>architect-system-design</module>
         <module>concurrency</module>
         <module>middleware-message</module>
         <module>container-docker</module>

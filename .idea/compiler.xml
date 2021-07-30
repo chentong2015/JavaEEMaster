@@ -14,7 +14,7 @@
         <module name="distributed-load-balancing" />
         <module name="container-docker" />
         <module name="redis-basic" />
-        <module name="architect-core" />
+        <module name="architect-system-design" />
         <module name="serverless-framework" />
         <module name="concurrency" />
       </profile>

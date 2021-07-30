@@ -1,4 +1,4 @@
-package system.design.model;
+package core.scheduler;
 
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;

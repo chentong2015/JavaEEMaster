@@ -1,4 +1,4 @@
-package system.design.model;
+package core.scheduler;
 
 import java.util.Random;
 import java.util.UUID;

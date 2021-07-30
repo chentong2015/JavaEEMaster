@@ -1,16 +1,13 @@
-package system.design;
-
-import system.design.model.DelayedTask;
-import system.design.model.TaskConsumer;
-import system.design.model.TaskProducer;
+package core.scheduler;
 
 import java.util.concurrent.DelayQueue;
 
 /**
- * "定时任务调度器": 有很多任务，每个任务都有一个时间戳，任务会在该时间点开始执行
- * ? 如何指定的时间执行任务，而在尽量的减少等待的时间差，同时避免对CPU的过渡消耗 ?
- * 1. PriorityBlockingQueue + Polling: 时间间隔不好控制 !
- * 2. PriorityBlockingQueue + 时间差  : 时间差会造成任务处理不及时 !
+ * "定时任务调度器":
+ * 大量任务，每个任务都有一个时间戳，任务会在该时间点开始执行
+ * 如何指定的时间执行任务，而在尽量的减少等待的时间差，同时避免对CPU的过渡消耗 ?
+ * 1. PriorityBlockingQueue + Polling: 时间间隔不好控制
+ * 2. PriorityBlockingQueue + 时间差  : 时间差会造成任务处理不及时
  * 3. DelayQueue -> ScheduledThreadPoolExecutor 工作原理一致
  */
 // HashedWheelTimer时间轮(循环队列): 循环队列中的每个Node，执行每个Node下面的应该被执行的任务(根据延迟时间依次)
