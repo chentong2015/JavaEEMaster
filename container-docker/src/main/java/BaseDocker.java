@@ -9,9 +9,9 @@
 //    虚拟机必须具有在这种场景下必要的所以二进制文件和因应用程序，几GB，启功慢
 // 2. 容器则运行在指定的"物理计算机"上，使用计算机上安装的操作系统，几MB，启动快
 //    多个容器可以共享宿主计算机的操作系统
-//    容器(应用程序，库)   容器(应用程序，库)
-//             Docker引擎
-//              操作系统
+//     | 容器(应用程序，库)   容器(应用程序，库)   |
+//     |          Docker引擎                 |
+//     |           操作系统                   |
 
 // 从容器到微服务架构: 构建一次，到处运行
 // 是使用一种特殊的格式(容器镜像)打包应用程序及其配置，部署到启用了容器的服务器
@@ -22,9 +22,6 @@
 //   容器3：Redis缓存
 public class BaseDocker {
 
-    /**
-     * TODO: https://howtodoinjava.com/java/library/docker-hello-world-example/
-     * 打包自包含的应用程序
-     * https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/self-contained-packaging.html
-     */
+    // Demo Project
+    // TODO: https://howtodoinjava.com/java/library/docker-hello-world-example/
 }
