@@ -2,15 +2,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 
-// Redis is a cache, message broker, and richly-featured key-value store. Redis是一个缓存，消息代理和功能丰富的键值存储
+// redis全套视频教程 https://www.bilibili.com/video/BV18J411V7oq
+
+// Redis is a cache, message broker, and richly-featured key-value store.
+// Redis是一个缓存，消息代理和功能丰富的键值存储
 // Redis的本质: key-value存储，内存中一张巨大的hash表，依赖于hash function，查询的效率很高 接近O(1)
 // redis数据结构的底层实现
 // redis如何实现高可用
-// redis的性能为何如此高
+// redis的性能为何如此高  ==> https://mikechen.cc/779.html
 
 // Redis集群搭建及原理   https://juejin.cn/post/6971243764765425677
 // Redis与MySQL双写一致性如何保证？ https://juejin.cn/post/6964531365643550751
 // Redis Cluster 原理实践篇 https://xie.infoq.cn/article/b272c96e7346ccbb402109ff2
+// 将内存节省到极致的一种数据结构ziplist https://juejin.cn/post/6992003200899350541
 public class BaseRedis {
 
     /**
