@@ -2,7 +2,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 
-// redis全套视频教程 https://www.bilibili.com/video/BV18J411V7oq
+// redis全套视频教程    https://www.bilibili.com/video/BV18J411V7oq
+// Redis轻松实现秒杀系统 https://www.bilibili.com/video/BV1CE411s7xN
+// 缓存中间件Redis全套视频教程 https://www.bilibili.com/video/BV1PA411V7U3
+
+// 最细最全的Redis教程(基础)  https://www.bilibili.com/video/BV13U4y1a7vi/?spm_id_from=333.788.recommend_more_video.6
 
 // Redis is a cache, message broker, and richly-featured key-value store.
 // Redis是一个缓存，消息代理和功能丰富的键值存储
@@ -43,6 +47,11 @@ public class BaseRedis {
      * Redis缓存分片？
      * Redis的数据淘汰策略？
      * redis队列应用场景？
-     * 分布式使用场景（储存session）？
+     * 分布式使用场景（储存session）？ Redis分布式/集群中Session共享的问题  https://www.cnblogs.com/lenve/p/10971384.html
+     *
+     * Redis的数据结构是什么？线程模型说一下？
+     * 讲讲Redis的数据淘汰机制？
+     * 说说Redis的数据一致性问题？
+     * Redis的分布式怎么做
      */
 }

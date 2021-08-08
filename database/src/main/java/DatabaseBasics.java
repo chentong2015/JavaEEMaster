@@ -1,6 +1,7 @@
-// MySQL的运行原理 https://juejin.cn/post/6969839499731795999
 public class DatabaseBasics {
 
+    // MySQL的运行原理 https://juejin.cn/post/6969839499731795999
+    
     /* TODO: 基本数据类型的理解
      * Float、Decimal 存储金额的区别？
      * Datetime、Timestamp 存储时间的区别？
