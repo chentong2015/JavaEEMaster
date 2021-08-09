@@ -53,5 +53,7 @@ public class BaseRedis {
      * 讲讲Redis的数据淘汰机制？
      * 说说Redis的数据一致性问题？
      * Redis的分布式怎么做
+     *
+     * redis的io多路复用
      */
 }
