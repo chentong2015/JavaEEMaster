@@ -1,4 +1,4 @@
-// Docker容器的基本认识：
+// 容器的基本认识：
 // 1. 容器是一个软件单元，包含应用程序及其完整的依赖和配置
 // 2. 容器可以部署到指定的宿主操作系统，而不需要进一步的配置即可运行
 // 3. 在这个"容器"能够运行，也能在生产环境中运行
@@ -20,7 +20,7 @@
 //   容器1：SQL数据库
 //   容器2：Web API
 //   容器3：Redis缓存
-public class BaseDocker {
+public class BaseContainer {
 
     // Demo Project
     // TODO: https://howtodoinjava.com/java/library/docker-hello-world-example/
