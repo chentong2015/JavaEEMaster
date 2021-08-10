@@ -1,8 +1,26 @@
 package Redis_Basics;
 
+// TODO: 测试安装和Redis分布式锁项目
+// Redis安装和使用:
+// 1. Windows场景+RedisClient
+// 2. Linux场景
+//    >cd /usr/local/redis-5.0.3/
+//    >src/redis-server redis.conf
+//    >ps -ef | grep redis
+
+// Redis全套教程         https://www.bilibili.com/video/BV18J411V7oq?p=1
 // Redis缓存高并发架构实战 https://www.bilibili.com/video/BV1PA411V7U3
 // Redis实现秒杀系统      https://www.bilibili.com/video/BV1CE411s7xN
 public class BaseRedis {
+
+    // Redis是单线程的, 后端缓存：功能强大 + 性能
+    // 1. 不适合存储大量的信息, 只暂存关键的信息
+    // 2. 操作是微秒级别的, 对于某些业务场景下，性能明显优于MySQL数据库
+    // 3. 重构数据存储的方式，和业务逻辑的轻松实现(不同场景使用不同数据类型来实现)
+
+    // 早期新浪微博后端使用redis实现，使用集群架构(单个结点挂了不影响)，配置Redis的容量为T级别
+    // BAT后台的分布式缓存/中间件，基本使用自研的方式来实现，保证源码的可控性，容量扩展
+    // WeChat这种级别的应用，不会使用Redis，难以修改，处理问题
 
     // https://mikechen.cc/779.html
     // Redis is a cache, message broker, and richly-featured key-value store.
@@ -11,20 +29,6 @@ public class BaseRedis {
     // redis数据结构的底层实现
     // redis如何实现高可用
     // redis的性能为何如此高 ?
-
-    // Redis是单线程的, 后端缓存
-    // 不适合存储大量的信息, 只暂存关键的信息
-    // 操作是微秒级别的, 对于某些业务场景下，性能明显优于MySQL数据库
-
-    // 早期新浪微博后端使用redis实现，使用集群架构(单个结点挂了不影响)，配置Redis的容量为T级别
-    // BAT后台的分布式缓存/中间件，基本使用自研的方式来实现，保证源码的可控性，容量扩展
-    // WeChat这种级别的应用，不会使用Redis，难以修改，处理问题
-
-    // Linux启动Redis:
-    // >cd /usr/local/redis-5.0.3/
-    // >src/redis-server redis.conf
-    // >ps -ef | grep redis
-
 
     /**
      * redis数据结构有哪些？

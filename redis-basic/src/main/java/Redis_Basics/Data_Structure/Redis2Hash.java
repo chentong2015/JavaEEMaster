@@ -5,6 +5,7 @@ public class Redis2Hash {
     // Hash的结构:
     // key -> field1 value
     //        field2 value
+    //        field2 value
     //        ...
 
     /*

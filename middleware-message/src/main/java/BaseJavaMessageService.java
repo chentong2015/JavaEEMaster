@@ -1,5 +1,10 @@
 public class BaseJavaMessageService {
 
+    // 分布式消息中间件 ==> 掌握到源码级别
+    // RabbitMQ
+    // RocketMQ
+    // Kafka
+
     /**
      * 消息中间件技术 + GlassFish Web Container 
      * https://docs.oracle.com/javaee/6/tutorial/doc/bncdr.html
