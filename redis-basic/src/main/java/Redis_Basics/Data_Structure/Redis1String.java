@@ -1,3 +1,5 @@
+package Redis_Basics.Data_Structure;
+
 public class Redis1String {
 
     /*
@@ -20,9 +22,9 @@ public class Redis1String {
     //    set key value
     //    get key
 
-    // 2. 对象缓存: 如何将数据库表中一行的数据对象存储到redis中 ==> TODO: 使用hash更优
-    //    set user:1 value(json数据格式)                    ==> 将user id为1的数据通过json存储            ===> 简单，但性能不好，不容易修改
-    //    mset user:1:name chentong user1:balance 1888    ==> 批量设置值，组合user+id+field成可以键值存储  ===> 热点数据过多容易淘汰 !!
+    // 2. 对象缓存: 如何将数据库表中一行的数据对象存储到redis中
+    //    set user:1 value(json数据格式)                 ==> 将user id为1的数据通过json存储            ===> 简单，但性能不好，不容易修改
+    //    mset user:1:name chentong user1:balance 1888 ==> 批量设置值，组合user+id+field成可以键值存储  ===> 热点数据过多容易淘汰 !!
     //    mget user:1name user:1:balance
     //     1) "chentong"
     //     2) "1888"
@@ -39,8 +41,8 @@ public class Redis1String {
     //    get article:readcount:{文章id}
 
     // 5. TODO: Java Web集群session共享
-    //    Spring session(底层通过redis实现session共享和存储), 源码的实现
+    //    Spring session(底层通过redis实现session共享和存储), 注意查查看源码的实现
 
-    // 6. 分布式id生成器(系统全局id序列号)
-    //    increby orderid 1000  批量生成序列号提升性能
+    // 6. 分布式id生成器(系统全局序列号)
+    //    increby orderid 1000  原子计数器, 批量生成序列号提升性能
 }
