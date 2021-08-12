@@ -5,21 +5,7 @@ package ngnix;
 // 2.可以方便的使用反向代理和IMAP/POP3代理服务器
 public class BaseNginx {
 
-    // 1. 如何把Nginx配置成反向代理
-    // 修改/etc/nginx/sites-available/default JSON文件
-    // server {
-    //    listen: 80;
-    //    location / {
-    //           proxy_pass http://localhost:5000;  可以修改改属性的值来指定Kestrel服务器的位置
-    //           proxy_http_version 1.1;
-    //           proxy_set_header Upgrade $http_upgrade;
-    //           proxy_set_header Connection heep-alive;
-    //           proxy_set_header Host $host;
-    //           proxy_cache_bypass $http_upgrade;
-    //    }
-    // }
-
-    // 2. Nginx 负载均衡(设备)
+    // 1. Nginx作为负载均衡设备
     // 使用虚拟机上nginx的ip地址来进行访问 192.168.0.60
     // > vim conf/nginx.conf 配置配置文件, 配置负载均衡的策略
     //   http {
@@ -38,4 +24,18 @@ public class BaseNginx {
     //         }
     //     }
     //   }
+
+    // 2. 如何把Nginx配置成反向代理
+    // 修改/etc/nginx/sites-available/default JSON文件
+    // server {
+    //    listen: 80;
+    //    location / {
+    //           proxy_pass http://localhost:5000;  可以修改改属性的值来指定Kestrel服务器的位置
+    //           proxy_http_version 1.1;
+    //           proxy_set_header Upgrade $http_upgrade;
+    //           proxy_set_header Connection heep-alive;
+    //           proxy_set_header Host $host;
+    //           proxy_cache_bypass $http_upgrade;
+    //    }
+    // }
 }

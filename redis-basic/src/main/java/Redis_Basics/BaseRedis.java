@@ -13,7 +13,8 @@ package Redis_Basics;
 // Redis实现秒杀系统      https://www.bilibili.com/video/BV1CE411s7xN
 public class BaseRedis {
 
-    // Redis是单线程的, 后端缓存：功能强大 + 性能
+    // TODO: Redis服务端模型：单线程模型
+    // Redis缓存：功能强大 + 性能(单机的QPS几万)
     // 1. 不适合存储大量的信息, 只暂存关键的信息
     // 2. 操作是微秒级别的, 对于某些业务场景下，性能明显优于MySQL数据库
     // 3. 重构数据存储的方式，和业务逻辑的轻松实现(不同场景使用不同数据类型来实现)

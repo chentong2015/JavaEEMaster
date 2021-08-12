@@ -8,10 +8,10 @@ public class Redis1String {
      * get key
      * del key
      * mset key value [key value] 批量存储字符串键值对
-     * mget key [key..] 批量获取字符串键值对
-     * expire key seconds 设置一个键的过期时间
-     * setnx key value  存入一个不存在的字符串键值对(set if not exist) 当且仅当可以不存在, 将key值设置成value
-     * incr key  原子增加
+     * mget key [key..]   批量获取字符串键值对
+     * expire key seconds 设置一个key过期时间
+     * setnx key value    存入一个不存在的字符串键值对(set if not exist) 当且仅当可以不存在, 将key值设置成value
+     * incr key           原子增加
      * decr key
      * incrby key increment
      * decrby key decrement
@@ -29,10 +29,10 @@ public class Redis1String {
     //     1) "chentong"
     //     2) "1888"
 
-    // 3. 分布式锁(基本方案)
+    // 3. 分布式锁 复杂度O(1)
     //    setnx product:10001 true          返回1表示获取锁成功  ===> 多个线程，那个设置成功，则表示拿到锁
     //    setnx product:10001 true          返回0表示获取锁失败
-    //    ... 执行业务操作
+    //    ...   执行业务操作
     //    del   product:10001               执行完业务后释放锁
     //    set   product:10001 true ex 10 nx 防止程序意外终止导致死锁
 

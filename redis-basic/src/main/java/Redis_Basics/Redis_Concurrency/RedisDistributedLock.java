@@ -2,34 +2,97 @@ package Redis_Basics.Redis_Concurrency;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
 
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
 // Redis分布式锁场景
 // 1. 互联网秒杀
 // 2. 抢优惠券
 // 3. 接口幂等性校验
 public class RedisDistributedLock {
 
-    // 1. 单体上部署Web App, 在一个tomcat中部署应用
+    // TODO: Redis自身和高并发是不一致的(将并发转成串行执行的代码)，虽然单体的性能不错，但是如何最多限度的提升性能 ? (面试题)
+    //       构建Redis分布式集群 ?
 
-    // 2. 分布式集群架构部署
+    // 应用部署场景
+    // 1. 一个tomcat单体中部署应用
+    // 2. 多个tomcat分布式集群架构部署, 高可用
     //           前端的用户访问的是负载均衡的设备
     //        http://192.168.0.60/deduct_stock
     //                nginx 负载均衡(设备)        ===> 分发请求到不同的部署上面
     //         tomcat1            tomcat2       ===> Web引用部署在多个Web Container中
-    //      localhost:8080     localhost:8090   ===> 不同的部署会有不同的进程，不同的JVM  ==> TODO: Java(JDK)内置锁不能跨越进程
+    //      localhost:8080     localhost:8090   ===> 不同的部署会有不同的进程，不同的JVM
     //                    Redis
+    //             Redis服务端单线程处理程序
+    //               按照先后优先依次处理
 
     // 在Spring层面封装了Redis的使用模板: StringRedisTemplate针对(Key->String)类型的数据结构进行存储
-    public void testRedisTemplate() {
-        // 这里添加的锁在高并发的场景下失效 !!
-        synchronized (this) {
-            StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
-            // jedis.get("stock");
+    String key = "lockKey";
+    StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
+
+    // 锁的基本设计
+    // jedis.setnx(key, value);
+    // jedis.get("stock");
+    // jedis.set(key, value);
+    public String testDistributedLock() {
+        // TODO: Java(JDK)内置锁不能跨越进程, 在分布式场景下锁会失效
+        // synchronized (this) { }
+        // TODO: 使用SETNX来实现基本的分布式锁
+        boolean isGetLocked = stringRedisTemplate.opsForValue().setIfAbsent(key, "myValue");
+        if (!isGetLocked) return "Error"; // 没拿到锁，则从后端返回，后端业务繁忙给出提示
+        int stock = Integer.parseInt(stringRedisTemplate.opsForValue().get("stock"));
+        if (stock > 0) {
+            stringRedisTemplate.opsForValue().set("stock", String.valueOf(stock - 1));
+        }
+        stringRedisTemplate.delete(key); // 删除掉设置的key，以便于其的请求拿到锁
+        return "Success";
+    }
+
+    // 分布式锁的优化
+    // 1. 在主体业务抛出异常的情况下，保证拿到锁的线程必须能够释放锁
+    // 2. 在主体业务执行的过程，如果服务宕机或者挂掉，如果保存将获得的锁释放掉，能够执行finally的程序     ===> 设置key的超时时间，确保释放
+    //    其他的tomcat继续发送请求，则无法有效的获得锁
+    // 3. 如果在设置超时时间完成之前，服务宕机或者挂掉，依然无法保证锁的释放     ==> 在获取锁和设置锁所执行的操作不是原子的，无法保证不被打断
+    public String testDistributedLockPlus() {
+        // boolean isGetLocked = stringRedisTemplate.opsForValue().setIfAbsent(key, "myValue");
+        // stringRedisTemplate.expire(key, 10, TimeUnit.SECONDS);
+
+        // 将两个操作合并到一个原子操作中
+        boolean isGetLocked = stringRedisTemplate.opsForValue().setIfAbsent(key, "myValue", 10, TimeUnit.SECONDS);
+        if (!isGetLocked) return "Error";
+        try {
             int stock = Integer.parseInt(stringRedisTemplate.opsForValue().get("stock"));
             if (stock > 0) {
-                int newStock = stock - 1;
-                // jedis.set(key, value);
-                stringRedisTemplate.opsForValue().set("stock", String.valueOf(newStock));
+                stringRedisTemplate.opsForValue().set("stock", String.valueOf(stock - 1));
             }
+        } finally {
+            stringRedisTemplate.delete(key);
         }
+        return "Success";
+    }
+
+    // TODO: 分布式锁的高并发场景: 如何避免"锁永久失效"的问题，根本无法保证执行的顺序和逻辑  ===> 使用Redisson来实现
+    // 1. 如何设置有效的超时时间，保证同一时间只有一个线程在执行同步的业务代码块(而不是可能又多个线程都在获取锁之后执行中) ?
+    //    不能将过期时间设置过长，否则在某种场景下需要等待锁释放的时间过长，影响体验
+    //    TODO: 使用分线程"动态控制"锁的超时时间，给锁延续更正时间
+    // 2. 请求线程    A    B     C   场景分析: 由于设置了锁的过期事件，在业务的执行时间和锁的过期时间不一致时
+    //    执行时间  15S    8S   5S           在A请求的业务执行没有结束时，锁被释放，这时B线程能够获得锁，开始执行
+    //             10S   go.                在A请求的业务完全结束时，执行finally语句，把B获得的线程锁给释放掉，然后让C请求来获得锁
+    //             5S    5S   go.           接着等B请求执行完，执行finally语句，又释放掉别的线程获得的锁....
+    //                   3S   3S
+    //    解决办法：必须保证释放的锁是自己获取的锁，通过锁的值来确定
+    public String testDistributedLockPlus2() {
+        String threadIdValue = UUID.randomUUID().toString();
+        boolean isGetLocked = stringRedisTemplate.opsForValue().setIfAbsent(key, threadIdValue, 10, TimeUnit.SECONDS);
+        if (!isGetLocked) return "Error";
+        try {
+            int stock = Integer.parseInt(stringRedisTemplate.opsForValue().get("stock"));
+            if (stock > 0) {
+                stringRedisTemplate.opsForValue().set("stock", String.valueOf(stock - 1));
+            }
+        } finally {
+            stringRedisTemplate.delete(key);
+        }
+        return "Success";
     }
 }

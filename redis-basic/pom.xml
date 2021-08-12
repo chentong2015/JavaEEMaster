@@ -26,6 +26,7 @@
     </repositories>
 
     <dependencies>
+        <!-- Spring框架下两款开源的Redis类库 -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
@@ -36,6 +37,13 @@
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>
             <version>6.1.1.RELEASE</version>
+        </dependency>
+
+        <!-- Redis分布式问题解决方案框架 -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.16.1</version>
         </dependency>
     </dependencies>
 
