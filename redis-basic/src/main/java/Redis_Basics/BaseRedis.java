@@ -1,19 +1,11 @@
 package Redis_Basics;
 
-// TODO: 测试安装和Redis分布式锁项目
-// Redis安装和使用:
-// 1. Windows场景+RedisClient
-// 2. Linux场景
-//    >cd /usr/local/redis-5.0.3/
-//    >src/redis-server redis.conf
-//    >ps -ef | grep redis
-
 // Redis全套教程         https://www.bilibili.com/video/BV18J411V7oq?p=1
 // Redis缓存高并发架构实战 https://www.bilibili.com/video/BV1PA411V7U3
 // Redis实现秒杀系统      https://www.bilibili.com/video/BV1CE411s7xN
 public class BaseRedis {
 
-    // TODO: Redis服务端模型：单线程模型
+    // Redis服务端模型：单线程模型
     // Redis缓存：功能强大 + 性能(单机的QPS几万)
     // 1. 不适合存储大量的信息, 只暂存关键的信息
     // 2. 操作是微秒级别的, 对于某些业务场景下，性能明显优于MySQL数据库
@@ -30,6 +22,11 @@ public class BaseRedis {
     // redis数据结构的底层实现
     // redis如何实现高可用
     // redis的性能为何如此高 ?
+
+    // Redis集群搭建及原理            https://juejin.cn/post/6971243764765425677
+    // Redis与MySQL双写一致性如何保证？ https://juejin.cn/post/6964531365643550751
+    // Redis Cluster 原理实践篇       https://xie.infoq.cn/article/b272c96e7346ccbb402109ff2
+    // 内存节省到极致的数据结构ziplist   https://juejin.cn/post/6992003200899350541
 
     /**
      * redis数据结构有哪些？
@@ -49,9 +46,4 @@ public class BaseRedis {
      * Redis的分布式怎么做
      * redis的io多路复用
      */
-
-    // Redis集群搭建及原理            https://juejin.cn/post/6971243764765425677
-    // Redis与MySQL双写一致性如何保证？ https://juejin.cn/post/6964531365643550751
-    // Redis Cluster 原理实践篇       https://xie.infoq.cn/article/b272c96e7346ccbb402109ff2
-    // 内存节省到极致的数据结构ziplist   https://juejin.cn/post/6992003200899350541
 }
