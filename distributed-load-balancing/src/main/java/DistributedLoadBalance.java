@@ -1,8 +1,7 @@
 public class DistributedLoadBalance {
 
-    // 分布式框架: Zookeeper, Dubbo, Netty(网络通信编程)
-
     /**
+     * Netty(网络通信编程)
      * 理解分布式, 负载均衡(DNS负载均衡、IP负载均衡、"反向代理"负载均衡), 连接池
      * 开发高并发应用
      * cap了解吗，分别指什么？ http://www.ruanyifeng.com/blog/2018/07/cap.html

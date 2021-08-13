@@ -7,21 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
-// http://redisson.org
-// Redis Java Client 客户端解决分布式锁的框架
+// Redis Java Client 客户端解决分布式锁的框架 http://redisson.org
 // 1. Distributed Java Objects
 // 2. Distributed Java Locks and synchronizers
 // 3. Distributed Java Services
 public class RedissonFramework {
-
-    // TODO: 在分布式锁场景下，在主从架构(哨兵架构)中如何解决锁的同步性 ? (面试题)
-    //       Redisson  ->  Redis(Master)  ->  Redis(Slave)
-    //                                    ->  Redis(Slave)
-    // 如果redisson在主redis中加了一把锁(设置一个key)，则从结点一般需要将key"同步"过去
-    // 如果key刚好设置到redis主结点，然后redis主结点挂了
-    // 1. 将从结点重新切换成主结点，新的结点没有key
-    // 2. 新来的线程如果访问新的结点，发现没有锁，则会继续执行
-
+    
     // 在SpringBoot项目中依赖注入(容器)，初始化Redisson
     @Bean
     public Redisson redisson() {
@@ -39,11 +30,12 @@ public class RedissonFramework {
     Redisson redisson;
     StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
 
+    // TODO: 使用分线程"动态控制"锁的超时时间，给锁延续更正时间
     public String testDistributedLockPlus2() {
         String key = "lockKey";
         RLock redissonLock = redisson.getLock(key); // 生成一个Redisson锁对象
         try {
-            // TODO: 多个线程只有一个线程能够获得锁，其他的线程会原地等待(自旋)，在锁被释放之后进行争抢
+            // 多个线程只有一个线程能够获得锁，其他的线程会原地等待(自旋)，在锁被释放之后进行争抢 !!
             // 核心是通过分线程+Timer来实现，Lua脚本源代码(原子代码块)
             // 底层的实现 jedis.setnx(key, threadIdValue, 30, TimeUnit.SECONDS) 默认锁30秒
             redissonLock.lock();
