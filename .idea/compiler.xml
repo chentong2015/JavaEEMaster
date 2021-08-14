@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="redis-master" />
         <module name="big-data-processing-system" />
         <module name="middleware-message" />
         <module name="hibernate-basic" />
