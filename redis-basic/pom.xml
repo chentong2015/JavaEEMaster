@@ -26,6 +26,13 @@
     </repositories>
 
     <dependencies>
+        <!-- 注意单个dependency的添加需要补充version版本号 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.9</version>
+        </dependency>
+
         <!-- Spring Data Redis基本框架 -->
         <dependency>
             <groupId>org.springframework.data</groupId>

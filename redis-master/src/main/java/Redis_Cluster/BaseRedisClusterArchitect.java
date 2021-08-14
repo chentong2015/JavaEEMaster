@@ -5,13 +5,12 @@ package Redis_Cluster;
 // Web --->  Redis Master 主服务
 //           Redis Slave  从服务(可能需要人工运维干预)
 
-// TODO: 在分布式锁场景下，在主从架构(哨兵架构)中如何解决锁的同步性 ? (面试题)
+// TODO: 在分布式锁场景下，在主从架构(哨兵架构)中如何解决锁的同步性 ? (面试题)  ==> 如果主从失效，能够容忍 & 使用Zookeeper分布式结构
 //       Redisson  ->  Redis(Master)  ->  Redis(Slave) / Redis(Slave)
-// 如果redisson在主redis中加了一把锁(设置一个key)，则从结点一般需要将key"同步"过去
+// 如果redisson在主redis中加了一把锁(设置一个key)，则从结点一般需要将key"同步/异步复制"过去
 // 如果key刚好设置到redis主结点，然后redis主结点挂了
 // 1. 将从结点重新切换成主结点，新的结点没有key
 // 2. 新来的线程如果访问新的结点，发现没有锁，则会继续执行
-// 解决方案：如果主从失效，能够容忍 & 使用Zookeeper分布式结构
 public class BaseRedisClusterArchitect {
 
     // 1. Guard哨兵模式(中小型企业)
@@ -23,12 +22,19 @@ public class BaseRedisClusterArchitect {
     //    如果哨兵挂掉：可以做多个，如果一个挂了，前端的负载均衡可以找另一个哨兵
     //    并发缺点：对外提供的写只有一台，在挂掉的时候切换时间内"访问瞬断"的情况
 
-    // 2. 高可用集群模式(相对的)  ===> TODO: 伪分布式/伪集群，在一台机器上搭建3主3从的Redis实例，模拟分布式场景
-    //       client         client
-    //            JedisCluster
-    //      master           master          master         至少要3个master结点(选举必须是单数)，最多集群支持1000台...
-    //  slave  slave     slave  slave     slave   salve     多个集群的数据是分开
-    //  如果请求到别的小集群，会自动的重定向到正确的小集群
-    //  在小集群中"瞬断切换"的时候，也是相对的高可用
-
+    // TODO: 伪分布式/伪集群，在一台机器上搭建3主3从的Redis实例，模拟分布式场景
+    // 2. 高可用集群模式(相对的)
+    //           client         client
+    //                JedisCluster
+    //          master           master          master         至少要3个master结点(选举必须是单数)，最多集群支持1000台...
+    //      slave  slave     slave  slave     slave   salve     多个集群的数据是分开
+    // 备注: 1. 在小集群中"瞬断切换"的时候，也是相对的高可用
+    //      2. 对集群做水平扩展或者减小一个集群，比较麻烦
+    //
+    // 数据操作验证/集群内部会重定向到不同的master机器上执行(类似于轮询的负载均衡的算法)
+    // 127.0.0.1:8001> set name chentong
+    // -> Redirected to slot [5798] located at 127.0.0.1:8002
+    //    OK
+    // 根据key来定位存储位置, 每个master结点存储的数据是分开存储的，数据分片，不重复
+    // 集群之间有通讯原理
 }

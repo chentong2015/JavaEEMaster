@@ -68,11 +68,14 @@ Ubuntu Cloud Server
       >/src/redis-cli -c -h 127.0.0.1 -p 8001
       >cluster info  验证集群状态
       >cluster nodes 验证结点
-      >数据操作验证/集群内部会重定向到不同的master机器上执行(类似于轮询的负载均衡的算法) !!
-         127.0.0.1:8001> set name chentong
-         -> Redirected to slot [5798] located at 127.0.0.1:8002
-            OK
-      >/src/redis-cli -c -h 127.0.0.1 -p 8001 shutdown 逐个关闭集群
+      127.0.0.1:8001> set name chentong
+           -> Redirected to slot [5798] located at 127.0.0.1:8002  数据操作验证/集群内部会重定向到不同的master机器上执行
+           OK
+   8. 测试集群模式下的"主从替代"
+      >/src/redis-cli -c -h 127.0.0.1 -p 8001 shutdown 关闭集群中的一个Master结点，检测它的"从结点"会自动替代该挂掉的Master结点 !!
+      >/src/redis-cli -c -h 127.0.0.1 -p 8002 连接8002
+      >cluster nodes
+        8001 master; fail <- 8004自动顶上来
 
 Linux开放和关闭指定端口
      > apt install firewall

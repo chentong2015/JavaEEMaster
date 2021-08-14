@@ -1,4 +1,4 @@
-package Redis_Basics;
+package Spring_Data_Redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;

@@ -1,7 +1,5 @@
 package Redis_Basics;
 
-// Redis缓存高并发架构实战 https://www.bilibili.com/video/BV1PA411V7U3
-// Redis实现秒杀系统      https://www.bilibili.com/video/BV1CE411s7xN
 public class BaseRedis {
 
     // Redis服务端模型：单线程模型
@@ -22,6 +20,7 @@ public class BaseRedis {
      *  // redis数据结构的底层实现
      *  // redis如何实现高可用
      *  // redis的性能为何如此高 ?          https://mikechen.cc/779.html
+     *
      *  // Redis集群搭建及原理              https://juejin.cn/post/6971243764765425677
      *  // Redis与MySQL双写一致性如何保证？  https://juejin.cn/post/6964531365643550751
      *  // Redis Cluster 原理实践篇        https://xie.infoq.cn/article/b272c96e7346ccbb402109ff2
