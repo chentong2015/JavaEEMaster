@@ -1,4 +1,4 @@
-package Redis_Basics.Data_Structure;
+package Redis_Basics.Data_Structure.base;
 
 public class Redis1String {
 
@@ -15,6 +15,9 @@ public class Redis1String {
      * decr key
      * incrby key increment
      * decrby key decrement
+     *
+     * type key            返回key对应的(5种基本)大类型
+     * object encoding key 判断编码类型 ==> int(如果value能转换类型成功则使用int来存储), embstr, raw(大于44字节)
      */
 
     // String 应用场景

@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
-// Redis Java Client 客户端解决分布式锁的框架 github.com/redisson/redisson/wiki/目录
-// 1. Distributed Java Objects
-// 2. Distributed Java Locks and synchronizers
-// 3. Distributed Java Services
+// Redis Java Client 客户端解决分布式锁的框架
+// TODO:完整使用教程 https://github.com/redisson/redisson/wiki/目录
 public class RedissonFramework {
 
     // 在SpringBoot项目中依赖注入(容器)，初始化Redisson

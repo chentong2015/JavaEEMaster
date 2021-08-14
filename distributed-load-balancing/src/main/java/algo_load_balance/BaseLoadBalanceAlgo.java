@@ -1,4 +1,4 @@
-package load_balance_algo;
+package algo_load_balance;
 
 public class BaseLoadBalanceAlgo {
 

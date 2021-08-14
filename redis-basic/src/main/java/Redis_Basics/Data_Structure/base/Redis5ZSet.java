@@ -1,11 +1,13 @@
-package Redis_Basics.Data_Structure;
+package Redis_Basics.Data_Structure.base;
 
 public class Redis5ZSet {
 
     // ZSet的结构:
-    // key  -> 80 steven  正数索引: 0   负数索引: -3
-    //         84 chen             1           -2
-    //         90 tong             2           -1
+    // TODO: 默认使用ZipList压缩列表,
+    //       zset-max-ziplist-entries 128 配置元素超过128时，使用SkipList进行编码
+    // key  -> 80 steven   正数索引: 0   负数索引: -3
+    //         84 chen              1           -2
+    //         90 tong              2           -1
     //         ...
 
     /*
@@ -25,8 +27,8 @@ public class Redis5ZSet {
 
     // ZSet应用场景
     // 1. 排行榜的实现
-    //    1) zincrby hotNews:20210810 1 BigNews          点击新闻，增加一份热度
-    //    2) zrevrange hotNews:20210810 0 10 WITHSCORES  展示当日排行前十
-    //    3) zunionstore hotNews:20210810-20210817 7     七日搜索榜单计算
+    //    1) zincrby hotNews:20210810 1 BigNews                  点击新闻，增加一份热度
+    //    2) zrevrange hotNews:20210810 0 10 WITHSCORES          展示当日排行前十
+    //    3) zunionstore hotNews:20210810-20210817 7             七日搜索榜单计算
     //    4) zrevrange hotNews:20210810-20210817 0 10 WITHSCORES 展示7日排行前10
 }
