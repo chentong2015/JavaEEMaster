@@ -1,5 +1,3 @@
-package Redis_Master;
-
 // Redis缓存高并发架构实战 https://www.bilibili.com/video/BV1PA411V7U3
 
 // Redis 应用场景
@@ -18,5 +16,5 @@ package Redis_Master;
 // 7. 分布式锁
 // 8. 热点数据存储，排行榜
 public class RedisMaster {
-    
+
 }
