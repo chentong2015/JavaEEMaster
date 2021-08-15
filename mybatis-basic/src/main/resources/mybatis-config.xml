@@ -26,8 +26,7 @@
         </environment>
     </environments>
 
-    <!--
-    整体的XML的配置
+    <!-- 整体的XML的配置
     <settings>
         <setting name="cacheEnabled" value="true"/>
     </settings>
@@ -40,13 +39,11 @@
     添加自定义的类型处理器：将从PreparedStatement结果集中取出的值转换成Java类型
     <typeHandlers>
         <typeHandler handler="org.mybatis.example.ExampleTypeHandler"/>
-    </typeHandlers>
-    -->
+    </typeHandlers> -->
 
     <mappers>
         <!-- 使用相对于类路径的资源引用, 默认的资源路径/resources -->
         <mapper resource="BlogMapper.xml"/>
-
         <!-- 添加使用Java注解配置的映射器 <mapper class="com.ctong.main.mapper.BlogMapper"/> -->
     </mappers>
 </configuration>

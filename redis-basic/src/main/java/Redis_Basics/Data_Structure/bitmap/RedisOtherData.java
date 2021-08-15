@@ -1,8 +1,6 @@
-package Redis_Basics.Data_Structure.base;
+package Redis_Basics.Data_Structure.bitmap;
 
 public class RedisOtherData {
-
-    // Bitmap
     // Hyberloglog
     // GEO
 }

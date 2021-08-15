@@ -3,7 +3,7 @@ package Redis_Basics.Data_Structure.base;
 public class Redis5ZSet {
 
     // ZSet的结构:
-    // TODO: 默认使用ZipList压缩列表,
+    // TODO: 默认使用ZipList压缩列表, 元素相对较多时, 可以考虑使用跳表
     //       zset-max-ziplist-entries 128 配置元素超过128时，使用SkipList进行编码
     // key  -> 80 steven   正数索引: 0   负数索引: -3
     //         84 chen              1           -2

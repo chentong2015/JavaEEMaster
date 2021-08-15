@@ -1,5 +1,10 @@
 package Redis_Cluster;
 
+import redis.clients.jedis.*;
+
+import java.util.HashSet;
+import java.util.Set;
+
 // TODO: Redis自身和高并发是不一致的(将并发转成串行执行的代码)，虽然单体的性能不错，但是如何最多限度的提升性能 ? (面试题)
 // Redis分布式集群方案比较: 部署在多个服务器
 // Web --->  Redis Master 主服务
@@ -37,4 +42,47 @@ public class BaseRedisClusterArchitect {
     //    OK
     // 根据key来定位存储位置, 每个master结点存储的数据是分开存储的，数据分片，不重复
     // 集群之间有通讯原理
+
+    // 测试单体Redis Server服务的操作
+    private static void testSingleRedisServer() {
+        Jedis jedis = new Jedis("8.209.74.47", 6379);
+        // jedis.auth("password");  使用配置文件中自定义的authentication password进行身份认证
+        // jedis.auth("root", "requirepass");
+        jedis.set("key1", "my key");
+        System.out.println(jedis.get("key1"));
+        System.out.println(jedis.get("name"));
+        jedis.close();
+    }
+
+    // 测试使用Jedis连接池访问单体Redis服务
+    private static void testSingleRedisServerWithJedisPool() {
+        JedisPool pool = new JedisPool("8.209.74.47", 6379);
+        Jedis jedis = pool.getResource();
+        System.out.println(jedis.get("name"));
+        jedis.close();
+        pool.close();
+    }
+
+    // 测试Redis Cluster集群
+    private static void testRedisCluster() {
+        Set<HostAndPort> jedisClusterNodes = new HashSet<>();
+        jedisClusterNodes.add(new HostAndPort("8.209.74.47", 8001));
+        jedisClusterNodes.add(new HostAndPort("8.209.74.47", 8002));
+        jedisClusterNodes.add(new HostAndPort("8.209.74.47", 8003));
+        jedisClusterNodes.add(new HostAndPort("8.209.74.47", 8004));
+        jedisClusterNodes.add(new HostAndPort("8.209.74.47", 8005));
+        jedisClusterNodes.add(new HostAndPort("8.209.74.47", 8006));
+        // Jedis连接池的基本配置
+        JedisPoolConfig config = new JedisPoolConfig();
+        config.setMaxTotal(100);
+        config.setMaxIdle(10);        // 设置最大空闲
+        config.setTestOnBorrow(true); // 设置借用测试
+
+        JedisCluster jedisCluster = new JedisCluster(jedisClusterNodes, 5000, 10, config);
+        jedisCluster.set("firstname", "chen");
+        jedisCluster.set("age", "27");
+        System.out.println(jedisCluster.get("firstname"));
+        System.out.println(jedisCluster.get("age"));
+        jedisCluster.close();
+    }
 }

@@ -13,8 +13,9 @@ public interface BlogMapper {
     @Select("SELECT * FROM blog WHERE id = #{id}")
     Blog selectBlog(int id);
 
-    // ${columnName} MyBatis不会修改或转义该字符串 !!
-    //  ${column}会被直接(动态)替换，而#{value}会使用?预处理
+    // TODO: SQL语句中使用#和$的区别
+    // ${columnName} MyBatis不会修改或转义该字符串, ${column}会被直接(动态)替换
+    // #{value}会使用?预处理, #{} equivalent to PreparedStatement in JDBC
     @Select("select * from user where ${column} = #{value}")
     User findByColumn(@Param("column") String column, @Param("value") String value);
 
