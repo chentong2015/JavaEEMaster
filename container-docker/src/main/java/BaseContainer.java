@@ -22,6 +22,4 @@
 //   容器3：Redis缓存
 public class BaseContainer {
 
-    // Demo Project
-    // TODO: https://howtodoinjava.com/java/library/docker-hello-world-example/
 }
