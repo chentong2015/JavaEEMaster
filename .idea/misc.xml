@@ -9,6 +9,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/architect-system-design/pom.xml" />
         <option value="$PROJECT_DIR$/container-serverless-framework/pom.xml" />
         <option value="$PROJECT_DIR$/container-severless-framework/pom.xml" />
         <option value="$PROJECT_DIR$/database/pom.xml" />

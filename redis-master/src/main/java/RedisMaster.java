@@ -3,7 +3,7 @@
 // Redis 应用场景
 // 1. 缓存
 //    存储器      硬件介质   随机访问延时
-//    L1 cache   SRAM       1ns
+//    L1 cache   SRAM       1ns      CPU的1级缓存
 //    L2 cache   SRAM       4ns
 //    Memory     DRAM       100ns    内存     ==> Redis存储在内存
 //    Disk       SSD        150us    固态硬盘  ==> DB数据库

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>architect-system-design</artifactId>
+    <artifactId>middleware-network</artifactId>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
