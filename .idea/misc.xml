@@ -16,6 +16,8 @@
         <option value="$PROJECT_DIR$/high-concurrency/pom.xml" />
         <option value="$PROJECT_DIR$/message-middleware/pom.xml" />
         <option value="$PROJECT_DIR$/multi-threads-concurrency/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-basic/pom.xml" />
+        <option value="$PROJECT_DIR$/orm-hibernate/pom.xml" />
       </set>
     </option>
   </component>

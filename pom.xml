@@ -10,8 +10,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>mybatis-basic</module>
-        <module>hibernate-basic</module>
         <module>redis-basic</module>
         <module>distributed-load-balancing</module>
         <module>big-data-processing-system</module>

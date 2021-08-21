@@ -10,8 +10,6 @@
         <module name="big-data-processing-system" />
         <module name="middleware-network" />
         <module name="middleware-message" />
-        <module name="hibernate-basic" />
-        <module name="mybatis-basic" />
         <module name="distributed-load-balancing" />
         <module name="container-docker" />
         <module name="redis-basic" />
@@ -26,6 +24,8 @@
       <module name="high-concurrency" target="15" />
       <module name="message-middleware" target="15" />
       <module name="multi-threads-concurrency" target="15" />
+      <module name="mybatis-basic" target="15" />
+      <module name="orm-hibernate" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
