@@ -1,0 +1,14 @@
+ 框架: 一组用于在特定平台或多个平台上开发代码的类库
+ 技术栈: 一组技术，通常包括(多个)框架
+ 企业级项目5大方面：高可用，高并发，高性能(扩展)，安全，监控
+
+ 高级面试题目完整版 https://www.bilibili.com/video/BV1zL4y1e7YN
+
+ 架构师全教程 https://mikechen.cc/
+ 架构师的视角 https://icyfenix.cn/exploration/projects/
+  1. 服务架构
+  2. 架构师的视角
+  3. 分布式的基石
+  4. 基础设施Infrastructure
+  5. 技术方法论
+  6. 部署
