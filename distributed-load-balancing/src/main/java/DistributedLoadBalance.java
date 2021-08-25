@@ -1,7 +1,10 @@
 public class DistributedLoadBalance {
 
     //  性能优化、系统压测、限流降级
-
+    //  如何实现，如何配置，如何实战
+    //  https://medium.com/must-know-computer-science/system-design-load-balancing-1c2e7675fc27
+    //  https://nerohoop.gitbooks.io/system-design/content/system-design-and-scalability/load-balancer.html
+    
     /**
      * 理解分布式, 负载均衡(DNS负载均衡、IP负载均衡、"反向代理"负载均衡), 连接池
      * 开发高并发应用

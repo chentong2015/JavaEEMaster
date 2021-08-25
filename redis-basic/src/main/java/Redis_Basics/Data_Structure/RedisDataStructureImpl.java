@@ -31,7 +31,7 @@ public class RedisDataStructureImpl {
     // struct sdshdr {   3.2版本之前的设计，头部所占的字节过多，导致浪费
     //    int len;
     //    int free;
-    //   char buf[];
+    //    char buf[];
     // }
     // struct __attribute__ sdshdr5 {}  之后版本的优化
     // struct __attribute__ sdshdr8 {}  uint8_t len; 只使用一个字节存储len长度

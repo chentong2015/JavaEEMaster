@@ -2,7 +2,8 @@
  技术栈: 一组技术，通常包括(多个)框架
  企业级项目5大方面：高可用，高并发，高性能(扩展)，安全，监控
 
- 高级面试题目完整版 https://www.bilibili.com/video/BV1zL4y1e7YN
+ 高级面试题完整版  https://www.bilibili.com/video/BV1zL4y1e7YN
+ JAVA架构师完整版 https://www.bilibili.com/video/BV13q4y1n7oC
 
  架构师全教程 https://mikechen.cc/
  架构师的视角 https://icyfenix.cn/exploration/projects/
