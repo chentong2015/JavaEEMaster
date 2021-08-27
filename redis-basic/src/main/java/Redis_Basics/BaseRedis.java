@@ -21,6 +21,9 @@ public class BaseRedis {
     //    aeApiPoll() { epoll_wait(); ... }
     //    aeApiDelEvent() { epoll_ctl(); ... }
 
+    // 缓存穿透，缓存雪崩
+    // https://www.bilibili.com/video/BV1Rf4y1y7xE?p=90
+
     /**
      * Redis集群搭建及原理              https://juejin.cn/post/6971243764765425677
      * Redis与MySQL双写一致性如何保证？   https://juejin.cn/post/6964531365643550751
