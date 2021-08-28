@@ -15,7 +15,7 @@
  JVM与高级架构全集  https://www.bilibili.com/video/BV1Rf4y1y7xE  55小时
    Zookeeper
    Redis
-   mysql
+   mysql  ===> OK锁
 
  JAVA架构师完整版 https://www.bilibili.com/video/BV13q4y1n7oC
    JVM / Java多线程

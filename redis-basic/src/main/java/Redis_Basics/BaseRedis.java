@@ -21,6 +21,7 @@ public class BaseRedis {
     //    aeApiPoll() { epoll_wait(); ... }
     //    aeApiDelEvent() { epoll_ctl(); ... }
 
+    // Redis内存问题 ? 图片
     // 缓存穿透，缓存雪崩
     // https://www.bilibili.com/video/BV1Rf4y1y7xE?p=90
 
