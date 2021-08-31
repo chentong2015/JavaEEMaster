@@ -78,19 +78,6 @@ Ubuntu Cloud Server
       >cluster nodes
         8001 master; fail <- 8004自动顶上来
 
-Linux 设置防火墙来开放和关闭指定访问的port端口号: 避免网络的恶意访问 
-     > apt install firewall
-     > firewall-cmd --zone=public --add-port=6379/tcp --permanent 开放端口 
-     > firewall-cmd --reload 重启防火墙 
-     > firewall-cmd --zone=public --query-port=6379/tcp 查看设置是否生效 
-     > firewall-cmd --zone=public --list-ports 查看系统所有开放的端口 
-     > firewall-cmd --zone=public --remove-port=6379/tcp --permanent 关闭端口 
-     > firewall-cmd --reload 重启防火墙 
 
-	 > systemctl status firewalld 查看防火状态
-       service  iptables status
-     > systemctl stop firewalld 暂时关闭防火墙
-       service  iptables stop
-	 > systemctl disable firewalld 永久关闭防火墙
 	   
 
