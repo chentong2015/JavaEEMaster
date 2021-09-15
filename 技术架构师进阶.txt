@@ -13,17 +13,18 @@
 
 ----------------------------------------------------------------------
  JVM与高级架构全集  https://www.bilibili.com/video/BV1Rf4y1y7xE  55小时
+   tomcat
    Zookeeper
    Redis
-   mysql  ===> OK锁
+   mysql    ===> OK锁
 
  JAVA架构师完整版 https://www.bilibili.com/video/BV13q4y1n7oC
    JVM / Java多线程
    Redis
    HashMap
-   IP/Netty高性能通讯中间件
+   IP/Netty 高性能通讯中间件
    微服务架构 Sentine/Nacos
-   MySQL调优                  ==> OK
+   MySQL调优  ===> OK
 
  高级面试题完整版  https://www.bilibili.com/video/BV1zL4y1e7YN
  Baidu面经         https://duibiao.info/post/61

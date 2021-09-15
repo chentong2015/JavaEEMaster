@@ -31,4 +31,6 @@ public class Redis5ZSet {
     //    2) zrevrange hotNews:20210810 0 10 WITHSCORES          展示当日排行前十
     //    3) zunionstore hotNews:20210810-20210817 7             七日搜索榜单计算
     //    4) zrevrange hotNews:20210810-20210817 0 10 WITHSCORES 展示7日排行前10
+
+    // 2. TODO: 分布式的定时任务调度器 ?
 }
