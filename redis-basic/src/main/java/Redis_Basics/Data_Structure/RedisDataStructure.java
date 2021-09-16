@@ -11,7 +11,7 @@ package Redis_Basics.Data_Structure;
 //       3   -> 对于不同的value值, 对应着特定的存储结构
 //       4
 //       5
-public class RedisDataStructureImpl {
+public class RedisDataStructure {
 
     // TODO: Redis底层的数据存储结构
     // 1. 简单的动态字符串
@@ -21,7 +21,8 @@ public class RedisDataStructureImpl {
     // 5. 整数数组         O(n)
     // 6. SkipList跳表    O(log(n)): 基于有序链表的优化结构，支持二分查找的结构
 
-    // TODO: Redis C类型的实现SDS: Simple Dynamic String
+    // TODO: Redis所有的key都是string类型
+    //       C类型的实现SDS: Simple Dynamic String
     // 1. 二进制安全的数据结构
     // 2. 内存的预分配操作，避免频繁的内存分配
     //      int free: 0              还剩余多少空间，以进行数据的"动态扩容"
@@ -30,7 +31,7 @@ public class RedisDataStructureImpl {
     //
     //       int free: 0       int free: 9
     //        int len: 6       int len:  9
-    //       int addLen: 3
+    //     int addLen: 3
     //     char buf[]: "chentong123"
     //    (len+addLen)*2=18    成倍的扩容长度，当数据达到1M时，每次最多只增加1M，并且库扩容之后不会再缩小 !!
     // 3. 兼容C语言的函数库: 对自动串结尾添加"\0"的处理

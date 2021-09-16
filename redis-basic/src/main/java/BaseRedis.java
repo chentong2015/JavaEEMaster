@@ -1,4 +1,5 @@
-// Redis服务端模型：单线程模型, 底层使用C++实现
+//
+// Redis服务端模型：单线程模型, 底层使用C++实现/C语言实现
 // 分布式的缓存中间件：功能强大 + 性能(单机的QPS每秒处理几万请求) ===> 压力测试出请求量
 // 1. 不适合存储大量的信息, 只暂存关键的信息
 // 2. 操作是微秒级别的, 对于某些业务场景下，性能明显优于MySQL数据库
@@ -26,7 +27,7 @@ public class BaseRedis {
     // 8. 热点数据存储，排行榜
 
 
-    // TODO: Redis读写都是单线程，但性能为何如此高 ? Redis 6.0多线程 ?
+    // TODO: Redis读写都是单线程，但性能为何如此高 ? Redis 6.0多线(执行用户请求的还是单线程) ?
     // 1. 底层是基于高效的数据存储结构来实现的
     // 2. 多路复用 ?? https://mikechen.cc/779.html
     //    IO多路复用select/poll/epoll介绍  https://www.bilibili.com/video/BV1qJ411w7du
@@ -61,8 +62,6 @@ public class BaseRedis {
      * 说说Redis的数据一致性问题？
      * Redis的分布式怎么做
      * redis的io多路复用
-     *
-     * // 高并发项目的经验
-     * // redis如何实现高可用
+     * redis如何实现高可用
      */
 }
