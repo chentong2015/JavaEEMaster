@@ -1,28 +1,16 @@
 package Redis_Basics.Data_Structure;
 
-// Redis数据结构的底层实现
-// key-value存储，内存中一张巨大的hash表，依赖于hash function，查询的效率很高 接近O(1)
-// Redis底层渐进式rehash以及动态扩容机制，减少hash冲突的可能性
-// 存储基于一张全局的hash表: hash(key)%table_size
-//    全局hash表
-//       0   -> key: 都是String类型
-//       1   -> entry<key, value>
-//       2   -> entry<key, value> -> entry<key, value> 冲突的时候，挂链表
-//       3   -> 对于不同的value值, 对应着特定的存储结构
-//       4
-//       5
+// TODO: Redis底层基于高效的数据存储结构来实现
+//       底层encoding进行编码优化, 不同的数据类型对应实际编码的对象
+// 1. 简单的动态字符串
+// 2. hash表          O(1)
+// 3. ZipList压缩列表  O(n): 把指针去掉后的双向链表，类似于数组，添加相对的偏移值
+// 4. 双向链表         O(n)
+// 5. 整数数组         O(n)
+// 6. SkipList跳表    O(log(n)): 基于有序链表的优化结构，支持二分查找的结构
 public class RedisDataStructure {
 
-    // TODO: Redis底层的数据存储结构
-    // 1. 简单的动态字符串
-    // 2. hash表          O(1)
-    // 3. ZipList压缩列表  O(n): 把指针去掉后的双向链表，类似于数组，添加相对的偏移值
-    // 4. 双向链表         O(n)
-    // 5. 整数数组         O(n)
-    // 6. SkipList跳表    O(log(n)): 基于有序链表的优化结构，支持二分查找的结构
-
-    // TODO: Redis所有的key都是string类型
-    //       C类型的实现SDS: Simple Dynamic String
+    // TODO: Redis所有key都是string类型, 对应到C语言的实现SDS: Simple Dynamic String --> "Raw"
     // 1. 二进制安全的数据结构
     // 2. 内存的预分配操作，避免频繁的内存分配
     //      int free: 0              还剩余多少空间，以进行数据的"动态扩容"

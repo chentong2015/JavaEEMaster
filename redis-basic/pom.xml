@@ -33,7 +33,7 @@
             <version>5.3.9</version>
         </dependency>
 
-        <!-- Spring Data Redis基本框架 -->
+        <!-- Spring Data Redis基本框架: 封装到XXXRedisTemplate -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>

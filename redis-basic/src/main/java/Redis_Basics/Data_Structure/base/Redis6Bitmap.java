@@ -23,7 +23,7 @@ public class Redis6Bitmap {
     // > setbit login1111 1 1
     // > setbit login1111 2 1
     // > type login1111
-    //   string 底层的数据类型
+    //   string 底层(封装)的数据类型
     // > strlen login1111
     //   1 表示一个字节的长度
     // > setbit login1111 8 1  可以存储不是连续的userId

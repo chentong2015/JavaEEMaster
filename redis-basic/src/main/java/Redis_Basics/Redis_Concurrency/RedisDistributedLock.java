@@ -14,7 +14,7 @@ public class RedisDistributedLock {
     // 应用部署场景
     // 1. 一个tomcat单体中部署应用
     // 2. 多个tomcat分布式集群架构部署, 高可用
-    //           前端的用户访问的是负载均衡的设备
+    //             前端用户访问负载均衡设备
     //        http://192.168.0.60/deduct_stock
     //                nginx 负载均衡(设备)        ===> 分发请求到不同的部署上面
     //         tomcat1            tomcat2       ===> Web引用部署在多个Web Container中

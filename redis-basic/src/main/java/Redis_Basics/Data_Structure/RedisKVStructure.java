@@ -1,12 +1,11 @@
 package Redis_Basics.Data_Structure;
 
-// Redis K-V 底层实现原理:
-// Redis底层使用C语言实现，基于数组和链表来实现
-// 1. 数据结构: map -> dict
-// 2. K - V : 数据库 -> 海量的数据存储 
+// TODO: Redis K-V底层(C语言)实现原理 --> 基于数组和链表来实现
+// 1. 内存中一张巨大的hash表，依赖于hash function，查询的效率很高，接近O(1)
+// 2. hash运算: hash(key)%table_size
+//             hash(key) -> 自然数 % model = index 将字符串转换成整型值
+// 3. hash冲突: 渐进式rehash以及动态扩容机制，减少hash冲突
 public class RedisKVStructure {
-    
-    // hash(key) -> 自然数 % model = index 将字符串转换成整型值
 
     // 计算数组存放的位置，hash运算，散列避免hash冲突
     // 1. 任意相同的输入，一定有相同的冲突
@@ -14,15 +13,18 @@ public class RedisKVStructure {
     //    hash(k1) % 4 = 0
     //    hash(k2) % 4 = 1
     //    hash(k3) % 4 = 1
+
+    // 全局hash表
+    //    arr[0] => key: 都是String类型 --> 对应到C语言SDS类型
     //    arr[0] -> (k1, v1, next->null) 数组存指针，指向具体的键值对元素
     //    arr[1] -> (k3, v3, next-> k2),(k2, v2, next->null)  如果key一样则先删除再设置，反之挂链表
-    //    arr[2]     TODO: 如果这里挂的链表过长，可能会rehash
-    //    arr[3]
+    //    arr[2]    如果这里挂的链表过长，可能会rehash
+    //    arr[3] => 对于不同的value值, 对应着特定的存储结构
 
     // TODO: Redis默认支持16个DB数据库，可以配置redis.conf
     // > select redisDB
     //   typedef struct redisDb {
-    //      dict *dict;                 /* The keyspace for this DB */ 所有的"键值对"存储的位置，字典
+    //      dict *dict;                 /* The keyspace for this DB */ 所有的"键值对"存储的位置
     //      dict *expires;              /* Timeout of keys with a timeout set */
     //      dict *blocking_keys;        /* Keys with clients waiting for data (BLPOP)*/ 阻塞队列
     //      dict *ready_keys;           /* Blocked keys that received a PUSH */
@@ -33,15 +35,23 @@ public class RedisKVStructure {
     //      list *defrag_later;         /* List of key names to attempt to defrag one by one, gradually. */
     //  } redisDb;
 
-    //
+    // 数据库所使用的dict字典数据结构 --> map结构的具体实现
     // struct dict {
     //     dictType *type;
-    //     dictEntry **ht_table[2];  解决渐进式的扩容，避免转移数据时的卡顿
+    //     dictEntry **ht_table[2];
+    //     dictht ht[2]; 渐进式的扩容，避免转移数据时的卡顿
     //     unsigned long ht_used[2];
     //     long rehashidx; /* rehashing not in progress if rehashidx == -1 */
     //     int16_t pauserehash; /* If >0 rehashing is paused (<0 indicates coding error) */
     //     signed char ht_size_exp[2]; /* exponent of size. (size = 1<<exp) */
     // };
+
+    // typeof struct dictht {
+    //   dictEntry **table;
+    //   unsigned long size; // hashtable容量
+    //   unsigned long sizemask;
+    //   unsigned long used; // 使用元素的个数
+    // }dictht;
 
     // typedef struct dictType {
     //    uint64_t (*hashFunction)(const void *key);
@@ -53,4 +63,17 @@ public class RedisKVStructure {
     //    int (*expandAllowed)(size_t moreMem, double usedRatio);
     //    size_t (*dictEntryMetadataBytes)(dict *d);
     // } dictType;
+
+    // 使用dictEntry封装键值对<key, v, next指针>
+    // typedef struct dictEntry {
+    //    void *key;         这里的key指向string对象(所有的key都是string)
+    //    union {
+    //        void *val;     具体存储数据的redisObject
+    //        uint64_t u64;
+    //        int64_t s64;
+    //        double d;
+    //    } v;
+    //    struct dictEntry *next; 构建链表的指针next
+    //    void *metadata[];
+    //} dictEntry;
 }
