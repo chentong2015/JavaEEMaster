@@ -6,11 +6,9 @@ import org.redisson.api.RLock;
 import org.redisson.api.RReadWriteLock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller
 public class RedisCacheProblems {
 
     // Redis缓存问题
@@ -33,9 +31,9 @@ public class RedisCacheProblems {
     //            内存队列(针对不同的商品的操作进行串行化执行)，
     //            加分布式锁(将并发改成串行执行，性能不行)
     //    解法方案：
-    //    1. 分布式读写锁：读锁(不互斥) + 写锁(互斥)  ==> 针对"读多写少"的业务场景
-    //    2. 设置缓存超时时间 expire key 30s       ==> 针对"读多写多"的业务场景，不强制要求"数据库"和"缓存"中的值一致
-    //    3. 不用缓存, 避免大量更新缓存的操作         ==> 针对"读多写多"的业务场景，要求"数据库"和"缓存"严格一致
+    //    1. 分布式读写锁：读锁(不互斥) + 写锁(互斥)  ==> "读多写少"业务场景
+    //    2. 设置缓存超时时间 expire key 30s       ==> "读多写多"业务场景，不强制要求"数据库"和"缓存"中的值一致
+    //    3. 不用缓存, 避免大量更新缓存的操作         ==> "读多写多"业务场景，要求"数据库"和"缓存"严格一致
     //    4. TODO: 使用Canal中间件来优化第3种解决方案 / 使用支持高并发的数据库, 分布式数据库TiDB
 
     @Autowired

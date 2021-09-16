@@ -1,4 +1,4 @@
-package Redis_Basics.Data_Structure.base;
+package Redis_Basics.Data_Structure;
 
 public class Redis4Set {
 

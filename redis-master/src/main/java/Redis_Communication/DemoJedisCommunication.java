@@ -1,6 +1,5 @@
-package Redis_Client;
+package Redis_Communication;
 
-import Redis_Client.Communication.MyJedisApplicationLayer;
 import redis.clients.jedis.Jedis;
 
 import java.io.IOException;
@@ -11,7 +10,7 @@ import java.io.IOException;
 // 2. 消息处理层  Message Protocol ===> 提供Redis Server通讯的特殊协议 RESP(Redis Serialization Protocol)
 // 3. 传输层     TCP/UDP          ===> 网络传输层使用的可靠协议
 // 4. 比特流传输
-public class BaseJedis {
+public class DemoJedisCommunication {
 
     public static void main(String[] args) {
         Jedis jedis = new Jedis("8.209.74.47", 6379);
@@ -25,7 +24,7 @@ public class BaseJedis {
     public static void testMyJedis() throws IOException {
         String host = "127.0.0.1";
         short port = 6379;
-        MyJedisApplicationLayer myJedis = new MyJedisApplicationLayer(host, port);
+        JedisApplicationLayer myJedis = new JedisApplicationLayer(host, port);
         myJedis.set("name", "new name");
         System.out.println(myJedis.get("name"));
     }

@@ -1,9 +1,9 @@
-package Redis_Basics.Data_Structure.bitmap;
+package Redis_Basics.Data_Structure;
 
 // 面试思考题:
 // 系统有亿级的活跃用户，如何实现日志统计 ?
 // 为了增强用户粘性，需要上线一个连续打卡发放积分的功能，如何实现连续打开用户统计 ?
-public class BaseBitMap {
+public class Redis6Bitmap {
 
     // 解法方案：基于Redis bitmap数据结构(底层是字符串)来实现
     // String

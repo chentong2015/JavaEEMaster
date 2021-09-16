@@ -13,6 +13,14 @@ package Redis_Basics.Data_Structure;
 //       5
 public class RedisDataStructureImpl {
 
+    // TODO: Redis底层的数据存储结构
+    // 1. 简单的动态字符串
+    // 2. hash表          O(1)
+    // 3. ZipList压缩列表  O(n): 把指针去掉后的双向链表，类似于数组，添加相对的偏移值
+    // 4. 双向链表         O(n)
+    // 5. 整数数组         O(n)
+    // 6. SkipList跳表    O(log(n)): 基于有序链表的优化结构，支持二分查找的结构
+
     // TODO: Redis C类型的实现SDS: Simple Dynamic String
     // 1. 二进制安全的数据结构
     // 2. 内存的预分配操作，避免频繁的内存分配
@@ -38,12 +46,4 @@ public class RedisDataStructureImpl {
     // struct __attribute__ sdshdr16 {} 从上面往下扩容
     // struct __attribute__ sdshdr32 {}
     // struct __attribute__ sdshdr64 {}
-
-    // 底层的数据存储结构
-    // 1. 简单的动态字符串
-    // 2. hash表          O(1)
-    // 3. ZipList压缩列表  O(n): 把指针去掉后的双向链表，类似于数组，添加相对的偏移值
-    // 4. 双向链表         O(n)
-    // 5. 整数数组         O(n)
-    // 6. SkipList跳表    O(log(n)): 基于有序链表的优化结构，支持二分查找的结构
 }

@@ -1,6 +1,6 @@
-package Redis_Client.Communication;
+package Redis_Communication;
 
-import Redis_Client.Communication.model.MyRedisCommand;
+import Redis_Communication.model.MyRedisCommand;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -17,7 +17,7 @@ import java.io.OutputStream;
 //    For Bulk Strings the first byte of the reply is "$"   $3 表示字符串的字符数
 //    For Arrays the first byte of the reply is "*"         *3 表示数组有3个
 // RESP different parts of the protocol are always terminated with "\r\n" (CRLF) 以占行或回车作为部分的结束
-public class MyJedisMessageProtocolLayer {
+public class JedisMessageProtocolLayer {
 
     // byte[]... 支持附加多个参数的传递，同时适用.set() & .get()方法
     public static void serialize(MyRedisCommand command, OutputStream outputStream, String... input) throws IOException {

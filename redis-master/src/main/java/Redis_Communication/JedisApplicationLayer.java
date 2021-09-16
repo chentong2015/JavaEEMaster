@@ -1,15 +1,14 @@
-package Redis_Client.Communication;
+package Redis_Communication;
 
-import Redis_Client.Communication.connection.MyJedisConnection;
-import Redis_Client.Communication.model.MyRedisCommand;
+import Redis_Communication.model.MyRedisCommand;
 
 import java.io.IOException;
 
-public class MyJedisApplicationLayer {
+public class JedisApplicationLayer {
 
     private MyJedisConnection connectionLayer;
 
-    public MyJedisApplicationLayer(String host, short port) {
+    public JedisApplicationLayer(String host, short port) {
         connectionLayer = new MyJedisConnection(host, port);
     }
 

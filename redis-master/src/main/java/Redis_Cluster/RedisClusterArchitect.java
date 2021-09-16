@@ -16,7 +16,7 @@ import java.util.Set;
 // 如果key刚好设置到redis主结点，然后redis主结点挂了
 // 1. 将从结点重新切换成主结点，新的结点没有key
 // 2. 新来的线程如果访问新的结点，发现没有锁，则会继续执行
-public class BaseRedisClusterArchitect {
+public class RedisClusterArchitect {
 
     // 1. Guard哨兵模式(中小型企业)
     //    client

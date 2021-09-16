@@ -1,7 +1,6 @@
-package Redis_Client.Communication.connection;
+package Redis_Communication;
 
-import Redis_Client.Communication.MyJedisMessageProtocolLayer;
-import Redis_Client.Communication.model.MyRedisCommand;
+import Redis_Communication.model.MyRedisCommand;
 
 import java.io.*;
 import java.net.Socket;
@@ -24,9 +23,10 @@ public class MyJedisConnection {
 
     // 只有在有指令操作的时候才构建Connection ===> 性能不好 !!
     // TODO: 使用连接池或者"复用"来解决connection的问题 ??
-    public MyJedisConnection sendCommand(MyRedisCommand command, String... input) throws IOException {
+    public MyJedisConnection sendCommand(MyRedisCommand command, String... input)
+            throws IOException {
         connectRedisServer();
-        MyJedisMessageProtocolLayer.serialize(command, outputStream, input);
+        JedisMessageProtocolLayer.serialize(command, outputStream, input);
         return this;
     }
 

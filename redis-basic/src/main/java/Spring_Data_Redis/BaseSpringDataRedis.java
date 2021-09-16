@@ -19,5 +19,4 @@ public class BaseSpringDataRedis {
     // listOps.leftPush(String userId, URL url.toExternalForm());
     // @Resource(name = "redisTemplate")
     private ListOperations<String, String> listOps;
-
 }

@@ -1,5 +1,3 @@
-package Redis_Basics;
-
 // Redis服务端模型：单线程模型, 底层使用C++实现
 // 分布式的缓存中间件：功能强大 + 性能(单机的QPS每秒处理几万请求) ===> 压力测试出请求量
 // 1. 不适合存储大量的信息, 只暂存关键的信息
@@ -10,6 +8,23 @@ package Redis_Basics;
 // BAT后台的分布式缓存/中间件，基本使用自研的方式来实现，保证源码的可控性，容量扩展
 // WeChat这种级别的应用，不会使用Redis，难以修改，处理问题
 public class BaseRedis {
+
+    // Redis 应用场景
+    // 1. 缓存
+    //    存储器      硬件介质   随机访问延时
+    //    L1 cache   SRAM       1ns      CPU的1级缓存
+    //    L2 cache   SRAM       4ns
+    //    Memory     DRAM       100ns    内存     ==> Redis存储在内存
+    //    Disk       SSD        150us    固态硬盘  ==> DB数据库
+    //    Disk       HDD        10ms     机械硬盘
+    // 2. 分布式计数器: 对String进行频繁的自增和自减
+    // 3. 分布式ID生成器: 一次请求一个大一点的步长incr 2000
+    // 4. 海量数据存储: bitmap
+    // 5. 会话缓存: 统一存储多态服务器的会话信息
+    // 6. 分布式队列，阻塞队列
+    // 7. 分布式锁
+    // 8. 热点数据存储，排行榜
+
 
     // TODO: Redis读写都是单线程，但性能为何如此高 ? Redis 6.0多线程 ?
     // 1. 底层是基于高效的数据存储结构来实现的
@@ -46,6 +61,7 @@ public class BaseRedis {
      * 说说Redis的数据一致性问题？
      * Redis的分布式怎么做
      * redis的io多路复用
+     *
      * // 高并发项目的经验
      * // redis如何实现高可用
      */

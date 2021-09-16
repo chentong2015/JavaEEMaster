@@ -1,4 +1,4 @@
-package Redis_Client.Communication.socket_server;
+package Redis_Communication.socket_server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
