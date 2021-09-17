@@ -25,17 +25,7 @@ public class BaseRedis {
     // 早期新浪微博后端使用redis实现，使用集群架构(单个结点挂了不影响)，配置Redis的容量为T级别
     // BAT后台的分布式缓存/中间件，基本使用自研的方式来实现，保证源码的可控性，容量扩展
     // WeChat这种级别的应用，不会使用Redis，难以修改，处理问题
-    
-
-    // TODO: Redis读写都是单线程，但性能为何如此高 ? Redis 6.0多线(执行用户请求的还是单线程) ?
-    // 1. 底层是基于高效的数据存储结构来实现的
-    // 2. 多路复用 ?? https://mikechen.cc/779.html
-    //    IO多路复用select/poll/epoll介绍  https://www.bilibili.com/video/BV1qJ411w7du
-    //    ae_epoll.c 单线程，多路复用的实现
-    //    底层操作系统函数/模型：
-    //    aeApiCreate() { epoll_create(); ... }
-    //    aeApiPoll() { epoll_wait(); ... }
-    //    aeApiDelEvent() { epoll_ctl(); ... }
+  
 
     /**
      * Redis集群搭建及原理              https://juejin.cn/post/6971243764765425677
