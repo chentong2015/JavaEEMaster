@@ -16,7 +16,6 @@
         <module>middleware-message</module>
         <module>container-docker</module>
         <module>serverless-framework</module>
-        <module>redis-master</module>
         <module>middleware-network</module>
     </modules>
 

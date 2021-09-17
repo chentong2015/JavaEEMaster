@@ -25,7 +25,7 @@ public class GoogleBloomFilter {
     private BloomFilter<Integer> bloomFilter = BloomFilter.create(Funnels.integerFunnel(), 10000, 0.1);
 
     // 根据定义的参数，源码中使用两个算法计算出需要的位数组长度和hash函数个数
-    // TODO: 定义的位数组长度位int类型的最大值，约20多亿
+    // TODO: 定义的位数组长度位int类型的最大值(2^31-1)，约20多亿
     // long numBits = optimalNumOfBits(expectedInsertions, fpp);
     // int numHashFunctions = optimalNumOfHashFunctions(expectedInsertions, numBits);
 

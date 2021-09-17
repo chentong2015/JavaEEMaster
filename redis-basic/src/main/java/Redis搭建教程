@@ -21,7 +21,7 @@ Ubuntu Cloud Server
       > netstat -tunpl | grep 6379   查看是否有redis服务或者查看端口(默认的端口是6379)
    8. > /src/redis-cli               使用Redis Client Interface
       > keys * 查看是否为空
-      > quit   退出客户端
+      > quit / exit 退出客户端
    9. > pkill redis-server 退出redis服务
       > kill  进程号
       > /src/redis-cli shutdown

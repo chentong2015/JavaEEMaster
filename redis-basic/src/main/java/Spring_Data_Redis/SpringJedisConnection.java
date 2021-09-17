@@ -19,6 +19,7 @@ public class SpringJedisConnection {
         connection.stringCommands().set("chentong".getBytes(), "20210".getBytes());
         byte[] value = connection.stringCommands().get("chentong".getBytes());
         System.out.println(value);
+        connection.close();
 
         // 继承自RedisTemplate<String, String>，提供一系列操作接口
         RedisTemplate<String, String> redisTemplate = getJedisStringTemplate();
