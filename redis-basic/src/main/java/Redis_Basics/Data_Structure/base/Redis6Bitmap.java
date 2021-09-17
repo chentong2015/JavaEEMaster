@@ -5,8 +5,8 @@ package Redis_Basics.Data_Structure.base;
 public class Redis6Bitmap {
 
     // 解法方案：基于Redis bitmap数据结构(底层是字符串，string类型)来实现
-    // 只有两种情况，使用bit位来表示
-    // value:  0 1 0 1 0 1 0 0   0  1  0  1  0  1  1  1   ==> 登录状态
+    // TODO: 底层是一个位数组的存储形式
+    // value:  0 1 0 1 0 1 0 0   0  1  0  1  0  1  1  1
     // offset: 1 2 3 4 5 6 7 8   9  10 11 12 13 14 15 16  ==> userId最大(2^32-1), 约42亿数据量，约512M内存空间
 
     // TODO: setbit & bitcount 底层都是位运算来实现的

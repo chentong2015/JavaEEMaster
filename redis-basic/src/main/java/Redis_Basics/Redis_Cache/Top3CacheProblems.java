@@ -2,6 +2,7 @@ package Redis_Basics.Redis_Cache;
 
 import Redis_Basics.Redis_Cache.model.Order;
 import Redis_Basics.Redis_Cache.service.OrderService;
+import Spring_Data_Redis.SpringJedisConnection;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.concurrent.TimeUnit;
@@ -9,12 +10,12 @@ import java.util.concurrent.TimeUnit;
 // Redis缓存三大问题:
 // 1. 缓存穿透: 查询一个根本不存在的数据，数据库中没有，缓存中也不可能有，导致始终会走数据库 !!
 //    1.1 缓存空对象: 当查询不存在的数据时，在缓存中添加空对象做判断
-//    1.2 布隆过滤器: Google框架单机版本，<com.google.guava>，BloomFilter
+//    1.2 布隆过滤器 BloomFilter:
 // 2. 缓存击穿:
 // 3. 缓存雪崩:
 public class Top3CacheProblems {
 
-    StringRedisTemplate redisTemplate = new StringRedisTemplate();
+    StringRedisTemplate redisTemplate = SpringJedisConnection.getJedisStringTemplate();
 
     // 错误代码演示：
     public String findOrder(int id) {

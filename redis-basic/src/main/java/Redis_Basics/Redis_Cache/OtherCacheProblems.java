@@ -1,5 +1,6 @@
 package Redis_Basics.Redis_Cache;
 
+import Spring_Data_Redis.SpringJedisConnection;
 import jodd.util.StringUtil;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
@@ -17,7 +18,6 @@ public class OtherCacheProblems {
     // 1. 存储无底洞
     // 2. 缓存失效
     // 3. 热点key倾斜，重建
-
     // 4. 缓存和数据库双写不一致(在数据库持久化的同时，导致和缓存中的数据不一致)
     //    Thread 1 -> update DB stock=10  -----> DB卡顿  ------> update Cache stock=10 并发情况写数据库操作不是原子操作 !!
     //    Thread 2 -> update DB stock=6 -> update Cache stock=6
@@ -39,7 +39,7 @@ public class OtherCacheProblems {
     Redisson redisson;
     private String lockKey = "keyProduct101";
     private RReadWriteLock readWriteLock = redisson.getReadWriteLock(lockKey);
-    StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
+    StringRedisTemplate stringRedisTemplate = SpringJedisConnection.getJedisStringTemplate();
 
     // 背后实现逻辑: set key -> mode(read), value 对于添加的锁设置一个读写的模式
     @RequestMapping("/getStock")
