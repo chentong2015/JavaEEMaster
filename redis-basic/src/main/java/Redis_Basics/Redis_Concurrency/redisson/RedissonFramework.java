@@ -1,4 +1,4 @@
-package Redis_Basics.Redis_Concurrency;
+package Redis_Basics.Redis_Concurrency.redisson;
 
 import org.redisson.Redisson;
 import org.redisson.api.RLock;

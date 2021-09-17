@@ -40,6 +40,13 @@
             <version>2.5.0</version>
         </dependency>
 
+        <!-- Google Bloom Filter 解决缓存穿透问题 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
+        </dependency>
+
         <!-- Redis分布式问题解决方案框架 -->
         <dependency>
             <groupId>org.redisson</groupId>

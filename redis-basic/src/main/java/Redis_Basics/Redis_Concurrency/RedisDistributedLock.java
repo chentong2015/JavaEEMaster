@@ -5,10 +5,6 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-// Redis分布式锁场景
-// 1. 互联网秒杀
-// 2. 抢优惠券
-// 3. 接口幂等性校验
 public class RedisDistributedLock {
 
     // 应用部署场景

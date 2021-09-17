@@ -3,6 +3,7 @@ package Redis_Basics.Redis_Concurrency;
 import java.util.concurrent.ConcurrentHashMap;
 
 // 秒杀系统: 高并发，大流量场景
+// 性能优化: 缓存预减库存，内存售完标记，消息队列异步处理
 public class DemoSpikeSystem {
 
     // Spring MVC Controller
@@ -27,10 +28,16 @@ public class DemoSpikeSystem {
         return "success";
     }
 
+
     // TODO: 直接在JVM级别构建二级缓存，直接走内存，避免JVM <-> Redis造成的网络开销
-    //       JVM级别的缓存解决不表分布式锁的问题 !!
     private boolean isSoldOut = false; // JVM级别的标记，内存对象
-    private ConcurrentHashMap<Long, Boolean> productSoldOutMap = new ConcurrentHashMap<>(); // 所有商品是否售完的标记
+    private static ConcurrentHashMap<Long, Boolean> productSoldOutMap = new ConcurrentHashMap<>(); // 所有商品是否售完的标记
+
+    // 该方法被回调执行，可以删除之前设置的标记，清除JVM级别的缓存
+    public static void removeProductSoldOutFlag(Long productId) {
+        if (productSoldOutMap.get(productId))
+            productSoldOutMap.remove(productId);
+    }
 
     public void secondKillPlus() {
         // 如果已经卖完，则直接返回，避免操作Redis
@@ -38,18 +45,24 @@ public class DemoSpikeSystem {
             // stringRedisTemplate.opsForValue().decrement() 原子操作，线程安全(单线程模型)
             // if(stock < 0) {
             //    isSoldOut = true;
-            //    stringRedisTemplate.opsForValue().increment()
+            //    stringRedisTemplate.opsForValue().increment();
+            //    设置zookeeper的标记，同时设置客户端监听效果
             //    return;
             // }
         }
+
+        // 在异常的情况下:
+        // TODO: JVM级别的缓存无法解决分布式锁的问题 !! 必须要在集群中同步
         // 如果后面没有成功操作，必须还原标记
         isSoldOut = false;
-        // 在异常的情况下，修改zooKeeper中path下结点值，通知所有监听的客户端 !!
+        // TODO: 通过Zookeeper实时同步集群JVM缓存，分布式集群中任何一个结点都能更新缓存标记
         // if (zooKeeper.exists(zkProductPath, true) == null) {
+        //      修改zooKeeper中path下结点值，通知所有监听的客户端
         //      zooKeeper.create(zkProductPath, "false".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
         // }
         return;
     }
+
 
     // Service Layer
     public void secondKillService(Long productId) {

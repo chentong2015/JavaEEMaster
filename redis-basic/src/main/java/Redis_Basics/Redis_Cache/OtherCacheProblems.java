@@ -1,4 +1,4 @@
-package Redis_Basics.Redis_Memory_Cache;
+package Redis_Basics.Redis_Cache;
 
 import jodd.util.StringUtil;
 import org.redisson.Redisson;
@@ -9,17 +9,16 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-public class RedisCacheProblems {
+// 使用缓存的意义:
+// 1. 缓解数据库压力
+// 2. 提升性能
+public class OtherCacheProblems {
 
-    // Redis缓存问题
     // 1. 存储无底洞
-    // 2. 缓存穿透
-    // 3. 缓存雪崩
-    // 4. 缓存失效
-    // 5. 热点key倾斜
-    // 6. 热点key重建
+    // 2. 缓存失效
+    // 3. 热点key倾斜，重建
 
-    // 7. 缓存和数据库双写不一致(在数据库持久化的同时，导致和缓存中的数据不一致)
+    // 4. 缓存和数据库双写不一致(在数据库持久化的同时，导致和缓存中的数据不一致)
     //    Thread 1 -> update DB stock=10  -----> DB卡顿  ------> update Cache stock=10 并发情况写数据库操作不是原子操作 !!
     //    Thread 2 -> update DB stock=6 -> update Cache stock=6
     //
