@@ -20,8 +20,8 @@ public class OtherCacheProblems {
     // Thread 2 -> update DB stock=6 -> update Cache stock=6
     //
     // Thread 1 -> update DB stock=10 -> Delete Cache
-    // Thread 2 ---------------------------------------> update DB stock=6  --> Delete Cache
-    // Thread 2 --------------------------> check cache ---> search DB stock=10  ---> 卡顿  ---> update Cache stock=10
+    // Thread 2 -------------------------------------------------------> update DB stock=6  --> Delete Cache
+    // Thread 2 ----------------------------> check cache ---> search DB stock=10  ---> 卡顿  ---> update Cache stock=10
 
     // 错误方案：
     // 延迟双删: 所有的写请求在删除完缓存之后，sleep几十毫秒，再次删除缓存

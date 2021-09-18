@@ -42,7 +42,7 @@ public class RedisDistributedLock {
     // 1. 在主体业务抛出异常的情况下，保证拿到锁的线程必须能够释放锁
     // 2. 在主体业务执行的过程，如果服务宕机或者挂掉，如果保存将获得的锁释放掉，能够执行finally的程序 ===> 设置key的超时时间，确保释放
     //    其他的tomcat继续发送请求，则无法有效的获得锁
-    // 3. 如果在设置超时时间完成之前，服务宕机或者挂掉，依然无法保证锁的释放                       ==> 在获取锁和设置锁所执行的操作不是原子的，无法保证不被打断
+    // 3. 如果在设置超时时间完成之前，服务宕机或者挂掉，依然无法保证锁的释放 ==> 在获取锁和设置锁所执行的操作不是原子的，无法保证不被打断
     public String testDistributedLockPlus() {
         // boolean isGetLocked = stringRedisTemplate.opsForValue().setIfAbsent(key, "myValue");
         // stringRedisTemplate.expire(key, 10, TimeUnit.SECONDS);
@@ -62,7 +62,7 @@ public class RedisDistributedLock {
     }
 
     // TODO: 分布式锁的高并发场景: 如何避免"锁永久失效"的问题，根本无法保证执行的顺序和逻辑  ===> 使用Redisson
-    // 1. 如何设置有效的超时时间，保证同一时间只有一个线程在执行同步的业务代码块(而不是可能又多个线程都在获取锁之后执行中)
+    // 1. 如何设置有效的超时时间，保证同一时间只有一个线程在执行同步的业务代码块(而不是可能有多个线程都在获取锁之后执行中)
     //    不能将过期时间设置过长，否则在某种场景下需要等待锁释放的时间过长，影响体验
     // 2. 请求线程    A    B     C   场景分析: 由于设置了锁的过期事件，在业务的执行时间和锁的过期时间不一致时
     //    执行时间  15S    8S   5S           在A请求的业务执行没有结束时，锁被释放，这时B线程能够获得锁，开始执行
@@ -83,8 +83,7 @@ public class RedisDistributedLock {
             // TODO: 检测并且只释放自己获取的锁，这里的执行必须是原子执行 !!
             if (stringRedisTemplate.opsForValue().get(key).equals(threadIdValue)) {
                 // 如果系统在这里卡顿，刚好超过10s，由于之前设置的超时时间，导致锁释放了
-                // 下面的操作会失效:
-                // 通过key来删除，有可能会删除到被的请求刚获取的锁...
+                // 下面操作失效: 通过key来删除，有可能会删除到其他请求刚获取的锁...
                 stringRedisTemplate.delete(key);
             }
         }

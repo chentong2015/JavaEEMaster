@@ -4,6 +4,8 @@ Ubuntu Cloud Server
    Server IP: 8.209.74.47 外网 / ip addr show 172.25.8.130 内网
    主存放目录/home/redis/
 
+Redis性能调优：配置redis.conf文件
+
 搭建单体模式Redis Server
    1. > tar -zxvf redis-3.0.0-rc.tar.gz 下载Redis package并解压
    2. > apt install gcc                 安装gcc, 编译redis源码(C++) / Linux Sever Cloud自带gcc
