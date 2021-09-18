@@ -1,14 +1,53 @@
 package Redis_Basics.Redis_Performance;
 
-// TODO: Redis读写都是单线程，但性能为何如此高 ? Redis 6.0多线(执行用户请求的还是单线程) ?
-// 1. 底层是基于高效的数据存储结构来实现的
-// 2. 多路复用 ?? https://mikechen.cc/779.html
-//    IO多路复用select/poll/epoll介绍  https://www.bilibili.com/video/BV1qJ411w7du
-//    ae_epoll.c 单线程，多路复用的实现
-//    底层操作系统函数/模型：
-//    aeApiCreate() { epoll_create(); ... }
-//    aeApiPoll() { epoll_wait(); ... }
-//    aeApiDelEvent() { epoll_ctl(); ... }
-
+// Redis读写都是单线程，性能为何如此高 ?
+// 1. 纯内存(核心)
+// 2. 网络IO(设计优势)
+// 3. key-value高效的数据存储结构(查询效率)
 public class RedisPerformance {
+
+    // 纯内存(介质问题) --------------------------------------------------
+    //    CPU
+    //    存储器      硬件介质   随机访问延时
+    //    L1 cache   SRAM       1ns      CPU的1级缓存
+    //    L2 cache   SRAM       4ns      CPU的2级缓存
+    //    L2 cache   SRAM       10ns
+    //    Memory     DRAM       100ns    内存         ==> Redis存储在内存
+    //    Disk       SSD        150us    固态硬盘      ==> DB数据库
+    //    Disk       SSHD                混合硬盘
+    //    Disk       HDD        10ms     机械硬盘
+
+    // Q1: 为什么磁盘读取数据要比从内存中读取慢很多?
+    //     寻址: 从磁盘上读取的数据，最小单位是磁道中的一个扇区(物理地址)，512字节
+    //          磁盘寻址时间：毫秒级别
+    //          内存寻址时间：纳秒级别
+    //     带宽：内存的带宽比磁盘大
+    //          磁盘: M/s，连续读比随机读更优
+    //          内存: G/s
+    
+    // 网络IO  ---------------------------------------------------------
+    // 1. get建立连接的过程
+    //    走网络IO，监听TCP端口6379
+    //    connectionSocket = accept($listenSocket); 建立连接，涉及IO
+    //    read(connectSocket);  从客户端读  ==> 内存数据的执行
+    //    write(connectSocket); 返回给客户端
+
+    // 2. I/O多路复用: 每建立的一个连接都会对系统开销有影响
+    //    TODO: 针对"网络IO"的"多个TCP连接"，"复用一个线程"来处理多个连接请求
+    //    IO的模型(底层操作系统函数，逐渐升级的一个过程):
+    //       select:
+    //       poll  :
+    //       epoll : Redis选择的模型，本质上其实是一个"事件驱动，通知"
+    //    每个请求来时，会注册套接字到epoll中(放到队列中)，然后通知，返回数据给客户端
+
+    // 3. 非阻塞IO: 相当于对请求做一个"报道"，之后去做自己的事情
+    //    轮询查看是否数据准备好
+    //    或者接收通知(事件机制)，epoll的逻辑
+
+    // key-value的数据结构 ------------------------------------------------
+    // 1. hash函数本身的效率
+    //    对应key的查找性能高 O(1)
+    //    具有良好的分布性，避免hash冲突
+
+
 }

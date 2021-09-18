@@ -1,8 +1,5 @@
 package Redis_Basics.Data_Structure.base;
 
-// 面试思考题:
-// 系统有亿级的活跃用户，如何实现日志统计 ?
-// 为了增强用户粘性，需要上线一个连续打卡发放积分的功能，如何实现连续打开用户统计 ?
 public class Redis6Bitmap {
 
     // Bitmap数据结构：底层字符串，string类型的扩展
@@ -18,6 +15,10 @@ public class Redis6Bitmap {
 
     // bitcount key [start end]  [0, end]字节的索引范围index，不是bit偏移量的索引，默认统计全部范围
     // bitcount login_11_11      统计指定key序列中bit位1数量  ==> 位运算: 求一个序列中1的个数(数学算法)
+
+    // 面试思考题:
+    // 系统有亿级的活跃用户，如何实现日志统计 ?
+    // 为了增强用户粘性，需要上线一个连续打卡发放积分的功能，如何实现连续打开用户统计 ?
 
     // 测试案列 1：基本登录的统计
     // > setbit login1111 0 1

@@ -8,22 +8,29 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 // Redis缓存三大问题:
-// 1. 缓存穿透: 查询一个根本不存在的数据，数据库中没有，缓存中也不可能有，导致始终会走数据库 !!
+// 1. 缓存穿透: 查询一个根本不存在的数据，数据库中没有，缓存中也不可能有，导致始终会走数据库
 //    方案1: 缓存空对象
 //    方案2: 布隆过滤器
-// 2. 缓存击穿: 查询缓存中没有，数据库中有的数据 ==> 并发访问的问题
-//    原因1: 没有访问过，没有加入到缓存
-//    原因2: 并发的时候，缓存中的数据刚好过期，导致全部的并发都必须查询数据库 ?????
-// https://www.bilibili.com/video/BV1Rf4y1y7xE?p=92
 
-// 3. 缓存雪崩:
+// 2. 缓存击穿: 大量并发访问时，查询缓存中没有，但数据库中有的数据 ===> 并发请求全部压到数据库
+//    缓存中为什么没有数据 ?
+//       原因1: 没有访问过，没有加入到缓存
+//       原因2: 并发的时候，缓存中的数据刚好过期，导致全部的并发都必须查询数据库
+//    方案1: 使用分布式锁解决数据库的并发请求
+
+// 3. 缓存雪崩: 机器挂了，或者同一时刻缓存中的大量数据失效
+//    方案1: 搭建高可用的集群Redis Cluster，使用主从结点架构
+//    方案2: 设置过期时间交错
+//    方案3: 熔断(在生产过程中已经出现)
 public class Top3CacheProblems {
 
     StringRedisTemplate redisTemplate = SpringJedisConnection.getJedisStringTemplate();
 
-    // 错误代码演示：
+    // 错误代码演示:
     public String findOrder(int id) {
         // 1. 查询缓存
         Object cacheOrder = redisTemplate.opsForValue().get(String.valueOf(id));
@@ -87,6 +94,38 @@ public class Top3CacheProblems {
             return "can not find in the bloom filter";
         }
         // ...
+        return "find nothing";
+    }
+
+    // TODO: 分布式锁
+    // 测试使用JVM级别的锁代替分布式锁
+    private Lock distributedLock = new ReentrantLock();
+
+    public String findOrder4(int id) {
+        if (!bloomFilter.isExist(id)) {
+            return "can not find in the bloom filter";
+        }
+        Object cacheOrder = redisTemplate.opsForValue().get(String.valueOf(id));
+        if (cacheOrder != null) {
+            return "find order in cache";
+        }
+        // 添加一把分布式锁: 互斥锁，只有一个线程能够拿到，其他的线程阻塞直到拿到锁
+        distributedLock.lock();
+        try {
+            // 双重检测:
+            // 拿到锁之后，需要再次查询缓存，缓存可能被别的线程所修改，避免直接查询数据库
+            cacheOrder = redisTemplate.opsForValue().get(String.valueOf(id));
+            if (cacheOrder != null) {
+                return "find order in cache";
+            }
+            Order order = OrderService.selectOrderById(id);
+            if (order != null) {
+                redisTemplate.opsForValue().set(String.valueOf(id), order.getName(), 10, TimeUnit.MINUTES);
+                return "get order from db";
+            }
+        } finally {
+            distributedLock.unlock();  // 最后必须要确保能够释放掉锁
+        }
         return "find nothing";
     }
 }

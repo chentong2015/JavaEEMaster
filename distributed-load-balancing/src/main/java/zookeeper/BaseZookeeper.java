@@ -10,7 +10,7 @@ package zookeeper;
 // 2. 如果主结点挂掉，则Zookeeper会保证使用新的有同步过的结点来作为新的主结点，保证(分布式)锁的有效性
 public class BaseZookeeper {
 
-    // Zookeeper详解 https://www.bilibili.com/video/BV1Rf4y1y7xE?p=79
+    // Zookeeper详解 https://www.bilibili.com/video/BV1Rf4y1y7xE?p=79 约4个小时
 
     // https://zookeeper.apache.org/
     // TODO: https://zookeeper.apache.org/doc/current/index.html

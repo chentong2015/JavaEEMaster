@@ -10,9 +10,9 @@ import java.util.Set;
 // Web --->  Redis Master 主服务
 //           Redis Slave  从服务(可能需要人工运维干预)
 
-// TODO: 在分布式锁场景下，在主从架构(哨兵架构)中如何解决锁的同步性 ? (面试题)  ==> 如果主从失效，能够容忍 & 使用Zookeeper分布式结构
-//       Redisson  ->  Redis(Master)  ->  Redis(Slave) / Redis(Slave)
-// 如果redisson在主redis中加了一把锁(设置一个key)，则从结点一般需要将key"同步/异步复制"过去
+// TODO: 在分布式锁场景下，在主从架构(哨兵架构)中如何解决锁的同步性? ==> 如果主从失效，能够容忍 & 使用Zookeeper分布式结构
+//       Redisson  ->  Redis(Master)  ->  Redis(Slave) / Redis(Slave)  ===> 依赖于主从复制
+// 如果redisson在主redis中加了一把锁(设置key)，则从结点一般需要将key"同步/异步复制"过去
 // 如果key刚好设置到redis主结点，然后redis主结点挂了
 // 1. 将从结点重新切换成主结点，新的结点没有key
 // 2. 新来的线程如果访问新的结点，发现没有锁，则会继续执行

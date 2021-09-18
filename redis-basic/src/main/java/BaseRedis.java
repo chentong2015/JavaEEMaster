@@ -1,5 +1,7 @@
 public class BaseRedis {
 
+    // 使用缓存的意义: 缓解数据库压力, 提升性能
+
     // 单线程模型, 底层使用C++实现/C语言实现
     // 分布式的缓存中间件：功能强大 + 性能(单机的QPS每秒处理几万请求)
     // 1. 不适合存储大量的信息，只暂存关键的信息
@@ -8,12 +10,6 @@ public class BaseRedis {
 
     // Redis应用场景
     // 1. 缓存
-    //    存储器      硬件介质   随机访问延时
-    //    L1 cache   SRAM       1ns      CPU的1级缓存
-    //    L2 cache   SRAM       4ns
-    //    Memory     DRAM       100ns    内存     ==> Redis存储在内存
-    //    Disk       SSD        150us    固态硬盘  ==> DB数据库
-    //    Disk       HDD        10ms     机械硬盘
     // 2. 分布式计数器: 对String进行频繁的自增和自减
     // 3. 分布式ID生成器: 一次请求一个大一点的步长incr 2000
     // 4. 海量数据存储: bitmap
@@ -25,7 +21,9 @@ public class BaseRedis {
     // 早期新浪微博后端使用redis实现，使用集群架构(单个结点挂了不影响)，配置Redis的容量为T级别
     // BAT后台的分布式缓存/中间件，基本使用自研的方式来实现，保证源码的可控性，容量扩展
     // WeChat这种级别的应用，不会使用Redis，难以修改，处理问题
-  
+
+
+    // Redis性能调优：配置redis.conf文件
 
     /**
      * Redis集群搭建及原理              https://juejin.cn/post/6971243764765425677
