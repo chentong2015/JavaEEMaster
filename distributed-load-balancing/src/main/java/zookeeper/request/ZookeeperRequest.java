@@ -1,4 +1,4 @@
-package zookeeper;
+package zookeeper.request;
 
 public class ZookeeperRequest {
 
@@ -10,5 +10,4 @@ public class ZookeeperRequest {
     // TODO: Zookeeper处理请求的过程
     // 1. 持久化事务日志，处理文件，可用顺序添加，速度更慢  ==> 可以通过事务日志来恢复数据
     // 2. 更新内存，DataTree，数结构修改速度更慢
-
 }

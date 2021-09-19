@@ -1,7 +1,11 @@
-Linux Server部署
+Java源码启动，下载项目启动main方法
+1. 配置不同参数/conf/zooX.cfg，作为不同的server
+2. 逐个启动，server启动时需要连接集群中不同的Server，只启动一台时会持续报错
+3. 当启动成功时，便可以对外提供服务
 
+Linux Server部署: 脚本启动
 Zookeeper单机搭建
-  > tar -zxvf apache-zookeeper-3.6.3-bin.tar.gz 必须下载带bin的文件 !!
+  > tar -zxvf apache-zookeeper-3.6.3-bin.tar.gz 必须下载带bin的文件
   > mv zoo-sample.cfg zoo.cfg 修改配置文件名称
   > vim /conf/zoo.cfg
     clientPort=2181           默认客户端连接端口2181 ==> 必须打开云服务器的安全组端口 !!
@@ -9,6 +13,7 @@ Zookeeper单机搭建
     dataLogDir=/tmp/zookeeper 添加存放日志位置
 
   > ./zkServer.sh start       启动服务端，可以使用客户端去连接
+                              使用脚本启动，默认运行Java类
   > ps -ef | grep zookeeper
   > bin/zkCli.sh              启动自带的客户端 ==> Socket connection to server localhost/127.0.0.1:2181
     bin/zkCli.sh -server 127.0.0.1:218 默认连接server
@@ -20,35 +25,35 @@ Zookeeper单机搭建
   > quit
   > ./zkServer.sh stop
 
- Zookeeper集群搭建
- 伪集群：相同的ip，配置不同的端口，指定配置文件监听的端口
- conf/zoo1.cfg 集群模式下配置
-     clientPort=2181
-     server.1=localhost:2887:3887  这个端口用来沟通的，投票机制
-     server.2=localhost:2888:3888  参与者，参与选举
-     server.3=localhost:2889:3889
-     # server.4=localhost:2890:3890
-     # server.5=localhost:2891:3891
-     # server.6=localhost:2892:3892:observer 非参与者，不参与选举
+Zookeeper集群搭建
+  伪集群：相同的ip，配置不同的端口，指定配置文件监听的端口
+  conf/zoo1.cfg 集群模式下配置
+      clientPort=2181
+      server.1=localhost:2887:3887  这个端口用来沟通的，投票机制
+      server.2=localhost:2888:3888  参与者，参与选举
+      server.3=localhost:2889:3889
+      # server.4=localhost:2890:3890
+      # server.5=localhost:2891:3891
+      # server.6=localhost:2892:3892:observer 非参与者，不参与选举
 
- conf/zoo2.cfg
-     clientPort=2182
-     server.1=localhost:2887:3887
-     server.2=localhost:2888:3888
-     server.3=localhost:2889:3889
-     # server.4=localhost:2890:3890
-     # server.5=localhost:2891:3891
-     # server.6=localhost:2892:3892:observer
+  conf/zoo2.cfg
+      clientPort=2182
+      server.1=localhost:2887:3887
+      server.2=localhost:2888:3888
+      server.3=localhost:2889:3889
+      # server.4=localhost:2890:3890
+      # server.5=localhost:2891:3891
+      # server.6=localhost:2892:3892:observer
 
- > ./zkServer.sh start conf/zoo1.cfg  启动集群中一个服务器
- > ./zkServer.sh start conf/zoo2.cfg
+  > ./zkServer.sh start conf/zoo1.cfg  启动集群中一个服务器
+  > ./zkServer.sh start conf/zoo2.cfg
 
- > ./zkCli.sh -server localhost 2181 客户端1，连接同一个集群中其中一个服务器
-   > create /node 1  在其中一个server中创建的数据，自动"同步"到集群中的其他server
+  > ./zkCli.sh -server localhost 2181 客户端1，连接同一个集群中其中一个服务器
+    > create /node 1  在其中一个server中创建的数据，自动"同步"到集群中的其他server
 
- > ./zkCli.sh -server localhost 2182 客户端2
-   > get /           在这里获取增加的结点信息
-   > [zookeeper, node]
+  > ./zkCli.sh -server localhost 2182 客户端2
+    > get /           在这里获取增加的结点信息
+    > [zookeeper, node]
 
 
 
