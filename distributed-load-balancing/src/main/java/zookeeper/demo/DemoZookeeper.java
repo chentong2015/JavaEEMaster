@@ -1,4 +1,4 @@
-package zookeeper;
+package zookeeper.demo;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
@@ -9,13 +9,6 @@ import java.io.IOException;
 
 // Zookeeper和Redis类似: (key路径值，value存标记)
 // 当key对应的value值发生变化，所有"监听"zookeeper的应用都将受到通知，执行相应的回调逻辑操作
-
-// 在服务端启动
-// > ps -ef | grep zookeeper
-// > bin/zkCli.sh 进入控制台操作
-// > ls /
-// > get /key_flag
-// > set /key_flag false
 public class DemoZookeeper {
 
     // TODO: 分布式场景，JVM级别的多实例要同步缓存，考虑使用Zookeeper (或者消息中间件)

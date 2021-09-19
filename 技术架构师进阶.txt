@@ -19,7 +19,7 @@
 
  JVM与高级架构全集  https://www.bilibili.com/video/BV1Rf4y1y7xE  55小时
  tomcat
- Zookeeper
+ Zookeeper  ===> OK
  Redis      ===> OK缓存问题
  mysql      ===> OK锁
 
