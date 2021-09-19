@@ -11,6 +11,7 @@ Zookeeper单机搭建
   > ./zkServer.sh start       启动服务端，可以使用客户端去连接
   > ps -ef | grep zookeeper
   > bin/zkCli.sh              启动自带的客户端 ==> Socket connection to server localhost/127.0.0.1:2181
+    bin/zkCli.sh -server 127.0.0.1:218 默认连接server
   > create /tong 10           创建指定的结点path和对应的数据data
   > ls /                      查询根节点下存储的全部结点(数据)
   > get /tong                 获取结点数据
@@ -21,16 +22,16 @@ Zookeeper单机搭建
 
  Zookeeper集群搭建
  伪集群：相同的ip，配置不同的端口，指定配置文件监听的端口
- zoo1.cfg 集群模式下配置
+ conf/zoo1.cfg 集群模式下配置
      clientPort=2181
-     server.1=localhost:2887:3887  表示集群中有3个服务器
-     server.2=localhost:2888:3888
+     server.1=localhost:2887:3887  这个端口用来沟通的，投票机制
+     server.2=localhost:2888:3888  参与者，参与选举
      server.3=localhost:2889:3889
      # server.4=localhost:2890:3890
      # server.5=localhost:2891:3891
-     # server.6=localhost:2892:3892:observer
+     # server.6=localhost:2892:3892:observer 非参与者，不参与选举
 
- zoo2.cfg
+ conf/zoo2.cfg
      clientPort=2182
      server.1=localhost:2887:3887
      server.2=localhost:2888:3888
@@ -39,8 +40,8 @@ Zookeeper单机搭建
      # server.5=localhost:2891:3891
      # server.6=localhost:2892:3892:observer
 
- > ./zkServer.sh start zoo1.cfg 启动集群中的一个服务器
- > ./zkServer.sh start zoo2.cfg
+ > ./zkServer.sh start conf/zoo1.cfg  启动集群中一个服务器
+ > ./zkServer.sh start conf/zoo2.cfg
 
  > ./zkCli.sh -server localhost 2181 客户端1，连接同一个集群中其中一个服务器
    > create /node 1  在其中一个server中创建的数据，自动"同步"到集群中的其他server
