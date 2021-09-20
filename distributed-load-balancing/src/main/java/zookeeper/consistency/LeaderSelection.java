@@ -10,9 +10,11 @@ public class LeaderSelection {
 
     // 什么时候发生领导者选举?
     // 1. 集群启动
-    //    PK投票标准: 数据越新则越强，比较Server的事务日志zxid
-    //    若PK无效(zxid相同或者没有): 使用serverId来比较，越大越强(越后面)
-    //    再统计投票箱，是否有超过一半的server和我投了相同的server
+    //    PK投票标准:
+    //      1.1 先比较届数
+    //      1.2 比较Server的事务日志zxid，数据越新则越强
+    //      1.3 比较serverId，越大越强(越后面) / 若PK无效(zxid相同或者没有)
+    //      再统计投票箱，是否有超过一半的server和我投了相同的server
     // 2. leader挂掉
     //    使用同样的PK机制进行分析
     // 3. follower挂掉导致leader没有超过半数的follower追随自己

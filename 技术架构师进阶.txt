@@ -17,12 +17,6 @@
  Baidu面经       https://duibiao.info/post/61
  Tencent面经     https://duibiao.info/post/48
 
- JVM与高级架构全集  https://www.bilibili.com/video/BV1Rf4y1y7xE  55小时
- tomcat
- Zookeeper  ===> OK
- Redis      ===> OK缓存问题
- mysql      ===> OK锁
-
  JAVA架构师完整版 https://www.bilibili.com/video/BV13q4y1n7oC
  JVM/多线程
  Redis
@@ -30,6 +24,15 @@
  IP/Netty
  Nacos微服务
  MySQL调优   ===> OK
+
+ JVM与高级架构全集  https://www.bilibili.com/video/BV1Rf4y1y7xE  55小时
+ tomcat
+ Zookeeper  ===> OK
+ Redis      ===> OK缓存问题
+ mysql      ===> OK锁
+
+ 分布式集群架构项目
+ Spring Boot + Zookeeper(cloud) + Redis(Cloud) + MyBatis + MySQL(Cloud)
 
 
 

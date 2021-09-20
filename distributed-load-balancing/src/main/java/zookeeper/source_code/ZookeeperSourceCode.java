@@ -10,7 +10,8 @@ public class ZookeeperSourceCode {
 
     // Server服务器在运行时候的状态: 代表处在不同身份状态, 不同的角色初始化有所区别
     // 1. LOOKING    正在寻找leader的状态
-    // 2. OBSERVING
-    // 3. FOLLOWING
-    // 4. LEADING
+    // 2. OBSERVING  处于在观察的状态
+    // 3. FOLLOWING  处于在跟随的状态
+    // 4. LEADING    处于在领导的状态
+
 }
