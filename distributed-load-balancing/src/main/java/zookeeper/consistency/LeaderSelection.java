@@ -12,6 +12,7 @@ public class LeaderSelection {
     // 1. 集群启动
     //    PK投票标准: 数据越新则越强，比较Server的事务日志zxid
     //    若PK无效(zxid相同或者没有): 使用serverId来比较，越大越强(越后面)
+    //    再统计投票箱，是否有超过一半的server和我投了相同的server
     // 2. leader挂掉
     //    使用同样的PK机制进行分析
     // 3. follower挂掉导致leader没有超过半数的follower追随自己
@@ -39,8 +40,8 @@ public class LeaderSelection {
     //    因此没有leader，不能对外提供服务
 
     // TODO: zookeeper为什么推荐要是奇数个server ?
-    //    5台可以挂掉2台
-    //    6台最多可以挂掉2台
+    //      5台可以挂掉2台
+    //      6台最多可以挂掉2台
     // 正常而言，启动两台(偶数结点)也可以构建集群，对外提供服务
     // 增加多余的server，能够提高"读请求"的性能(follower结点直接返回)，提高集群的吞吐量
     // 但是会减低写性能
@@ -51,5 +52,4 @@ public class LeaderSelection {
     // 不参与领导者选举，提高"读请求"的性能
     // 只会影响一点点"写请求"性能: 在leader做第二次提交时，会告诉observer同步数据，直接发送数包
     // inform(p); // 没有预提交，没有ack，只需要一步提交 !!
-
 }

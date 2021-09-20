@@ -3,7 +3,7 @@ Java源码启动，下载项目启动main方法
 2. 逐个启动，server启动时需要连接集群中不同的Server，只启动一台时会持续报错
 3. 当启动成功时，便可以对外提供服务
 
-Linux Server部署: 脚本启动
+Linux Server部署: 脚本启动，最终运行的是Java类QuorumPeerMain > main.initializeAndRun(args)
 Zookeeper单机搭建
   > tar -zxvf apache-zookeeper-3.6.3-bin.tar.gz 必须下载带bin的文件
   > mv zoo-sample.cfg zoo.cfg 修改配置文件名称
