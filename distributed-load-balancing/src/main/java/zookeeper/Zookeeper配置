@@ -35,7 +35,6 @@ Zookeeper集群搭建
       # server.4=localhost:2890:3890
       # server.5=localhost:2891:3891
       # server.6=localhost:2892:3892:observer 非参与者，不参与选举
-
   conf/zoo2.cfg
       clientPort=2182
       server.1=localhost:2887:3887
@@ -50,7 +49,6 @@ Zookeeper集群搭建
 
   > ./zkCli.sh -server localhost 2181 客户端1，连接同一个集群中其中一个服务器
     > create /node 1  在其中一个server中创建的数据，自动"同步"到集群中的其他server
-
   > ./zkCli.sh -server localhost 2182 客户端2
     > get /           在这里获取增加的结点信息
     > [zookeeper, node]
