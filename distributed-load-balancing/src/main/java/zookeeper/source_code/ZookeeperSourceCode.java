@@ -13,5 +13,4 @@ public class ZookeeperSourceCode {
     // 2. OBSERVING  处于在观察的状态
     // 3. FOLLOWING  处于在跟随的状态
     // 4. LEADING    处于在领导的状态
-
 }

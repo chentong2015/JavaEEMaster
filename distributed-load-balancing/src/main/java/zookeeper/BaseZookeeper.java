@@ -1,5 +1,13 @@
 package zookeeper;
 
+import org.apache.zookeeper.CreateMode;
+import org.apache.zookeeper.KeeperException;
+import org.apache.zookeeper.ZooDefs;
+import org.apache.zookeeper.ZooKeeper;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
 // 1. 分布式服务框架，Apache Hadoop子项目
 // 2. 解决分布式应用中的一些数据管理问题：统一命名服务，集群管理，应用配置等
 // 3. 性能没有Redis高
@@ -25,4 +33,22 @@ public class BaseZookeeper {
     // Zookeeper处理请求的过程
     //   1. 持久化事务日志，处理文件，可用顺序添加，速度更慢  ==> 可以通过事务日志来恢复数据
     //   2. 更新内存，DataTree，数结构修改速度更慢
+
+    // Test Zookeeper cluster connection
+    public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
+        // Connection follower server
+        String zookeeperAddress = "8.209.74.47:2181";
+        ZooKeeper zooKeeper = new ZooKeeper(zookeeperAddress, 10000, null);
+        // 获取指定的结点
+        byte[] data = zooKeeper.getData("/node", false, null);
+        String value = new String(data, StandardCharsets.UTF_8); // 反序列化需要有指定的编码格式
+        System.out.println(value);
+
+        // 创建指定结点
+        String nodePath = "/MyNode";
+        if (zooKeeper.exists(nodePath, false) == null) {
+            zooKeeper.create(nodePath, "100".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        }
+        System.out.println("Success");
+    }
 }

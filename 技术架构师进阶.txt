@@ -32,6 +32,7 @@
  mysql      ===> OK锁
 
  分布式集群架构项目
+ Nginx 负载均衡机器
  Spring Boot + Zookeeper(cloud) + Redis(Cloud) + MyBatis + MySQL(Cloud)
 
 

@@ -2,7 +2,7 @@ package zookeeper.consistency;
 
 import java.util.Set;
 
-// TODO: 领导者选举机制
+// TODO: 领导者选举机制 ==> FastLeaderElection快速领导者选举算法，异步操作，提高性能
 // 1. 投票: 投自己 -> 沟通比较 -> PK改票
 // 2. 投票箱[选票, 选票...]
 // 3. 过半机制
