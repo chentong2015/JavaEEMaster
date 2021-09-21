@@ -1,6 +1,9 @@
-package algo_load_balance;
+package load_balance;
 
-public class BaseLoadBalanceAlgo {
+public class AlgoLoadBalance {
+
+    // 根据什么来负载均衡
+    // DNS负载均衡、IP负载均衡、"反向代理"负载均衡
 
     // 负载均衡算法
     // 1.轮循

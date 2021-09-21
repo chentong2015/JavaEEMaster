@@ -17,7 +17,7 @@ public class BaseZookeeper {
     // TODO: Zookeeper是什么?
     // 1. 具有文件系统(Path路径结点)的数据库 ==> 统一命名服务，定义资源(保证名称不冲突)
     // 2. 能解决数据一致性问题的分布式数据库  ==> 集群中数据自动同步
-    // 3. 具有分布和订阅工具               ==> watch机制
+    // 3. 具有分布和订阅工具               ==> watch机制，watcher回调
 
     // zookeeper机制:
     // 1. zookeeper启动时会自动同步数据，会发生领导者选择

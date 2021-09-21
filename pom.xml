@@ -17,6 +17,7 @@
         <module>container-docker</module>
         <module>serverless-framework</module>
         <module>middleware-network</module>
+        <module>middleware</module>
     </modules>
 
     <properties>

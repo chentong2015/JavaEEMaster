@@ -1,9 +1,11 @@
+package messsage;
+
 public class BaseJavaMessageService {
 
     // 分布式消息中间件 ==> 掌握到源码级别
     // RabbitMQ ==> "分布式的定时任务调度器"的实现
     // RocketMQ
-    // Kafka
+    // Kafka ==> 使用之前测试的项目
 
     // https://github.com/Letitmiss/JMS
 

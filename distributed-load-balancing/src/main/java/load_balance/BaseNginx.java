@@ -1,4 +1,4 @@
-package ngnix;
+package load_balance;
 
 // Nginx开源HTTP服务器
 // 1.使用异步架构来处理请求，常用在可扩展性比较高的场景中

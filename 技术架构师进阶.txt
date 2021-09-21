@@ -23,17 +23,19 @@
  HashMap
  IP/Netty
  Nacos微服务
- MySQL调优   ===> OK
+ MySQL调优      ===> OK
 
  JVM与高级架构全集  https://www.bilibili.com/video/BV1Rf4y1y7xE  55小时
  tomcat
- Zookeeper  ===> OK
- Redis      ===> OK缓存问题
- mysql      ===> OK锁
+ Apache Dubbo
+ Zookeeper     ===> OK
+ Redis         ===> OK缓存问题
+ mysql         ===> OK锁
 
  分布式集群架构项目
  Nginx 负载均衡机器
  Spring Boot + Zookeeper(cloud) + Redis(Cloud) + MyBatis + MySQL(Cloud)
-
+ 怎么提升系统的QPS和吞吐？
+ 分布式系统怎么做服务治理？
 
 
