@@ -18,6 +18,7 @@
         <module>serverless-framework</module>
         <module>middleware-network</module>
         <module>middleware</module>
+        <module>rpc-dubbo</module>
     </modules>
 
     <properties>

@@ -1,11 +1,11 @@
 public class BaseServerlessFramework {
 
-    // Spring Serverless 微服务教程全集
-    // https://www.bilibili.com/video/BV1BJ411t7Tb
+    // 微服务简介      https://www.bilibili.com/video/BV1DJ411J7kz?p=57
+    // 微服务架构课程   https://www.bilibili.com/video/BV1BJ411t7Tb?p=1
+    // 微服务分布式事务 https://www.bilibili.com/video/BV1DJ411J7kz?p=51
 
     // 微服务架构离不开容器技术
     // Kubernetes是分布式容器集群操作平台，可以轻松地完成部署、调度、扩容等操作
-
     // 微服务架构概览
     // http://www.mianshigee.com/tutorial/hands-on-microservices/architecture-readme.md
 
