@@ -1,4 +1,4 @@
-package WebContainer;
+package tomcat;
 
 // Tomcat配置JNDI服务，设置DataSource数据库连接信息
 // https://tomcat.apache.org/tomcat-8.0-doc/jndi-datasource-examples-howto.html

@@ -12,13 +12,11 @@
     <modules>
         <module>redis-basic</module>
         <module>distributed-load-balancing</module>
-        <module>big-data-processing-system</module>
-        <module>middleware-message</module>
-        <module>container-docker</module>
         <module>serverless-framework</module>
-        <module>middleware-network</module>
         <module>middleware</module>
         <module>rpc-dubbo</module>
+        <module>docker-kubernetes</module>
+        <module>http-web-server</module>
     </modules>
 
     <properties>

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>container-docker</artifactId>
+    <artifactId>http-web-server</artifactId>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>

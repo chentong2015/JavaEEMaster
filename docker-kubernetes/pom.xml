@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>big-data-processing-system</artifactId>
+    <artifactId>docker-kubernetes</artifactId>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
