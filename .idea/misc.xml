@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/message-middleware/pom.xml" />
         <option value="$PROJECT_DIR$/middleware-message/pom.xml" />
         <option value="$PROJECT_DIR$/middleware-network/pom.xml" />
+        <option value="$PROJECT_DIR$/middleware/pom.xml" />
         <option value="$PROJECT_DIR$/multi-threads-concurrency/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-basic/pom.xml" />
         <option value="$PROJECT_DIR$/orm-hibernate/pom.xml" />

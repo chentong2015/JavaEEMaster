@@ -3,6 +3,7 @@ package apache;
 // Apache Http Server for windows
 // http://eost.u-strasbg.fr/manual/fr/platform/windows.html
 
+// TODO: HTTP协议端口80
 // bin/httpd.exe     应用程序启动
 // conf/httpd.conf   配置文件路径, 必须修改到安装的root路径
 //    Define SRVROOT "D:/Logiciel/WempServer/Apache24"

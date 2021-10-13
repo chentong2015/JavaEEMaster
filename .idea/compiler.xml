@@ -7,11 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rpc-dubbo" />
+        <module name="message-queue" />
+        <module name="io-netty-basic" />
         <module name="distributed-load-balancing" />
         <module name="docker-kubernetes" />
         <module name="redis-basic" />
         <module name="serverless-framework" />
-        <module name="middleware" />
         <module name="http-web-server" />
       </profile>
     </annotationProcessing>
@@ -24,6 +25,7 @@
       <module name="database" target="15" />
       <module name="high-concurrency" target="15" />
       <module name="message-middleware" target="15" />
+      <module name="middleware" target="15" />
       <module name="middleware-message" target="15" />
       <module name="middleware-network" target="15" />
       <module name="multi-threads-concurrency" target="15" />
