@@ -36,7 +36,7 @@ public class BaseZookeeper {
 
     // Test Zookeeper cluster connection
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
-        // Connection follower server
+        // Connection follower basic
         String zookeeperAddress = "8.209.74.47:2181";
         ZooKeeper zooKeeper = new ZooKeeper(zookeeperAddress, 10000, null);
         // 获取指定的结点

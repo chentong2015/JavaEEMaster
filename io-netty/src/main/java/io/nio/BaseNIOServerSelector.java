@@ -15,10 +15,13 @@ import java.util.Set;
 
 public class BaseNIOServerSelector {
 
-    // 创建epoll Selector多路复用器
     private static Selector selector;
 
+    // TODO: 不足之处
+    // 如果客户端和服务端建立的连接过多，导致需要的处理的事件过多
+    // 在(遍历)处理全部的事件的过程中，造成新的事件(包括连接事件)没有办法加进来(被监听)
     public static void main(String[] args) throws IOException {
+        // 创建epoll Selector多路复用器
         selector = Selector.open();
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.bind(new InetSocketAddress(9000));

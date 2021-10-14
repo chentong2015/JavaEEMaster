@@ -14,5 +14,5 @@ public class BaseLoadBalancer {
     // 3. mod_athena — Apache-based HTTP load balancer.
     // 4. Varnish — A reverse proxy-based load balancer.
     // 5. Balance — Open-source TCP load balancer.
-    // 6. LVS — Linux virtual server offering layer 4 load balancing.
+    // 6. LVS — Linux virtual basic offering layer 4 load balancing.
 }

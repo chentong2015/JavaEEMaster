@@ -4,8 +4,9 @@
     <file url="file://$PROJECT_DIR$/io-netty/src/main/java/io/Linux操作系统原理.JPG" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io-netty/src/main/java/io/bio" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io-netty/src/main/java/io/nio" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/io-netty/src/main/java/netty/NettyServer.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/io-netty/src/main/java/netty/ReactorThreadModel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io-netty/src/main/java/netty/basic/NettyServer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io-netty/src/main/java/netty/basic/NettyServer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io-netty/src/main/java/netty/thread_model/NettyThreadModel.java" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

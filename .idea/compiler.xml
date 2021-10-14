@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rpc-dubbo" />
+        <module name="container-docker-basic" />
         <module name="message-queue" />
         <module name="distributed-load-balancing" />
-        <module name="docker-kubernetes" />
         <module name="redis-basic" />
         <module name="io-netty" />
         <module name="serverless-framework" />
@@ -23,6 +23,7 @@
       <module name="container-serverless-framework" target="15" />
       <module name="container-severless-framework" target="15" />
       <module name="database" target="15" />
+      <module name="docker-kubernetes" target="15" />
       <module name="high-concurrency" target="15" />
       <module name="io-netty-basic" target="15" />
       <module name="message-middleware" target="15" />

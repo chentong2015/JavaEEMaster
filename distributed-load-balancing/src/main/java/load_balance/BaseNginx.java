@@ -11,10 +11,10 @@ public class BaseNginx {
     //      http {
     //         ...
     //         upstream redislock {
-    //            server 192.168.0.126:8080 weight=1; 配置每个server(机器IP地址+端口号)的负载权重
-    //            server 192.168.0.126:8090 weight=1; 动态转发到指定的地址
+    //            basic 192.168.0.126:8080 weight=1; 配置每个server(机器IP地址+端口号)的负载权重
+    //            basic 192.168.0.126:8090 weight=1; 动态转发到指定的地址
     //         }
-    //         server {
+    //         basic {
     //            listen      80;
     //            server_name localhost;
     //            location / {
@@ -27,7 +27,7 @@ public class BaseNginx {
 
     // 2. 如何把Nginx配置成反向代理
     //    修改/etc/nginx/sites-available/default JSON文件
-    //    server {
+    //    basic {
     //       listen: 80;
     //       location / {
     //              proxy_pass http://localhost:5000;  可以修改改属性的值来指定Kestrel服务器的位置

@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/container-serverless-framework/pom.xml" />
         <option value="$PROJECT_DIR$/container-severless-framework/pom.xml" />
         <option value="$PROJECT_DIR$/database/pom.xml" />
+        <option value="$PROJECT_DIR$/docker-kubernetes/pom.xml" />
         <option value="$PROJECT_DIR$/high-concurrency/pom.xml" />
         <option value="$PROJECT_DIR$/io-netty-basic/pom.xml" />
         <option value="$PROJECT_DIR$/message-middleware/pom.xml" />
