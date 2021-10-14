@@ -18,6 +18,7 @@
         <module>http-web-server</module>
         <module>io-netty-basic</module>
         <module>message-queue</module>
+        <module>io-netty</module>
     </modules>
 
     <properties>

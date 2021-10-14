@@ -8,10 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="rpc-dubbo" />
         <module name="message-queue" />
-        <module name="io-netty-basic" />
         <module name="distributed-load-balancing" />
         <module name="docker-kubernetes" />
         <module name="redis-basic" />
+        <module name="io-netty" />
         <module name="serverless-framework" />
         <module name="http-web-server" />
       </profile>
@@ -24,6 +24,7 @@
       <module name="container-severless-framework" target="15" />
       <module name="database" target="15" />
       <module name="high-concurrency" target="15" />
+      <module name="io-netty-basic" target="15" />
       <module name="message-middleware" target="15" />
       <module name="middleware" target="15" />
       <module name="middleware-message" target="15" />
