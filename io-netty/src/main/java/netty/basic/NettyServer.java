@@ -8,9 +8,6 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 public class NettyServer {
 
     public static void main(String[] args) {
-        // 创建两个线程组: 底层是线程池，一主多从
-        // bossGroup 只处理连接请求
-        // workerGroup 处理客户端业务，这里的线程数目默认为cpu核数的2倍
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup(8);
         try {

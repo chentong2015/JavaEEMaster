@@ -1,0 +1,26 @@
+
+服务端建立连接通过网口或者是网络驱动程序，来感知事件，最先感知到的是OS
+OS底层具有大量的通讯函数和系统函数来实现通讯，Java只是实现了上层调用
+
+Linux内核使用C和汇编语言实现
+> man epoll_create 名称查系统函数的介绍
+
+中断程序：系统用来响应硬件设备请求的一种机制
+OS在收到硬件的中断请求时，会打断正在执行的进程，然后调用内核中中断程序来响应请求
+实例: OS负责从Channels中转移到事件list中
+
+cmd> telnet localhost 9000
+cmd> send "message"
+cmd> help
+ c    - close                    关闭当前连接
+ d    - display                  显示操作参数
+ o    - open hostname [port]     连接到主机(默认端口 23)。
+ q    - quit                     退出 telnet
+ set  - set                      设置选项(键入 'set ?' 获得列表)
+ sen  - send                     将字符串发送到服务器
+ st   - status                   打印状态信息
+ u    - unset                    解除设置选项(键入 'set ?' 获得列表)
+ ?/h  - help                     打印帮助信息
+
+ Java NIO研究
+ https://tech.meituan.com/2016/11/04/nio.html
