@@ -6,6 +6,13 @@ package netty;
 // 3. 性能非常高效，可以集群
 public class BaseNetty {
 
+    // TODO: Netty线程模型，响应式编程模型<<Scalable IO in Java>>
+    // 1. 支撑上百万的连接, 强于Redis(10万)
+    // 2. 两个EventLoopGroup线程池，一主多从
+    //    EventLoopGroup bossGroup = new NioEventLoopGroup(1); 只处理连接请求
+    //    EventLoopGroup workerGroup = new NioEventLoopGroup(8); 处理客户端业务，线程数默认cpu核数2倍
+    //    NioEventLoop 使用多个来分散对事件的处理，支撑高并发(多事件)
+
     // TODO: Netty之于NIO的性能优化
     // 1. 借助NIO多路复用非阻塞
     // 2. 主从Reactor线程模型

@@ -5,6 +5,7 @@ package load_balance;
 // 2.可以方便的使用反向代理和IMAP/POP3代理服务器
 public class BaseNginx {
 
+    // TODO: 传统负载均衡策略的弊端: 需要手动配置负载均衡中的服务，添加和删除
     // 1. Nginx作为负载均衡设备
     //    使用虚拟机上nginx的ip地址来进行访问 192.168.0.60
     //    > vim conf/nginx.conf 配置配置文件, 配置负载均衡的策略

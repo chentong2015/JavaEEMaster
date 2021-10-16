@@ -69,7 +69,7 @@ public class CoreKVStructure {
     //      list *defrag_later;         /* List of key names to attempt to defrag one by one, gradually. */
     //  } redisDb;
 
-    // 数据库所使用的dict字典数据结构 --> map结构的具体实现
+    // 数据库所使用的dict字典数据结构: map结构的实现
     // struct dict {
     //     dictType *type;
     //     dictEntry **ht_table[2];
@@ -109,5 +109,5 @@ public class CoreKVStructure {
     //    } v;
     //    struct dictEntry *next; 构建链表的指针next
     //    void *metadata[];
-    //} dictEntry;
+    // } dictEntry;
 }
