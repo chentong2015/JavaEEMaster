@@ -14,11 +14,12 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
         System.out.println("Connection OK");
     }
 
-    // 读取客户端发送的数据，数据封装到msg直接使用
+    // 读取客户端发送的数据，数据封装到msg直接使用(源码封装时使用的缓冲数据结构是ByteBuf)
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         // Channel channel = ctx.channel(); 拿到建立连接的客户端Channel
         // ChannelPipeline pipeline = ctx.pipeline(); 双向链表，出站和入站
+        // 强制转换成封装的数据的类型
         ByteBuf byteBuf = (ByteBuf) msg;
         System.out.println("Get message from client: " + byteBuf.toString(CharsetUtil.UTF_8));
         // 回写信息回客户端

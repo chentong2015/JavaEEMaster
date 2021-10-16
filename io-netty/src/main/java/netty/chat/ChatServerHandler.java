@@ -10,6 +10,7 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// 继承指定的类型，实现指定模板方法
 public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
 
     // TODO: 必须使用Static，唯一全局的静态成员(共享连接到Server端的所有Client)
@@ -20,10 +21,10 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
-        System.out.println(channel.remoteAddress() + " connected");
+        System.out.println("Client " + channel.remoteAddress() + " connected");
         // TODO: 遍历其中所有的Channel并发送消息，推送到全部的客户端
         channelGroup.writeAndFlush(formatChannelMessage(channel));
-        // 将当前的channel也添加到集合中
+        // 将当前的channel也添加到集合中，入群
         channelGroup.add(channel);
     }
 
@@ -33,7 +34,7 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
         return "Client: " + channel.remoteAddress() + " up," + dateStr + "\n";
     }
 
-    // 处理接收(read)客户发送信息的事件
+    // 处理接收(read)客户发送信息的事件，消息封装到msg中
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) {
         Channel channel = ctx.channel();

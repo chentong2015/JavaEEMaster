@@ -34,7 +34,7 @@ public class BaseBio {
     // 1. 如果连接的客户端过多，会导致后台开的线程过多，内存爆炸
     //    C10K: connection 10*1000 一万连接数的问题
     //    C10M: connection 10*1M   一千万连接的问题
-    // 2. 如果使用线程池，又受到线程池的线程数量限制，无法处理超过一定数量的线程数
+    // 2. 如果使用线程池，又受到线程池的线程数量限制，无法处理超过一定数量线程
     public void testBaseBIO2(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(9000);
         while (true) {

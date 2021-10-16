@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rpc-dubbo" />
-        <module name="container-docker-basic" />
         <module name="message-queue" />
         <module name="distributed-load-balancing" />
         <module name="redis-basic" />
@@ -20,6 +19,7 @@
       <module name="architect-system-design" target="15" />
       <module name="big-data-processing-system" target="15" />
       <module name="container-docker" target="15" />
+      <module name="container-docker-basic" target="15" />
       <module name="container-serverless-framework" target="15" />
       <module name="container-severless-framework" target="15" />
       <module name="database" target="15" />

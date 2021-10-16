@@ -1,6 +1,6 @@
 package netty.thread_model;
 
-// TODO: Netty线程模型 > 响应式编程模型 <<Scalable IO in Java>>
+// TODO: Netty线程模型，响应式编程模型<<Scalable IO in Java>>
 // 1. 支撑上百万的连接, 强于Redis(10万)
 // 2. 两个EventLoopGroup线程池，一组多从
 //    EventLoopGroup bossGroup = new NioEventLoopGroup(1); 只处理连接请求

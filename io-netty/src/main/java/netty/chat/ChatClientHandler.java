@@ -7,7 +7,7 @@ public class ChatClientHandler extends SimpleChannelInboundHandler<String> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String s) {
-        // 直接将接收到的信息显示出来
+        // 直接将接收到Server的信息显示出来
         System.out.println(s.trim());
     }
 

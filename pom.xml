@@ -17,7 +17,6 @@
         <module>http-web-server</module>
         <module>message-queue</module>
         <module>io-netty</module>
-        <module>container-docker-basic</module>
     </modules>
 
     <properties>

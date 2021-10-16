@@ -27,6 +27,7 @@ public class ChatClient {
                             channelPipeline.addLast(new ChatClientHandler());
                         }
                     });
+            // 和服务端建立起连接，客户端会开启一个端口号(用于通讯)
             ChannelFuture future = bootstrap.connect("127.0.0.1", 8000).sync();
             System.out.println("Connected server");
             simulateChatting(future.channel());
@@ -45,7 +46,8 @@ public class ChatClient {
                     System.out.println("Exit the chat OK");
                     return;
                 }
-                clientChannel.writeAndFlush(message); // 将输入信息一并发送给服务端(群发)
+                // 将输入信息一并发送给服务端，通过服务端来群发
+                clientChannel.writeAndFlush(message);
             }
         } finally {
             clientChannel.close();

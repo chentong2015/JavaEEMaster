@@ -14,9 +14,9 @@ public class NettyServer {
             // 1. 创建服务端的启动对象
             ServerBootstrap bootstrap = new ServerBootstrap();
             // 2. 使用builder开发模式(链式)来配置参数
-            bootstrap.group(bossGroup, workerGroup)         // 设置两个线程组
+            bootstrap.group(bossGroup, workerGroup)         // 设置两个线程组(线程池)
                     .channel(NioServerSocketChannel.class)  // 设置服务器通道的实现类型
-                    // TODO: 初始化服务端队列的大小，服务端顺序处理客户端的连接请求
+                    // TODO: 初始化服务端队列的大小，服务端顺序处理客户端连接请求
                     //       同一个时间只能处理一个客户端连接，多个请求连接将会被放到队列中等待被处理
                     .option(ChannelOption.SO_BACKLOG, 1024)
                     .childHandler(new ChannelInitializer<>() {
@@ -30,6 +30,7 @@ public class NettyServer {
             // 3. 绑定一个服务端端口，生成一个异步对象
             //    使用isDone()等方法来判断异步事件的执行，sync()方法等待异步操作执行完毕
             ChannelFuture future = bootstrap.bind(9000).sync();
+
             // 4. 给ChannelFuture注册监听器，监听关心的事件
             // future.addListener((ChannelFutureListener) channelFuture -> {
             //     if (channelFuture.isSuccess()) {
