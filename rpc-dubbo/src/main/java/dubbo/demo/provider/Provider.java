@@ -2,10 +2,10 @@ package dubbo.demo.provider;
 
 import dubbo.demo.framework.URL;
 import dubbo.demo.protocol.http.HttpServer;
-import dubbo.demo.provider.local.LocalRegister;
-import dubbo.demo.provider.remote.RemoteRegister;
 import dubbo.demo.provider.services.MyService;
 import dubbo.demo.provider.services.MyServiceImpl;
+import dubbo.demo.register.LocalRegister;
+import dubbo.demo.register.RemoteRegister;
 
 public class Provider {
 

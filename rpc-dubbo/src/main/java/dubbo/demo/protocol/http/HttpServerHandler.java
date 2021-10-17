@@ -1,7 +1,7 @@
 package dubbo.demo.protocol.http;
 
 import dubbo.demo.framework.Invocation;
-import dubbo.demo.provider.local.LocalRegister;
+import dubbo.demo.register.LocalRegister;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,7 +30,7 @@ public class HttpServerHandler {
             Object instance = constructor.newInstance();
             // 传入实例和参数，需要严格的判断方法执行后的结果和值
             String result = (String) method.invoke(instance, invocation.getParamValues());
-            
+
         } catch (IOException | ClassNotFoundException | NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {

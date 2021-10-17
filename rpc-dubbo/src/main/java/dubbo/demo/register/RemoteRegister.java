@@ -1,4 +1,4 @@
-package dubbo.demo.provider.remote;
+package dubbo.demo.register;
 
 import dubbo.demo.framework.URL;
 

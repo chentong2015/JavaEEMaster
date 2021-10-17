@@ -1,4 +1,4 @@
-package dubbo.demo.provider.local;
+package dubbo.demo.register;
 
 import java.util.HashMap;
 import java.util.Map;
