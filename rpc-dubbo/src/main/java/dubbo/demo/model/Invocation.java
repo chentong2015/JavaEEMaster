@@ -1,9 +1,8 @@
-package dubbo.demo.framework;
+package dubbo.demo.model;
 
 import java.io.Serializable;
 
-// Client --> Server
-// 服务消费者发送到服务提供者的数据模型
+// "服务消费者"发送到"服务提供者"的数据模型
 // TODO: 必须实现Serializable，使得该类型的实例能够被序列化，经过网络传输
 public class Invocation implements Serializable {
 
@@ -11,6 +10,13 @@ public class Invocation implements Serializable {
     private String methodName;
     private Class[] paramTypes; // 参数类型列表
     private Object[] paramValues; // 参数值列表
+
+    public Invocation() {
+    }
+
+    public Invocation(String interfaceName) {
+        this(interfaceName, null, null, null);
+    }
 
     public Invocation(String interfaceName, String methodName, Class[] paramTypes, Object[] params) {
         this.interfaceName = interfaceName;

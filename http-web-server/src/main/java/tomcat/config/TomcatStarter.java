@@ -41,6 +41,11 @@ public class TomcatStarter {
         engine.addChild(host);
         service.setContainer(engine);
 
+        // 这里需要添加Servlet用于分发请求 ==> Spring Web使用DispatcherServlet
+        // tomcat.addServlet(contextPath, "dispatcher", new MyDispatcherServlet());
+        // 配置映射关系，所有请求需要走的Servlet
+        context.addServletMappingDecoded("/*", "dispatcher");
+
         try {
             tomcat.start();
             System.out.println("tomcat started at " + hostname + ":" + port);

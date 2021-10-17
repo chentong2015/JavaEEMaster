@@ -1,12 +1,15 @@
-package dubbo.demo.protocol.http;
+package dubbo.demo.consumer.client;
 
-import dubbo.demo.framework.Invocation;
+import dubbo.demo.model.Invocation;
+import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.Charset;
 
 // 自定义模拟HttpClient的实现
 public class HttpClient {
@@ -27,7 +30,8 @@ public class HttpClient {
             objectOutputStream.close(); // 这里应该被写到finally中
 
             // 发送请求，并且拿到Server端执行服务后的结果
-            
+            InputStream inputStream = connection.getInputStream();
+            return IOUtils.toString(inputStream, Charset.defaultCharset());
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -21,7 +21,7 @@ public class HttpServer {
         String contextPath = "";
         Context context = new StandardContext();
         context.setPath(contextPath);
-        context.addLifecycleListener(new Tomcat.DefaultWebXmlListener());
+        context.addLifecycleListener(new Tomcat.FixContextListener());
         Host host = new StandardHost();
         host.setName(hostname);
         host.addChild(context);
@@ -32,13 +32,13 @@ public class HttpServer {
         service.setContainer(engine);
 
         // Tomcat需要分发器，需要添加Servlet
-        tomcat.addServlet("/", "dispatcher", new MyDispatcherServlet());
+        tomcat.addServlet(contextPath, "dispatcher", new MyDispatcherServlet());
         // 配置映射关系，所有请求需要走的Servlet
         context.addServletMappingDecoded("/*", "dispatcher");
 
         try {
             tomcat.start();
-            System.out.println("tomcat started at " + hostname + ":" + port);
+            System.out.println("Http Server(Tomcat) started at " + hostname + ":" + port);
             tomcat.getServer().await();
         } catch (LifecycleException ex) {
             ex.printStackTrace();

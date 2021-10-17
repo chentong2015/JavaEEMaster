@@ -1,7 +1,10 @@
-package dubbo.demo.framework;
+package dubbo.demo.model;
+
+import java.io.Serializable;
 
 // schema://hostname:port
-public class URL {
+// 由于这里的URL信息会被持久化到本地，需要写入IO文件流，因此需要做对象的序列化
+public class URL implements Serializable {
 
     private String hostname;
     private int port;

@@ -1,6 +1,6 @@
 package dubbo.demo.provider;
 
-import dubbo.demo.framework.URL;
+import dubbo.demo.model.URL;
 import dubbo.demo.protocol.http.HttpServer;
 import dubbo.demo.provider.services.MyService;
 import dubbo.demo.provider.services.MyServiceImpl;

@@ -1,3 +1,5 @@
+package base_rpc;
+
 public class BaseRPC {
 
     // TODO: 实现跨程序(部署在不同机器)方法之间的调用: HTTP，TCP，Rocket也是一种RPC协议

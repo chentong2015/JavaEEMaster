@@ -10,6 +10,6 @@ public class MyDispatcherServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        new HttpServerHandler().handle(req, resp);
+        new HttpServerHandler().handleRequest(req, resp);
     }
 }
