@@ -9,7 +9,7 @@ public class BaseDubbo {
 
     // 手写Dubbo的基本模块:
     // 1. Provider模块:
-    //    提供API，实现API，暴露(启动tomcat, nettyServer)
+    //    提供API，实现API，暴露(启动内嵌的tomcat, nettyServer)
     //    注册中心注册服务，本地注册服务
     // 2. Consumer模块: 通过接口名称从注册中心获取服务，然后调用服务
     // 3. Registry模块: 保存服务配置信息(服务名: List<URL>)

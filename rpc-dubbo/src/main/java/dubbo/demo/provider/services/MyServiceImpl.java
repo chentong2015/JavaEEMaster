@@ -1,6 +1,4 @@
-package dubbo.demo.provider.impl;
-
-import dubbo.demo.provider.api.MyService;
+package dubbo.demo.provider.services;
 
 public class MyServiceImpl implements MyService {
 

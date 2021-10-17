@@ -1,4 +1,4 @@
-package dubbo.demo.protocol.http;
+package tomcat.config;
 
 import org.apache.catalina.*;
 import org.apache.catalina.connector.Connector;
@@ -7,11 +7,17 @@ import org.apache.catalina.core.StandardEngine;
 import org.apache.catalina.core.StandardHost;
 import org.apache.catalina.startup.Tomcat;
 
-public class HttpServer {
+public class TomcatStarter {
 
-    public void start(String hostname, int port) {
+    private static String hostname = "localhost";
+    private static int port = 8081;
+
+    // 使用纯程序启动Tomcat，替代XML配置结构
+    public static void startTomcat() {
         Tomcat tomcat = new Tomcat();
         tomcat.getHost().setAutoDeploy(false);
+
+        // getServer(): 创建一个Standard Server，然后创建Service并添加到Server中
         Server server = tomcat.getServer();
         Service service = server.findService("Tomcat");
         Connector connector = new Connector();
@@ -21,8 +27,12 @@ public class HttpServer {
         String contextPath = "";
         Context context = new StandardContext();
         context.setPath(contextPath);
-        context.addLifecycleListener(new Tomcat.DefaultWebXmlListener());
+        // TODO: 这里不能使用基于Xml配置的Listener
+        // context.addLifecycleListener(new Tomcat.DefaultWebXmlListener());
+        context.addLifecycleListener(new Tomcat.FixContextListener());
+
         Host host = new StandardHost();
+        // 这里必须设置host名称
         host.setName(hostname);
         host.addChild(context);
 
@@ -30,11 +40,6 @@ public class HttpServer {
         engine.setDefaultHost(hostname);
         engine.addChild(host);
         service.setContainer(engine);
-
-        // Tomcat需要分发器，需要添加Servlet
-        tomcat.addServlet("/", "dispatcher", new MyDispatcherServlet());
-        // 配置映射关系，所有请求需要走的Servlet
-        context.addServletMappingDecoded("/*", "dispatcher");
 
         try {
             tomcat.start();

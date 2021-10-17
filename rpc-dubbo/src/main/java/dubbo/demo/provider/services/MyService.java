@@ -1,4 +1,4 @@
-package dubbo.demo.provider.api;
+package dubbo.demo.provider.services;
 
 public interface MyService {
 
