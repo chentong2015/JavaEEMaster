@@ -1,6 +1,7 @@
 package dubbo.demo.provider;
 
 import dubbo.demo.model.URL;
+import dubbo.demo.protocol.dubbo.NettyServer;
 import dubbo.demo.protocol.http.HttpServer;
 import dubbo.demo.provider.services.MyService;
 import dubbo.demo.provider.services.MyServiceImpl;
@@ -17,8 +18,12 @@ public class Provider {
         URL url = new URL("localhost", 8080); // 这里使用本机地址
         RemoteRegister.register(MyService.class.getName(), url);
 
-        // 3. 启动Tomcat
+        // 3. 启动Server服务提供端
+        // 使用Http协议: 启动Server端Tomcat
         HttpServer httpServer = new HttpServer();
         httpServer.start("localhost", 8080);
+        // 使用dubbo协议: 启动Netty Server
+        NettyServer nettyServer = new NettyServer();
+        nettyServer.start("localhost", 8080);
     }
 }

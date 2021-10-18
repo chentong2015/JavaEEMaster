@@ -1,6 +1,7 @@
-package dubbo.demo.consumer.client;
+package dubbo.demo.protocol.http;
 
 import dubbo.demo.model.Invocation;
+import dubbo.demo.protocol.base.ProtocolClient;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
@@ -12,8 +13,9 @@ import java.net.URL;
 import java.nio.charset.Charset;
 
 // 自定义模拟HttpClient的实现
-public class HttpClient {
+public class HttpClient implements ProtocolClient {
 
+    @Override
     public String send(String hostname, int port, Invocation invocation) {
         try {
             URL url = new URL("http", hostname, port, "/");
