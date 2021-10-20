@@ -8,15 +8,13 @@ import dubbo.demo.register.RemoteRegister;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
-// 使用JDK实现的动态代理：对某一个接口生成一个代理类
 public class ProxyFactory {
 
+    // 使用工厂模式，动态确定使用的协议，解除对具体类型的强依赖(耦合)
     private static Protocol protocol;
 
+    // 使用JDK实现的动态代理：对某一个接口生成一个代理类
     public static <T> T getProxy(Class interfaceClass) {
-        // TODO: 在生成动态代理前，动态确定使用的协议
-        // 1. 使用工厂模式，解除对具体类型的强依赖(耦合) > ProtocolFactory.getProtocol()
-        // 2. 基于SPI机制，完成动态配置
         protocol = ProtocolFactory.getProtocol();
         return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(),
                 new Class[]{interfaceClass}, getInvocationHandler(interfaceClass));
