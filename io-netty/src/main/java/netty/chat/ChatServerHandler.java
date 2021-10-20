@@ -12,7 +12,7 @@ import java.util.Date;
 
 // 继承指定的类型，实现指定模板方法
 public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
-    
+
     // GlobalEventExecutor.INSTANCE单例/静态成员，全局的事件执行器(共享连接到Server端的所有Client)
     private static ChannelGroup channelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 

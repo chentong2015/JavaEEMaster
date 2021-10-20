@@ -1,6 +1,6 @@
 package dubbo.demo.register;
 
-import dubbo.demo.model.URL;
+import dubbo.demo.framework.data_model.URL;
 
 import java.io.*;
 import java.util.*;

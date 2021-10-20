@@ -1,7 +1,6 @@
 package dubbo.demo.protocol.dubbo;
 
-import dubbo.demo.model.Invocation;
-import dubbo.demo.protocol.base.ProtocolClient;
+import dubbo.demo.framework.data_model.Invocation;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -11,30 +10,29 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class NettyClient implements ProtocolClient {
+public class NettyClient {
 
     public NettyClientHandler clientHandler;
-
     private static ExecutorService executorService = Executors.newCachedThreadPool();
 
-    @Override
     public String send(String hostname, int port, Invocation invocation) {
-        if (clientHandler == null) {
-            start(hostname, port); // 先建立好连接
-        }
+        if (clientHandler == null)
+            connectServer(hostname, port, invocation);
         clientHandler.setInvocation(invocation);
-        // try {
-        //     return (String) executorService.submit(clientHandler).get();
-        // } catch (InterruptedException e) {
-        //     e.printStackTrace();
-        // }
+        try {
+            // 调用Future<T>.get()方法会阻塞当前线程，直到获取服务返回的值
+            return executorService.submit(clientHandler).get();
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
-    public void start(String hostname, int port) {
+    private void connectServer(String hostname, int port, Invocation invocation) {
         clientHandler = new NettyClientHandler();
         Bootstrap bootstrap = new Bootstrap();
         EventLoopGroup group = new NioEventLoopGroup();
@@ -53,7 +51,16 @@ public class NettyClient implements ProtocolClient {
                     }
                 });
         try {
-            bootstrap.connect(hostname, port).sync();
+            ChannelFuture future = bootstrap.connect(hostname, port).sync();
+            Channel clientChannel = future.channel();
+
+            //  ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            //  ObjectOutputStream serializeStream = new ObjectOutputStream(byteArrayOutputStream);
+            //  serializeStream.writeObject(invocation);
+            // clientChannel.writeAndFlush(serializeStream);
+
+            clientChannel.writeAndFlush("invocation");
+            System.out.println("Send OK");
         } catch (InterruptedException exception) {
             exception.printStackTrace();
         }

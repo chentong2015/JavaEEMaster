@@ -44,6 +44,7 @@ public class NettyServer {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
+            // 启动之后即刻关闭
             workerGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
         }

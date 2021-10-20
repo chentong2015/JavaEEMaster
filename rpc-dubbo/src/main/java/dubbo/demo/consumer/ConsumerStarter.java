@@ -1,14 +1,14 @@
 package dubbo.demo.consumer;
 
-import dubbo.demo.consumer.proxy.ProxyFactory;
-import dubbo.demo.model.Invocation;
+import dubbo.demo.framework.data_model.Invocation;
+import dubbo.demo.framework.factory.ProxyFactory;
 import dubbo.demo.protocol.http.HttpClient;
-import dubbo.demo.provider.services.MyService;
+import dubbo.demo.provider.MyService;
 
 public class ConsumerStarter {
 
     public static void main(String[] args) {
-        getServiceWithDubboProxy();
+        getServiceWithProxy();
     }
 
     // 基于Http协议，通过发送指定的"调用协议(信息)"，获取到服务提供端指定服务的结果
@@ -23,19 +23,12 @@ public class ConsumerStarter {
         System.out.println(result);
     }
 
-    // 使用动态代理，基于Http通讯协议
-    public static void getServiceWithHttpProxy() {
+    // 使用动态代理，需要基于不同的协议配置，调用到远程不同的服务
+    public static void getServiceWithProxy() {
         // 拿到实现了指定接口的代理对象
-        MyService myService = ProxyFactory.getProxyWithHttpProtocol(MyService.class);
+        MyService myService = ProxyFactory.getProxy(MyService.class);
         // 通过代理对象调用方法，实际会调用到InvocationHandler.invoke()方法
-        String result = myService.getServiceInfo("http Proxy");
-        System.out.println(result);
-    }
-
-    // 使用动态代理，基于Dubbo通讯协议
-    public static void getServiceWithDubboProxy() {
-        MyService myService = ProxyFactory.getProxyWithDubboProtocol(MyService.class);
-        String result = myService.getServiceInfo("dubbo Proxy");
+        String result = myService.getServiceInfo("Test Proxy");
         System.out.println(result);
     }
 }

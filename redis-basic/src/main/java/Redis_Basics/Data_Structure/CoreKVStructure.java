@@ -3,7 +3,7 @@ package Redis_Basics.Data_Structure;
 // TODO: Redis K-V底层(C语言)实现原理 --> 基于数组和链表来实现
 // 1. 内存中一张巨大的hash表，依赖于hash function，查询的效率很高，接近O(1)
 // 2. hash运算: hash(key)%table_size
-//             hash(key) -> 自然数 % model = index 将字符串转换成整型值
+//             hash(key) -> 自然数 % framework = index 将字符串转换成整型值
 // 3. hash冲突: 渐进式rehash以及动态扩容机制，减少hash冲突
 
 // 计算数组存放的位置，hash运算，散列避免hash冲突
