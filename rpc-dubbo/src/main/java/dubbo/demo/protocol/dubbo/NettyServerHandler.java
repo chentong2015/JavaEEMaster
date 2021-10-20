@@ -1,41 +1,24 @@
 package dubbo.demo.protocol.dubbo;
 
+import dubbo.demo.framework.data_model.Invocation;
+import dubbo.demo.protocol.base.InvocationHelper;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
-public class NettyServerHandler extends SimpleChannelInboundHandler<String> {
+public class NettyServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("Connected");
+        System.out.println("Connected one client");
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, String s) throws Exception {
-        System.out.println("get : " + s);
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        // 由于设置了解码器，这里直接强制转换类型
+        Invocation invocation = (Invocation) msg;
+        System.out.println("get: " + invocation.getInterfaceName());
+        Object result = InvocationHelper.getInvocationResult(invocation);
+        // 将结果写回到客户端
+        ctx.writeAndFlush(result);
     }
-
-    // @Override
-    // public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-    // ByteBuf buf = (ByteBuf) msg;
-    // byte[] req = new byte[buf.readableBytes()];
-    // buf.readBytes(req);
-
-    //  ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(buf.array());
-    //  ObjectInputStream deserializeStream = new ObjectInputStream(byteArrayInputStream);
-    //  Invocation invocation = (Invocation) deserializeStream.readObject();
-
-    // String str = (String) msg;
-    // System.out.println("get: " + str);
-
-
-    //Invocation invocation = (Invocation) msg;
-    //System.out.println("get: " + invocation.getInterfaceName());
-
-    //Object result = InvocationHelper.getInvocationResult(invocation);
-    //System.out.println("Netty server gets invocation: " + result);
-    //// 将结果写回到客户端
-    //ctx.writeAndFlush("Netty server" + result);
-    // }
-
 }

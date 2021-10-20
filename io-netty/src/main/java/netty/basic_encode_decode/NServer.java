@@ -1,26 +1,24 @@
-package dubbo.demo.protocol.dubbo;
+package netty.basic_encode_decode;
 
-import dubbo.demo.protocol.base.ChannelHandlerHelper;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
-public class NettyServer {
+public class NServer {
 
-    // 启动Netty Server的时候，只需要指定port，hostname取决于启动的服务器地址
-    public void start(int port) {
+    public static void main(String[] args) {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup(8);
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    .option(ChannelOption.SO_BACKLOG, 10240)
-                    .childHandler(ChannelHandlerHelper.getChannelHandler(new NettyServerHandler()));
+                    .option(ChannelOption.SO_BACKLOG, 16)
+                    .childHandler(ChannelHandlerHelper.getChannelHandler(new NServerHandler()));
             System.out.println("Netty Server started.");
-            bootstrap.bind(port).sync();
+            bootstrap.bind(8080).sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

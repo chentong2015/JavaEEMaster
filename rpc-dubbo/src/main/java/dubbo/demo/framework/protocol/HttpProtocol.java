@@ -7,15 +7,18 @@ import dubbo.demo.protocol.http.HttpServer;
 
 public class HttpProtocol implements Protocol {
 
+    private HttpServer server;
+    private HttpClient client;
+
     @Override
     public void startServer(URL url) {
-        HttpServer server = new HttpServer();
+        if (server == null) server = new HttpServer();
         server.start(url.getHostname(), url.getPort());
     }
 
     @Override
     public String sendInvocation(URL url, Invocation invocation) {
-        HttpClient client = new HttpClient();
+        if (client == null) client = new HttpClient();
         return client.send(url.getHostname(), url.getPort(), invocation);
     }
 }

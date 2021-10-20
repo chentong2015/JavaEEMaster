@@ -10,7 +10,7 @@ public class ProtocolFactory {
     // 1. 只需要唯一修改来切换
     // 2. 如果新添加协议，则需要修改工厂类
     public static Protocol getProtocol() {
-        String protocolName = "dubbo"; // System.getProperty("protocolName");
+        String protocolName = System.getProperty("protocolName");
         if (protocolName == null || protocolName.equals("") || protocolName.equals("http")) {
             return new HttpProtocol();
         }

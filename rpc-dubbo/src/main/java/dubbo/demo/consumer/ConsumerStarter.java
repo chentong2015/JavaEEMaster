@@ -28,7 +28,8 @@ public class ConsumerStarter {
         // 拿到实现了指定接口的代理对象
         MyService myService = ProxyFactory.getProxy(MyService.class);
         // 通过代理对象调用方法，实际会调用到InvocationHandler.invoke()方法
-        String result = myService.getServiceInfo("Test Proxy");
+        String result = myService.getServiceInfo("message01");
         System.out.println(result);
+        System.out.println(myService.getServiceInfo("message02"));
     }
 }

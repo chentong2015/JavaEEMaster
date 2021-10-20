@@ -1,11 +1,17 @@
 package netty.basic;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
 
 // 自定义Handler处理器，需要继承规定类型HandlerAdapter
+// ChannelInboundHandlerAdapter   继承该类型传输的是Object类型的数据，需要指定特定的编码和解码器
+// SimpleChannelInboundHandler<T> 继承该类型所传输的数据是String(封装)，需要配置String编码和解码器
+
+// TODO: 在同一个进程中被多个client端连接，这个ServerHandler需要被设置成"可共享"
+@ChannelHandler.Sharable
 public class NettyServerHandler extends ChannelInboundHandlerAdapter {
 
     // 当客户端连接服务器完成时，触发下面方法，在服务端回调

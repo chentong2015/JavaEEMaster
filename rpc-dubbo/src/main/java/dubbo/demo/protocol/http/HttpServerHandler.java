@@ -1,7 +1,7 @@
 package dubbo.demo.protocol.http;
 
 import dubbo.demo.framework.data_model.Invocation;
-import dubbo.demo.framework.util.InvocationHelper;
+import dubbo.demo.protocol.base.InvocationHelper;
 import org.apache.commons.io.IOUtils;
 
 import javax.servlet.http.HttpServletRequest;

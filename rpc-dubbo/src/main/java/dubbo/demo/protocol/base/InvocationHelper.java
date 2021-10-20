@@ -1,4 +1,4 @@
-package dubbo.demo.framework.util;
+package dubbo.demo.protocol.base;
 
 import dubbo.demo.framework.data_model.Invocation;
 import dubbo.demo.register.LocalRegister;
