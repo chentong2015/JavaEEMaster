@@ -1,7 +1,7 @@
 package load_balance.algo.round_robin;
 
-import load_balance.algo.RequestId;
-import load_balance.algo.ServerIP;
+import load_balance.model.RequestId;
+import load_balance.model.ServerIP;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -71,12 +71,28 @@ public class WeightRoundRobin {
         return mapServers.get(maxWeightIndex);
     }
 
-    // TODO: 平滑加权轮询 ==> 面向对象的一种实现
+    // TODO: 平滑加权轮询 ==> 面向对象的一种实现, 封装成指定的Class对象
+    // 使用server IP作为key唯一
     private static Map<String, Weight> weightMap = new HashMap<>();
 
     public static String getWeightServer3() {
-        int totalWeight = 7;
-
-        return "";
+        int totalWeight = 7; // 这里需要通过map来进行统计
+        if (weightMap.isEmpty()) {
+            ServerIP.WEIGHT_SERVERS.forEach((ip, weight) -> {
+                weightMap.put(ip, new Weight(ip, weight, 0));
+            });
+        }
+        Weight maxCurrentWeight = null;
+        for (Weight weight : weightMap.values()) {
+            weight.setCurrentWeight(weight.getCurrentWeight() + weight.getWeight());
+            if (maxCurrentWeight == null) {
+                maxCurrentWeight = weight;
+            } else if (maxCurrentWeight.getCurrentWeight() < weight.getCurrentWeight()) {
+                maxCurrentWeight = weight;
+            }
+        }
+        // 对找的拥有最多currentWeight权重的那个对象，刷新值
+        maxCurrentWeight.setCurrentWeight(maxCurrentWeight.getCurrentWeight() - totalWeight);
+        return maxCurrentWeight.getIp();
     }
 }

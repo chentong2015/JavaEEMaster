@@ -1,4 +1,4 @@
-package load_balance.algo;
+package load_balance.model;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;

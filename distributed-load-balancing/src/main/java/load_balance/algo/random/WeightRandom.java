@@ -1,6 +1,6 @@
 package load_balance.algo.random;
 
-import load_balance.algo.ServerIP;
+import load_balance.model.ServerIP;
 
 import java.util.Map;
 import java.util.Random;

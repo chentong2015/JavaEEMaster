@@ -3,7 +3,7 @@ package load_balance;
 // 负载均衡底层实现的算法
 // 1. 权重随机
 // 2. 权重轮询 & 平滑加权轮询
-// 3. 一致性hash(哈希环)
+// 3. 一致性hash & 哈希环
 // 4. 最小活跃数
 public class AlgoLoadBalance {
 
