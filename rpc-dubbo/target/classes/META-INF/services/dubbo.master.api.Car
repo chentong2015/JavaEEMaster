@@ -1,0 +1,3 @@
+black = dubbo.master.impl.BlackCar
+red = dubbo.master.impl.RedCar
+dubbo.master.aop.CarWrapper
