@@ -9,7 +9,7 @@ package dubbo;
 // Dubbo生态将发展成一整套微服务的解决方案
 // vs Spring Cloud一些组件没有继续更新和维护
 public class BaseDubbo {
-
-    // TODO: 补充问题
+    
     // Dubbo的服务请求失败怎么处理？
+    // Dubbo原理与源码 https://www.iocoder.cn/Dubbo/good-collection/?side
 }
