@@ -18,7 +18,6 @@ public class DataSourceAspect {
     public Connection invoke(ProceedingJoinPoint point) throws Throwable {
         // TODO: 这里会返回Spring本身的Connection实现类
         Connection connection = (Connection) point.proceed();
-
         // 使用原始拿到的实现类的对象
         // 返回自定义实现的Connection给Spring，以便拿到对事务的控制权
         return new MyConnection(connection);

@@ -1,4 +1,4 @@
-package distributed_transactions.seata.template.annotation;
+package distributed_transactions.seata.template.model;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

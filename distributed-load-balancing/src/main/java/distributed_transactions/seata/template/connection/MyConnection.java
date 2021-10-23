@@ -1,5 +1,8 @@
 package distributed_transactions.seata.template.connection;
 
+import distributed_transactions.seata.template.model.MyTransaction;
+import distributed_transactions.seata.template.model.TransactionType;
+
 import java.sql.*;
 import java.util.Map;
 import java.util.Properties;
@@ -10,6 +13,7 @@ import java.util.concurrent.Executor;
 public class MyConnection implements Connection {
 
     private Connection realConnection;
+    private MyTransaction transaction;
 
     public MyConnection(Connection realConnection) {
         this.realConnection = realConnection;
@@ -17,14 +21,32 @@ public class MyConnection implements Connection {
 
     @Override
     public void commit() throws SQLException {
-
-        // wait
-        realConnection.commit();
-        realConnection.rollback();
+        // TODO: 为了避免整个主线程被阻塞，需要开启一个新的线程执行，并判断最终的提交
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // 当业务逻辑执行到这个位置，则会被阻塞，等待被最终唤醒.signal();
+                transaction.getTask().waitTask();
+                if (transaction.getTransactionType().equals(TransactionType.commit)) {
+                    try {
+                        realConnection.commit();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    try {
+                        realConnection.rollback();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 
     @Override
     public void rollback() throws SQLException {
+        realConnection.rollback();
     }
 
     // 以下的方法直接使用原始Connection的实现方法

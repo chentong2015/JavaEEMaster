@@ -1,6 +1,9 @@
 package distributed_transactions.seata.template.aspect;
 
-import distributed_transactions.seata.template.annotation.GlobalTransaction;
+import distributed_transactions.seata.template.model.GlobalTransaction;
+import distributed_transactions.seata.template.model.MyTransaction;
+import distributed_transactions.seata.template.model.TransactionType;
+import distributed_transactions.seata.template.transactional.GlobalTransactionManager;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -14,27 +17,36 @@ import java.lang.reflect.Method;
 @Component
 public class GlobalTransactionAspect implements Ordered {
 
-    // 针对注解的一个切面
-    @Around("@annotation(distributed_transactions.seata.template.annotation.GlobalTransaction)")
-    public void invoke(ProceedingJoinPoint point) throws Throwable {
-        // Before
-        // 拿到切面方法上面标注的注解，确定分布式事务的开启
-        MethodSignature signature = (MethodSignature) point.getSignature();
-        Method method = signature.getMethod();
-        GlobalTransaction globalTransaction = method.getAnnotation(GlobalTransaction.class);
-        if (globalTransaction.isFirstServer()) {
-            // 需要全局事务的管理者TM
-        }
-
-        // 执行Spring的切面逻辑
-        point.proceed();
-
-        // After
-    }
-
     // 定义切面的优先级: 高于Spring的@Transactional注解的优先级
     @Override
     public int getOrder() {
         return 10000;
+    }
+
+    // 针对注解的一个切面
+    @Around("@annotation(distributed_transactions.seata.template.model.GlobalTransaction)")
+    public void invoke(ProceedingJoinPoint point) {
+        // 拿到切面方法上面标注的注解，确定分布式事务的开启
+        MethodSignature signature = (MethodSignature) point.getSignature();
+        Method method = signature.getMethod();
+        GlobalTransaction globalTransaction = method.getAnnotation(GlobalTransaction.class);
+
+        String groupId = "";
+        if (globalTransaction.isFirstServer()) {
+            groupId = GlobalTransactionManager.createTransactionGroup();
+        }
+        MyTransaction transaction = GlobalTransactionManager.createMyTransaction(groupId);
+        // 执行Spring的切面逻辑: 根据抛错来判断TransactionType(提交或者回滚)
+        try {
+            point.proceed(); // 执行Spring切面
+            transaction.setTransactionType(TransactionType.commit);
+        } catch (Throwable e) {
+            e.printStackTrace();
+            transaction.setTransactionType(TransactionType.rollback);
+        }
+        // 注册到事务的协调者
+        GlobalTransactionManager.registerMyTransaction(transaction);
+        // 如果上面没有报错，下面全局的提交
+        GlobalTransactionManager.submitGlobalTransaction(groupId);
     }
 }

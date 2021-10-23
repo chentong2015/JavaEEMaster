@@ -1,4 +1,4 @@
-package distributed_transactions.seata.template.transactional.tc;
+package distributed_transactions.seata.template.transactional;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -8,7 +8,7 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
 // TC: Server端是基于Netty Server搭建
-public class GlobalTransactionalController {
+public class GlobalTransactionController {
 
     public static void main(String[] args) {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
