@@ -1,4 +1,4 @@
-package distributed_system.Distributed_Session;
+package distributed_session;
 
 // 分布式Session:
 // 场景: 在分布式Server集群架构场景中，不同Server所保存的Session没有全局共享
