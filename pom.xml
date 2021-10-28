@@ -10,13 +10,12 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>redis-basic</module>
         <module>distributed-load-balancing</module>
-        <module>serverless-framework</module>
-        <module>rpc-dubbo</module>
         <module>http-web-server</module>
-        <module>message-queue</module>
         <module>io-netty</module>
+        <module>redis-basic</module>
+        <module>rpc-dubbo</module>
+        <module>serverless-framework</module>
     </modules>
 
     <properties>
