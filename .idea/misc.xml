@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/high-concurrency/pom.xml" />
         <option value="$PROJECT_DIR$/io-netty-basic/pom.xml" />
         <option value="$PROJECT_DIR$/message-middleware/pom.xml" />
+        <option value="$PROJECT_DIR$/message-queue/pom.xml" />
         <option value="$PROJECT_DIR$/middleware-message/pom.xml" />
         <option value="$PROJECT_DIR$/middleware-network/pom.xml" />
         <option value="$PROJECT_DIR$/middleware/pom.xml" />

@@ -13,6 +13,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.Set;
 
+// 服务端代码的权责:
+// 1. 套接字连接管理
+// 2. 客户端处理
+// 3. 线程策略(使用规则)
+// 4. 服务器关闭策略
 public class BaseNioServerSelector {
 
     private static Selector selector;

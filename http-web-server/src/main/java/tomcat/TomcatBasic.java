@@ -11,13 +11,12 @@ import java.io.IOException;
 // Tomcat 9.0版本(及之前): 支持Java EE, 实现javax.servlet接口
 // Tomcat 10.0版本(及之后): 支持JakartaEE，实现jakarta.servlet.Servlet接口
 
-// Tomcat是一个Servlet容器  ==>  默认端口号8080 http://localhost:8080/
+// Tomcat是一个Servlet容器
 //   Servlet(服务端应用程序) = server+applet(java开发的应用程序，运行在浏览器端，客户端)
 //   Servlet是一个规范: 自定义实现了HttpServlet的类型(最终实现的接口Servlet Interface)
 //   Servlet是一个小程序，wrapper -> 应用上下文Context -> 部署在host主机 -> 使用Engine来管理主机
-
-// TODO: Wrapper的理解
-// public class MyServlet extends HttpServlet implements SingleThreadModel {}
+//   TODO: Wrapper的理解
+//   public class MyServlet extends HttpServlet implements SingleThreadModel {}
 //   一般自定义实现了HttpServlet类型的类，在部署的时候，所有的请求都是公用同一个Servlet
 //   如果实现了SingleThreadModel接口，则表示每一个请求的线程都独立的使用一个Servlet实例
 //   使用Wrapper来包装所有的Servlet实例
@@ -33,7 +32,7 @@ public class TomcatBasic extends HttpServlet {
     // 4. 在apache-tomcat-9.0.41\conf\Catalina\localhost目录下添加文件 ServletDemoProject.xml
     //    文件中配置<Context path="/ServletDemoProject" docBase="指定build出来的文件全路径" />
 
-    // TODO: War包和jar包的区别 ==> 本质上都存储了共同的信息(编译后的class文件和web.xml)
+    // TODO: War包和jar包的区别: 本质上都存储了共同的信息(编译后的class文件和web.xml)
     // jar一般表示的是依赖的包，在tomcat启动时需要做出额外的判断
     // 使用war包的形式部署，方便tomcat识别和处理(当成是web引用)
     // Tomcat规范:

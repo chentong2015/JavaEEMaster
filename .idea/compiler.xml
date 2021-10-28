@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rpc-dubbo" />
-        <module name="message-queue" />
         <module name="distributed-load-balancing" />
         <module name="redis-basic" />
         <module name="io-netty" />
@@ -27,6 +26,7 @@
       <module name="high-concurrency" target="15" />
       <module name="io-netty-basic" target="15" />
       <module name="message-middleware" target="15" />
+      <module name="message-queue" target="15" />
       <module name="middleware" target="15" />
       <module name="middleware-message" target="15" />
       <module name="middleware-network" target="15" />

@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-// 1. BIO(Blocking IO) 阻塞IO >> 不支持高并发
-//    client --> Thread -->
-//    client --> Thread --> Server
-//    client --> Thread -->
+// BIO(Blocking IO) 阻塞IO >> 不支持高并发
+//   client --> Thread -->
+//   client --> Thread --> Server
+//   client --> Thread -->
 public class BaseBio {
 
     // TODO: BIO无法支持高并发场景

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-// 2. NIO(Non block IO, New IO)
+// NIO(Non block IO, New IO)
 public class BaseNioServer {
 
     private static List<SocketChannel> channelList = new ArrayList<>();
