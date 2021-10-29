@@ -4,12 +4,11 @@ package tomcat.policy;
 // 打开安全机制，通过conf/catalina.policy文件添加权限
 public class TomcatPolicy {
 
-    //  System.exit(1);
+    //  System.exit(1); 在doGet()方法测试调用该方法
     //
     //  public static void exit(int status) {
     //     Runtime.getRuntime().exit(status);
     //  }
-    //
     //  public void exit(int status) {
     //      SecurityManager security = System.getSecurityManager();
     //      if (security != null) {
@@ -22,8 +21,7 @@ public class TomcatPolicy {
     //  public void checkExit(int status) {
     //      checkPermission(new RuntimePermission("exitVM."+status));
     //  }
-    //
 
-    // 默认是没有该权限的，需要添加指定的权限名称
+    // 默认是没有该权限的，需要在文件中添加指定的权限名称
     // permission java.lang.RuntimePermission "exitVM.1";
 }

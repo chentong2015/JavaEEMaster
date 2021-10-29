@@ -20,6 +20,9 @@ import java.io.IOException;
 //   一般自定义实现了HttpServlet类型的类，在部署的时候，所有的请求都是公用同一个Servlet
 //   如果实现了SingleThreadModel接口，则表示每一个请求的线程都独立的使用一个Servlet实例
 //   使用Wrapper来包装所有的Servlet实例
+
+// Tomcat作为Http Server，默认端口号8080
+// Tomcat启动方式: cmd>apache-tomcat-8.5.65\bin\startup.bat
 public class TomcatBasic extends HttpServlet {
 
     // Tomcat部署应用的四种方式：
@@ -41,9 +44,10 @@ public class TomcatBasic extends HttpServlet {
     //        -- classes
     //        web.xml
 
-    // Tomcat处理请求(分发请求)逻辑:
-    // Tomcat > ApplicationFilterChain.java > 直接调用自定义servlet.service()
-    // service()方法是HttpServlet所实现的方法  > 确定接收请求的类型 > 调用doGet()还是doPost()
+    // TODO: Tomcat处理请求(分发请求)逻辑
+    // 直接调用自定义servlet.service()，HttpServlet所实现的方法
+    // > 确定接收请求的类型
+    // > 调用doGet()还是doPost()
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

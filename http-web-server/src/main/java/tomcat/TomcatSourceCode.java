@@ -1,8 +1,6 @@
 package tomcat;
 
-// Tomcat作为Http Server，默认端口号8080
-// cmd启动方式：apache-tomcat-8.5.65\bin\startup.bat
-public class TomcatMaster {
+public class TomcatSourceCode {
 
     // 根据Server.xml中<Connector>配置，使用不同的IO模型
     // public class Connector extends LifecycleMBeanBase
