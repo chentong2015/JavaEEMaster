@@ -12,7 +12,7 @@ public class TomcatStarter {
     private static String hostname = "localhost";
     private static int port = 8081;
 
-    // 使用纯程序启动Tomcat，替代XML配置结构
+    // 使用纯程序启动Tomcat，等效于server.xml文件配置
     public static void startTomcat() {
         Tomcat tomcat = new Tomcat();
         tomcat.getHost().setAutoDeploy(false);
@@ -20,6 +20,7 @@ public class TomcatStarter {
         // getServer(): 创建一个Standard Server，然后创建Service并添加到Server中
         Server server = tomcat.getServer();
         Service service = server.findService("Tomcat");
+
         Connector connector = new Connector();
         connector.setPort(port);
         service.addConnector(connector);
