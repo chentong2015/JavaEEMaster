@@ -149,8 +149,9 @@
                 <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
             </Realm>
 
-            <!-- 定义虚拟主机(可以配置多个)，配置域名，appBase使用到的目录 -->
-            <Host name="order.ctong.com" appBase="webapps">
+            <!-- 定义虚拟主机(可以配置多个)，配置域名，appBase使用到的目录
+                 TODO: 热部署默认是开启的  autoDeploy="true" -->
+            <Host name="order.ctong.com" appBase="webapps" autoDeploy="true">
                 <Context></Context>
             </Host>
             <!-- unpackWARs是否需要解压war包 -->

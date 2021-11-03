@@ -32,8 +32,9 @@ public class TomcatBasic extends HttpServlet {
     //    <Host name="" appBase="webs">
     //       <Context path="" docBase="" />
     //    </Host>
-    // 4. 在apache-tomcat-9.0.41\conf\Catalina\localhost目录下添加文件 ServletDemoProject.xml
+    // 4. 在apache-tomcat-9.0.41\conf\Catalina\localhost目录下添加文件ServletDemoProject.xml
     //    文件中配置<Context path="/ServletDemoProject" docBase="指定build出来的文件全路径" />
+    //    热加载配置<Context reloadable="false" />
 
     // TODO: War包和jar包的区别: 本质上都存储了共同的信息(编译后的class文件和web.xml)
     // jar一般表示的是依赖的包，在tomcat启动时需要做出额外的判断
