@@ -28,6 +28,7 @@
         <option value="$PROJECT_DIR$/mybatis-basic/pom.xml" />
         <option value="$PROJECT_DIR$/orm-hibernate/pom.xml" />
         <option value="$PROJECT_DIR$/redis-master/pom.xml" />
+        <option value="$PROJECT_DIR$/serverless-framework/pom.xml" />
       </set>
     </option>
   </component>

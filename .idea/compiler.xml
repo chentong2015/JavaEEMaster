@@ -10,7 +10,6 @@
         <module name="distributed-load-balancing" />
         <module name="redis-basic" />
         <module name="io-netty" />
-        <module name="serverless-framework" />
         <module name="http-web-server" />
       </profile>
     </annotationProcessing>
@@ -34,6 +33,7 @@
       <module name="mybatis-basic" target="15" />
       <module name="orm-hibernate" target="15" />
       <module name="redis-master" target="15" />
+      <module name="serverless-framework" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>

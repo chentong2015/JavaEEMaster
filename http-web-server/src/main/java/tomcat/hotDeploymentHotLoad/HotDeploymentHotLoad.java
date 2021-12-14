@@ -14,6 +14,5 @@ public class HotDeploymentHotLoad {
     // 如果重新部署，则会重新生成Context对象
     // 热加载，如果重新加载，不会生成Context对象
     // StandardContext.java > reload()
-    
 
 }

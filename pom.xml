@@ -15,7 +15,6 @@
         <module>io-netty</module>
         <module>redis-basic</module>
         <module>rpc-dubbo</module>
-        <module>serverless-framework</module>
     </modules>
 
     <properties>
