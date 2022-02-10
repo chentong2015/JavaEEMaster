@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
-// Redisson: Redis Java Client 分布式框架, 提供分布式场景解放方案
-// TODO:完整使用教程 https://github.com/redisson/redisson/wiki/目录
+// Redisson:
+// Redis Java Client
+// 分布式框架, 提供分布式场景解放方案
+// https://github.com/redisson/redisson/wiki/目录
 public class RedissonFramework {
 
     // 在SpringBoot项目中依赖注入(容器)，初始化Redisson
@@ -30,7 +32,8 @@ public class RedissonFramework {
     StringRedisTemplate stringRedisTemplate = SpringJedisConnection.getJedisStringTemplate();
 
     // TODO: 使用分线程"动态控制"锁的超时时间，给锁延续更正时间
-    // TODO: 性能问题: 把并行的逻辑串行化，没有并发的问题     ===> 使用分段锁进行优化，不同的请求选择不同的段位，实现并发执行请求 !!
+    // TODO: 性能问题: 把并行的逻辑串行化，没有并发的问题
+    //  ===> 使用分段锁进行优化，不同的请求选择不同的段位，实现并发执行请求 !!
     public String testDistributedLockPlus2() {
         String key = "lockKey";
         RLock redissonLock = redisson.getLock(key); // 生成一个Redisson锁对象
