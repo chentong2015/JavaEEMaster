@@ -1,0 +1,23 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(‘½Üâøÿÿÿÿ
+G
+java:S1135"2Complete the task associated to this TODO comment.(áïÕ?
+H
+java:S1135"2Complete the task associated to this TODO comment.(Òİñù
+Q	java:S125"<This block of commented-out lines of code should be removed.(üğô
+V	java:S125!"<This block of commented-out lines of code should be removed.(²—À†øÿÿÿÿ
+P	java:S125#"<This block of commented-out lines of code should be removed.(â’Ä_
+V	java:S125/"<This block of commented-out lines of code should be removed.(‹ÏÕ¯ıÿÿÿÿ
+M
+java:S1135@"2Complete the task associated to this TODO comment.(­«Äøÿÿÿÿ
+M
+java:S1135S"2Complete the task associated to this TODO comment.(ƒ Ğ•ıÿÿÿÿ
+a
+java:S1192 "FDefine a constant instead of duplicating this literal "Error" 3 times.(îÊöÎüÿÿÿÿ
+a
+java:S1192!"FDefine a constant instead of duplicating this literal "stock" 6 times.(²—À†øÿÿÿÿ
+^
+java:S1192&"HDefine a constant instead of duplicating this literal "Success" 3 times.(ÛÖØ¹
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÀĞªÕüÿÿÿÿ
+X
+java:S2259T"BA "NullPointerException" could be thrown; "get()" can return null.(ÊÒÏ¡
