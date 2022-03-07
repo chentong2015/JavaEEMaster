@@ -23,6 +23,7 @@ public class TomcatStarter {
 
         Connector connector = new Connector();
         connector.setPort(port);
+        // connector.setAsyncTimeout(1000L); 可以设置异步的超时时间
         service.addConnector(connector);
 
         String contextPath = "";

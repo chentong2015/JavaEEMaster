@@ -55,37 +55,28 @@
         <!--The connectors can use a shared executor, you can define one or more named thread pools-->
         <!--
         <Executor name="tomcatThreadPool" namePrefix="catalina-exec-"
-            maxThreads="150" minSpareThreads="4"/>
-        -->
-
+            maxThreads="150" minSpareThreads="4"/>  -->
 
         <!-- A "Connector" represents an endpoint by which requests are received
              and responses are returned. Documentation at :
              Java HTTP Connector: /docs/config/http.html
              Java AJP  Connector: /docs/config/ajp.html
              APR (HTTP/AJP) Connector: /docs/apr.html
-             Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
-        -->
+             Define a non-SSL/TLS HTTP/1.1 Connector on port 8080 -->
 
-        <!-- TODO: 定义连接处理器, 定义连接Host主机的端口 -->
-        <Connector port="8080" protocol="HTTP/1.1"
-                   connectionTimeout="20000"
-                   redirectPort="8443"/>
+        <!-- TODO: 定义连接处理器, 定义连接Host主机的端口, 包含默认的timeout -->
+        <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443"/>
         <!-- A "Connector" using the shared thread pool-->
         <!--
-        <Connector executor="tomcatThreadPool"
-                   port="8080" protocol="HTTP/1.1"
-                   connectionTimeout="20000"
-                   redirectPort="8443" />
-        -->
+        <Connector executor="tomcatThreadPool" port="8080" protocol="HTTP/1.1"
+                   connectionTimeout="20000" redirectPort="8443" />  -->
         <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443
              This connector uses the NIO implementation. The default
              SSLImplementation will depend on the presence of the APR/native
              library and the useOpenSSL attribute of the
              AprLifecycleListener.
              Either JSSE or OpenSSL style configuration may be used regardless of
-             the SSLImplementation selected. JSSE style configuration is used below.
-        -->
+             the SSLImplementation selected. JSSE style configuration is used below. -->
         <!--
         <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
                    maxThreads="150" SSLEnabled="true">
@@ -93,14 +84,12 @@
                 <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
                              type="RSA" />
             </SSLHostConfig>
-        </Connector>
-        -->
+        </Connector>  -->
         <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
              This connector uses the APR/native implementation which always uses
              OpenSSL for TLS.
              Either JSSE or OpenSSL style configuration may be used. OpenSSL style
-             configuration is used below.
-        -->
+             configuration is used below.  -->
         <!--
         <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
                    maxThreads="150" SSLEnabled="true" >
@@ -126,17 +115,14 @@
              Documentation at /docs/config/engine.html -->
 
         <!-- You should set jvmRoute to support load-balancing via AJP ie :
-        <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
-        -->
+        <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1"> -->
 
         <Engine name="Catalina" defaultHost="localhost">
-
             <!--For clustering, please take a look at documentation at:
                 /docs/cluster-howto.html  (simple how to)
                 /docs/config/cluster.html (reference documentation) -->
             <!--
-            <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>
-            -->
+            <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>  -->
 
             <!-- Use the LockOutRealm to prevent attempts to guess user passwords
                  via a brute-force attack -->
