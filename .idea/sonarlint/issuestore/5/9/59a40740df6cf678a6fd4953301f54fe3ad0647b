@@ -1,0 +1,9 @@
+
+t
+java:S2142,"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€
+M
+java:S1135"2Complete the task associated to this TODO comment.(–Ö–×ıÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(³‰Á˜üÿÿÿÿ
+F
+java:S1481 "+Remove this unused "future" local variable.(ÿ‚£ùÿÿÿÿ
+V	java:S125#"<This block of commented-out lines of code should be removed.(Ğøµşÿÿÿÿ

@@ -46,7 +46,7 @@ public class Redis4Set {
     //    sismember tongSet B                 A关注的人也关注了B     ==> 对每一个关注的人都做判断，需要优化/单独部署 !!
     //    sdiff BSet ASet  -> {victor, test}  差集，A可能认识的人(从B集合中排除A中关注过的人)，根据关注的关注来构建联系，推演算法
 
-    // 4. 电商页面的商品快速筛选
+    // 4. 电商页面的商品快速筛选Filter
     //    sadd brand:huawei P30
     //    sadd brand:iphone iphone11
     //    sadd os:android P30 iphone11
