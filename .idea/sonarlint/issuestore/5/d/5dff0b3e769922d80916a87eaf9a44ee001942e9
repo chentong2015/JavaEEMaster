@@ -1,0 +1,7 @@
+
+]
+java:S2094"BRemove this empty class, write its code or make it an "interface".(õ÷Ó¨ùÿÿÿÿ
+Q	java:S125,"<This block of commented-out lines of code should be removed.(ü÷Ðƒ
+M
+java:S1135."2Complete the task associated to this TODO comment.(¿¯Ûúÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²È‰îýÿÿÿÿ

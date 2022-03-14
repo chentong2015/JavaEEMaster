@@ -10,8 +10,10 @@ import java.util.Set;
 // Web --->  Redis Master 主服务
 //           Redis Slave  从服务(可能需要人工运维干预)
 
-// TODO: 在分布式锁场景下，在主从架构(哨兵架构)中如何解决锁的同步性?              ==> 如果主从失效，能够容忍 & 使用Zookeeper分布式结构
-//       Redisson  ->  Redis(Master)  ->  Redis(Slave) / Redis(Slave)  ===> 依赖于主从复制
+// TODO: 在分布式锁场景下，在主从架构(哨兵架构)中如何解决锁的同步性?
+//       ==> 如果主从失效，能够容忍 & 使用Zookeeper分布式结构
+//       Redisson  ->  Redis(Master)  ->  Redis(Slave) / Redis(Slave)
+//       ===> 依赖于主从复制
 // 如果redisson在主redis中加了一把锁(设置key)，则从结点一般需要将key"同步/异步复制"过去
 // 如果key刚好设置到redis主结点，然后redis主结点挂了
 // 1. 将从结点重新切换成主结点，新的结点没有key
@@ -27,10 +29,10 @@ public class ArchitectRedisCluster {
     //          slave  slave  ...   slave 从服务器，同步数据，顶替master
     // 哨兵监控作用: 故障检测，自动故障转移，避免人工干预
     // 如果哨兵挂掉: 可以做多个，如果一个挂了，前端的负载均衡可以找另一个哨兵
-    // 并发场景缺点: 对外提供的写只有一台，在挂掉的时候切换时间内"访问瞬断"的情况
+    // 并发场景缺点: 对外提供的写只有一台，在挂掉的时候切换时间内"访问瞬断"的情况 !!
 
     // TODO: 伪分布式/伪集群，在一台机器上搭建3主3从的Redis实例，模拟分布式场景
-    // 2. 高可用集群模式(相对的)
+    // 2. 高可用cluster集群模式(相对的)
     //           client         client
     //                JedisCluster
     //          master           master          master       至少要3个master结点(选举必须是单数)，最多集群支持1000台...

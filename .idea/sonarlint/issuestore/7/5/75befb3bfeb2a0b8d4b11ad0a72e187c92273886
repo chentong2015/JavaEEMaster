@@ -1,0 +1,15 @@
+
+M
+java:S1135"2Complete the task associated to this TODO comment.(Û¢ìëüÿÿÿÿ
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(Î£»±ûÿÿÿÿ
+S	java:S106'"9Replace this use of System.out or System.err by a logger.(Î£»±ûÿÿÿÿ
+H
+java:S1135J"2Complete the task associated to this TODO comment.(µÖ¨‰
+G
+java:S1602Q",Remove useless curly braces around statement(šÞ¾½ÿÿÿÿÿ
+b
+java:S1871Z"LThis branch's code block is the same as the block for the branch on line 88.(óý—Ý
+O
+java:S1144"4Remove this unused private "getWeightServer" method.(¤¸ëŽüÿÿÿÿ
+i
+java:S2259_"NA "NullPointerException" could be thrown; "maxCurrentWeight" is nullable here.(ÿ…ù¶ýÿÿÿÿ

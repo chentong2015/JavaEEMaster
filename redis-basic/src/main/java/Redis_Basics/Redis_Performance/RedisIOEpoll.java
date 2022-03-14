@@ -1,6 +1,6 @@
 package Redis_Basics.Redis_Performance;
 
-// Linux IO多路复用核心原理:
+// Linux IO多路复用(Multiplexing)核心原理:
 // https://blog.csdn.net/XueyinGuo/article/details/113096163
 public class RedisIOEpoll {
 

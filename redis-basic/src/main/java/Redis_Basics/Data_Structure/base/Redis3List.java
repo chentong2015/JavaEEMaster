@@ -31,8 +31,4 @@ public class Redis3List {
     //    2) 被订阅者2发布动态，消息id为10011   lpush msg:{我的-id} 10011
     //    3) 我查看最新的动态                  lrange meg{我的-id} 0 5   获取最新更新的动态信息，从list前面开始取，根据时间线
     //    优化实现: 如果一个用户的粉丝过多，则可以将新的动态发布到这个大V的消息队列中，，，
-    //
-    // TODO: 消息事件的订阅和发布 ?
-    // 1. Message Queue(RabbitMQ) 带有消息订阅和发布
-    // 2. Spring WebFlux(SSE) 具有事件推送机制
 }
