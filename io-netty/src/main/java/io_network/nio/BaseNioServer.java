@@ -24,6 +24,7 @@ public class BaseNioServer {
         serverSocketChannel.socket().bind(new InetSocketAddress(9000));
         // 设置server端为非阻塞
         serverSocketChannel.configureBlocking(false);
+
         while (true) {
             SocketChannel socketChannel = serverSocketChannel.accept();
             if (socketChannel != null) { // 确定有连接并且连接成功
@@ -36,7 +37,7 @@ public class BaseNioServer {
             while (iterator.hasNext()) {
                 SocketChannel sc = iterator.next();
                 ByteBuffer buffer = ByteBuffer.allocate(128);
-                // 在非阻塞模式下不会被阻塞
+                // 在非阻塞模式下不会被阻塞，从SocketChannel中获取指定buffer长度的数据
                 int len = sc.read(buffer);
                 if (len > 0) { // 确定有接受到来自客户端的数据
                     System.out.println("Receive: " + new String(buffer.array()));

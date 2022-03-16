@@ -1,7 +1,0 @@
-
-V
-java:S1854"ARemove this useless assignment to local variable "bytesReceived".(¡ýƒ'
-G
-java:S1481"2Remove this unused "bytesReceived" local variable.(¡ýƒ'
-f
-java:S2095"KUse try-with-resources or close this "SocketChannel" in a "finally" clause.(–¦ªÐøÿÿÿÿ
