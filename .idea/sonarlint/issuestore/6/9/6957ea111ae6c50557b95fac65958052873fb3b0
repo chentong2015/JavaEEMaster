@@ -1,0 +1,25 @@
+
+E
+java:S3740"/Provide the parametrized type for this generic.(‚¢‚ò
+J
+java:S3740"/Provide the parametrized type for this generic.(ðñ¯€ûÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ðÿ«‘üÿÿÿÿ
+M
+java:S1135"2Complete the task associated to this TODO comment.(„•Ôñüÿÿÿÿ
+U
+java:S1854":Remove this useless assignment to local variable "clazz1".(ðñ¯€ûÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(±ýçøÿÿÿÿ
+Z
+java:S2147$"DCombine this catch with the one at line 34, which has the same body.(ýàÑÎ
+F
+java:S1481"+Remove this unused "clazz1" local variable.(ðñ¯€ûÿÿÿÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(ì½™€ûÿÿÿÿ
+V	java:S125*"<This block of commented-out lines of code should be removed.(ÿüÜ±ûÿÿÿÿ
+M
+java:S1135Z"2Complete the task associated to this TODO comment.(Â†È¹ùÿÿÿÿ
+M
+java:S1135~"2Complete the task associated to this TODO comment.(Ì¼ ¥øÿÿÿÿ
+R
+java:S1144"7Remove this unused private "testUrlClassLoader" method.(åùÀËÿÿÿÿÿ
+b
+java:S2095"LUse try-with-resources or close this "URLClassLoader" in a "finally" clause.(ÀÑØÇ

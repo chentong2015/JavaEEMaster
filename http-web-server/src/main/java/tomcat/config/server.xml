@@ -140,6 +140,7 @@
             <Host name="order.ctong.com" appBase="webapps" autoDeploy="true">
                 <Context></Context>
             </Host>
+
             <!-- unpackWARs是否需要解压war包 -->
             <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
                 <!-- SingleSignOn valve, share authentication between web applications
@@ -153,6 +154,9 @@
                 <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                        prefix="localhost_access_log" suffix=".txt"
                        pattern="%h %l %u %t &quot;%r&quot; %s %b"/>
+
+                <!-- 配置Health check -->
+                <Valve className="org.apache.catalina.valves.HealthCheckValve"/>
             </Host>
         </Engine>
     </Service>
