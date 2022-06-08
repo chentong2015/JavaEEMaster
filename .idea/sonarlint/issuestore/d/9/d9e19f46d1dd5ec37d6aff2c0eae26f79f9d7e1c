@@ -1,0 +1,15 @@
+
+X
+java:S1854"=Remove this useless assignment to local variable "productId".(’¨…Ğúÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(«×¿×
+y
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(‡àæøÿÿÿÿ
+y
+java:S2142""^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(‡àæøÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(â¬³™ûÿÿÿÿ
+I
+java:S1481".Remove this unused "productId" local variable.(’¨…Ğúÿÿÿÿ
+o
+java:S1192"YDefine a constant instead of duplicating this literal "product_sold_out_flag_id" 3 times.(ú×¸·
+]
+java:S2259"GA "NullPointerException" could be thrown; "zookeeper" is nullable here.(ú×¸·
