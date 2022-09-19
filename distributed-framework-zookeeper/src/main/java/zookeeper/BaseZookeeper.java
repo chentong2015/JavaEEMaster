@@ -8,10 +8,10 @@ import org.apache.zookeeper.ZooKeeper;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+// https://zookeeper.apache.org/doc/current/index.html
 // 1. 分布式服务框架，Apache Hadoop子项目
 // 2. 解决分布式应用中的一些数据管理问题：统一命名服务，集群管理，应用配置等
 // 3. 性能没有Redis高
-// https://zookeeper.apache.org/doc/current/index.html
 public class BaseZookeeper {
 
     // TODO: Zookeeper是什么?
