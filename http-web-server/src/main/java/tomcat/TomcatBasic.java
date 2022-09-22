@@ -24,27 +24,7 @@ import java.io.IOException;
 // Tomcat作为Http Server，默认端口号8080
 // Tomcat启动方式: cmd>apache-tomcat-8.5.65\bin\startup.bat
 public class TomcatBasic extends HttpServlet {
-
-    // Tomcat部署应用的四种方式：
-    // 1. 将项目build成war包，放置到tomcat/webapps/下 ==> 解压出来之后和第二种部署方式相同
-    // 2. 将项目build成war exploded包，将文件夹放置到tomcat/webapps/下
-    // 3. 通过在tomcat配置文件server.xml中添加主机结点来实现
-    //    <Host name="" appBase="webs">
-    //       <Context path="" docBase="" />
-    //    </Host>
-    // 4. 在apache-tomcat-9.0.41\conf\Catalina\localhost目录下添加文件ServletDemoProject.xml
-    //    文件中配置<Context path="/ServletDemoProject" docBase="指定build出来的文件全路径" />
-    //    热加载配置<Context reloadable="false" />
-
-    // TODO: War包和jar包的区别: 本质上都存储了共同的信息(编译后的class文件和web.xml)
-    // jar一般表示的是依赖的包，在tomcat启动时需要做出额外的判断
-    // 使用war包的形式部署，方便tomcat识别和处理(当成是web引用)
-    // Tomcat规范:
-    //   ProjectName
-    //     -- WEB-INF
-    //        -- classes
-    //        web.xml
-
+    
     // TODO: Tomcat处理请求(分发请求)逻辑
     // 直接调用自定义servlet.service()，HttpServlet所实现的方法
     // > 确定接收请求的类型
