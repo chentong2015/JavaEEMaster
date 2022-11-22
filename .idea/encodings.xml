@@ -12,7 +12,7 @@
     <file url="file://$PROJECT_DIR$/io-netty/src/main/java/io_network/nio_selector/多路复用三函数区别.JPG" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io-netty/src/main/java/netty/basic/NettyServer.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/io-netty/src/main/java/netty/thread_model/NettyThreadModel.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/rpc-dubbo/src/main/java/base_rmi/BaseJavaRMI.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rpc-dubbo/src/main/java/rmi/BaseJavaRMI.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../SystemNetworking/system-linux/src/main/java/Linux操作系统原理.JPG" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
