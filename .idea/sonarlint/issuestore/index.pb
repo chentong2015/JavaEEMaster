@@ -123,3 +123,5 @@ U
 %rpc-dubbo/src/main/java/rmi/RMI基础,3\e\3ecf212b296bb1f28311d7a1a6613d3d3906891f
 [
 +rpc-dubbo/src/main/java/rmi/基于XML请求,5\c\5cf8b35e35eb14e27808a615ed8ede71030196d1
+r
+Bdistributed-load-balancing/src/main/java/load_balance/负载均衡,5\2\5280fe414a36611bf7980de557cdbcd30d530216
