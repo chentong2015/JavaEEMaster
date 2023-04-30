@@ -13,7 +13,7 @@
         <module>distributed-load-balancing</module>
         <module>http-web-server</module>
         <module>io-netty</module>
-        <module>redis-basic</module>
+        <module>caching-redis</module>
         <module>rpc-dubbo</module>
         <module>distributed-framework-zookeeper</module>
     </modules>

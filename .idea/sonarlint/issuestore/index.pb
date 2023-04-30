@@ -77,8 +77,6 @@ W
 'distributed-framework-zookeeper/pom.xml,7\0\7001fb82239f30a22b100fb92e0a912667978857
 R
 "distributed-load-balancing/pom.xml,d\0\d08fbeb50cb44c5b9d6079d41d2ee879c220e28f
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 �
 Wdistributed-framework-zookeeper/src/main/java/zookeeper/consistency/TwoPhaseCommit.java,c\e\cebe8d5f36d11e30e8920953365a2766cf7f5320
 w
@@ -101,8 +99,6 @@ f
 6http-web-server/src/main/java/apache/ApacheJMeter.java,d\b\db3fe994bcad65ad7e7b7343d4a9d142db38b40d
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-[
-+redis-basic/src/main/java/redis搭建教程,a\5\a53b3243315981782fc1114af6cc04cc096073b0
 z
 Jdistributed-framework-zookeeper/src/main/java/zookeeper/BaseZookeeper.java,c\1\c168ce316f4afa4302d4378a2f3457ee7b7e9c50
 G
@@ -113,9 +109,9 @@ n
 >http-web-server/src/main/java/tomcat/deploy/Tomcat部署方式,0\c\0c215e4b393f1e30343292ce405bbf1660029e5e
 e
 5http-web-server/src/main/java/tomcat/TomcatBasic.java,9\7\975162feae7fcf62881a8d54babc4aa3d9f0d9fc
-[
-+redis-basic/src/main/java/redis缓存基础,9\a\9af74287291e08a71ff77022bba9426b14ff1db0
 a
 1io-netty/src/main/java/netty/chat/ChatClient.java,9\6\96eb895206be7a74134e4c0d1882e82571146c8a
 r
 Bdistributed-load-balancing/src/main/java/load_balance/负载均衡,5\2\5280fe414a36611bf7980de557cdbcd30d530216
+Q
+!rpc-dubbo/src/main/java/RPC调用,c\5\c538f626b144cd25089a535a51965d6e79d3dd82

@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="rpc-dubbo" />
         <module name="distributed-framework-zookeeper" />
+        <module name="caching-redis" />
         <module name="distributed-load-balancing" />
-        <module name="redis-basic" />
         <module name="io-netty" />
         <module name="http-web-server" />
       </profile>
