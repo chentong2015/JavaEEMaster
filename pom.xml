@@ -9,13 +9,13 @@
     <artifactId>JavaEEMaster</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <modules>
-        <module>distributed-load-balancing</module>
+        <module>caching-redis</module>
+        <module>distributed-systems</module>
         <module>http-web-server</module>
         <module>io-netty</module>
-        <module>caching-redis</module>
         <module>rpc-dubbo</module>
-        <module>distributed-framework-zookeeper</module>
     </modules>
 
     <properties>
