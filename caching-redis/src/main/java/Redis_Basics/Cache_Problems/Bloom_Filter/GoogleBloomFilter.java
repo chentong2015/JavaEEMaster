@@ -1,4 +1,4 @@
-package Redis_Basics.Redis_Cache.Bloom_Filter;
+package Redis_Basics.Cache_Problems.Bloom_Filter;
 
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;

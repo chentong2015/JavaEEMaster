@@ -1,4 +1,4 @@
-package Redis_Basics.Redis_Cache;
+package Redis_Basics.Cache_Problems;
 
 import Spring_Data_Redis.SpringJedisConnection;
 import jodd.util.StringUtil;

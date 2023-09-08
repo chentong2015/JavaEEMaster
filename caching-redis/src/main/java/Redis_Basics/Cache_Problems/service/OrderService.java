@@ -1,6 +1,6 @@
-package Redis_Basics.Redis_Cache.service;
+package Redis_Basics.Cache_Problems.service;
 
-import Redis_Basics.Redis_Cache.model.Order;
+import Redis_Basics.Cache_Problems.model.Order;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Redis_Basics.Redis_Cache.Bloom_Filter;
+package Redis_Basics.Cache_Problems.Bloom_Filter;
 
 import Spring_Data_Redis.SpringJedisConnection;
 import org.springframework.dao.DataAccessException;

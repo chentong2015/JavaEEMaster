@@ -1,11 +1,0 @@
-
-_
-java:S1192"IDefine a constant instead of duplicating this literal "chentong" 3 times.(â§‡á
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(þ¨¥ü
-\
-java:S1854"ARemove this useless assignment to local variable "redisTemplate".(¹”ƒšþÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(‚é€Þûÿÿÿÿ
-M
-java:S1481"2Remove this unused "redisTemplate" local variable.(¹”ƒšþÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(•ã‘ÿøÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(þ­‚›

@@ -11,3 +11,6 @@
 1. 选择合适的缓存逐出算法，比如最常见的LRU
 2. 设置适当的警戒值，比如10G的缓存，当缓存数据达到8G时就开始报警，提前排查问题或者扩容
 3. 给一些没有必要长期保存的key，尽量设置过期时间
+
+EhCache缓存设计:
+https://www.ehcache.org/documentation/2.8/index.html

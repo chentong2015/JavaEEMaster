@@ -1,4 +1,4 @@
-package Redis_Basics.Redis_Cache.model;
+package Redis_Basics.Cache_Problems.model;
 
 public class Order {
 
