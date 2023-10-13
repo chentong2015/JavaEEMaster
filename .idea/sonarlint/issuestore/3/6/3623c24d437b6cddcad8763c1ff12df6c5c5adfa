@@ -1,0 +1,11 @@
+
+a
+java:S11926"FDefine a constant instead of duplicating this literal "stock" 3 times.(‰ñ¸üÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§ €øÿÿÿÿ
+V
+java:S22225";Unlock this lock along all executions paths of this method.(şİŠŒøÿÿÿÿ
+V
+java:S2222C";Unlock this lock along all executions paths of this method.(†Å·úÿÿÿÿ
+M
+java:S1135"2Complete the task associated to this TODO comment.(ÈŒğÁùÿÿÿÿ
+S	java:S1068"9Replace this use of System.out or System.err by a logger.(»¸ïıÿÿÿÿ

@@ -1,0 +1,24 @@
+
+b
+java:S11925"LDefine a constant instead of duplicating this literal "8.209.74.47" 8 times.(‘îš¼
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ò¢ø³
+U
+java:S1118":Add a private constructor to hide the implicit public one.(ºÒãÜùÿÿÿÿ
+M
+java:S1135"2Complete the task associated to this TODO comment.( áø²ıÿÿÿÿ
+H
+java:S1135"2Complete the task associated to this TODO comment.(È¶Ã
+M
+java:S1135""2Complete the task associated to this TODO comment.(›æèñúÿÿÿÿ
+Q	java:S1257"<This block of commented-out lines of code should be removed.(­§¬
+S	java:S1069"9Replace this use of System.out or System.err by a logger.(Š€¨¤øÿÿÿÿ
+N	java:S106:"9Replace this use of System.out or System.err by a logger.(†Àÿµ
+N	java:S106B"9Replace this use of System.out or System.err by a logger.(†Àÿµ
+N	java:S106Y"9Replace this use of System.out or System.err by a logger.(ÈÈê›
+N	java:S106Z"9Replace this use of System.out or System.err by a logger.(¹™ë­
+O
+java:S11444":Remove this unused private "testSingleRedisServer" method.(£Ü‰^
+]
+java:S1144?"GRemove this unused private "testSingleRedisServerWithJedisPool" method.(…¿Êå
+P
+java:S1144H"5Remove this unused private "testRedisCluster" method.(³‹‹Ÿÿÿÿÿÿ
