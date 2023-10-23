@@ -1,0 +1,19 @@
+JavaEE 6 注入
+https://docs.oracle.com/javaee/6/api/javax/inject/Inject.html
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+
+@ApplicationScoped
+public class BpmStartOfDayEtlProperties implements StartOfDayLiquidationProperties {
+
+    @Inject
+    @ConfigProperty(name = "bor-up.sod-liquidation.username")
+    private String user;
+
+    @Inject
+    @ConfigProperty(name = "bor-up.sod-liquidation.password")
+    private String password;
+
+    ///
+}

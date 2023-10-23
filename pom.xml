@@ -16,6 +16,7 @@
         <module>http-web-server</module>
         <module>io-netty</module>
         <module>rpc-dubbo</module>
+        <module>servlet-api</module>
     </modules>
 
     <properties>

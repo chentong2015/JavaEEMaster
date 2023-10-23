@@ -8,16 +8,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="rpc-dubbo" />
         <module name="distributed-framework-zookeeper" />
+        <module name="caching-redis" />
         <module name="distributed-load-balancing" />
         <module name="io-netty" />
-        <module name="redis-basic" />
         <module name="http-web-server" />
+        <module name="servlet-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="architect-system-design" target="15" />
       <module name="big-data-processing-system" target="15" />
-      <module name="caching-redis" target="15" />
       <module name="container-docker" target="15" />
       <module name="container-docker-basic" target="15" />
       <module name="container-serverless-framework" target="15" />
