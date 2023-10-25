@@ -7,10 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rpc-dubbo" />
+        <module name="ehcache" />
         <module name="distributed-framework-zookeeper" />
-        <module name="caching-redis" />
         <module name="distributed-load-balancing" />
         <module name="io-netty" />
+        <module name="redis" />
         <module name="http-web-server" />
         <module name="servlet-api" />
       </profile>

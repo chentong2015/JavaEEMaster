@@ -1,0 +1,12 @@
+
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‡»óÒúÿÿÿÿ
+P
+java:S1161":Add the "@Override" annotation above this method signature(÷¤‹ú
+V	java:S125"<This block of commented-out lines of code should be removed.(ü“ñûþÿÿÿÿ
+w
+java:S1989$"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ò¢ë‡
+U
+java:S1161'":Add the "@Override" annotation above this method signature(þ³‚”ûÿÿÿÿ
+z
+java:S1989)"_Handle the following exceptions that could be thrown by "doGet": ServletException, IOException.(®Ó‘ûÿÿÿÿÿ
