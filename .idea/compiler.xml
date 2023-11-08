@@ -6,14 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api-servlet-core" />
         <module name="rpc-dubbo" />
         <module name="ehcache" />
+        <module name="distributed-transaction-seata" />
+        <module name="load-balancer-nginx" />
+        <module name="distributed-search-index-engine" />
         <module name="distributed-framework-zookeeper" />
-        <module name="distributed-load-balancing" />
-        <module name="io-netty" />
         <module name="redis" />
-        <module name="http-web-server" />
-        <module name="servlet-api" />
+        <module name="load-balance-algo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,8 +25,11 @@
       <module name="container-serverless-framework" target="15" />
       <module name="container-severless-framework" target="15" />
       <module name="database" target="15" />
+      <module name="distributed-load-balancing" target="15" />
       <module name="docker-kubernetes" target="15" />
       <module name="high-concurrency" target="15" />
+      <module name="http-web-server" target="15" />
+      <module name="io-netty" target="15" />
       <module name="io-netty-basic" target="15" />
       <module name="message-middleware" target="15" />
       <module name="message-queue" target="15" />

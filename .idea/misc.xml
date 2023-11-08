@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/container-serverless-framework/pom.xml" />
         <option value="$PROJECT_DIR$/container-severless-framework/pom.xml" />
         <option value="$PROJECT_DIR$/database/pom.xml" />
+        <option value="$PROJECT_DIR$/distributed-systems/distributed-load-balancing/pom.xml" />
         <option value="$PROJECT_DIR$/docker-kubernetes/pom.xml" />
         <option value="$PROJECT_DIR$/high-concurrency/pom.xml" />
         <option value="$PROJECT_DIR$/io-netty-basic/pom.xml" />
@@ -29,6 +30,8 @@
         <option value="$PROJECT_DIR$/orm-hibernate/pom.xml" />
         <option value="$PROJECT_DIR$/redis-master/pom.xml" />
         <option value="$PROJECT_DIR$/serverless-framework/pom.xml" />
+        <option value="$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/http-web-server/pom.xml" />
+        <option value="$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/pom.xml" />
       </set>
     </option>
   </component>

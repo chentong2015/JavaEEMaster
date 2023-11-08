@@ -1,0 +1,8 @@
+zookeeper\ZkProjects.class
+zookeeper\ZookeeperWatcher.class
+zookeeper\source_code\ZookeeperSourceCode.class
+zookeeper\BaseZookeeper.class
+zookeeper\cap\BaseCAP.class
+zookeeper\consistency\LeaderSelection.class
+zookeeper\curator\BaseCuratorFramework.class
+zookeeper\consistency\TwoPhaseCommit.class

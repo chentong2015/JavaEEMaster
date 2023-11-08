@@ -8,16 +8,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>remote-procedure-call</artifactId>
     <packaging>pom</packaging>
 
-    <artifactId>distributed-systems</artifactId>
-
     <modules>
-        <module>distributed-framework-zookeeper</module>
-        <module>distributed-transaction-seata</module>
-        <module>load-balance-algo</module>
-        <module>load-balancer-nginx</module>
-        <module>distributed-search-index-engine</module>
+        <module>rpc-dubbo</module>
     </modules>
 
     <properties>

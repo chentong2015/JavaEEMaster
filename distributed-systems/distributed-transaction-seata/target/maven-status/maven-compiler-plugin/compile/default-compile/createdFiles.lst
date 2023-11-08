@@ -1,0 +1,15 @@
+com\seata\template\model\TransactionType.class
+com\seata\template\transactional\GlobalTransactionControllerHandler.class
+com\seata\template\connection\MyConnection.class
+com\seata\template\transactional\GlobalTransactionManager.class
+com\seata\template\task\MyTask.class
+com\seata\template\client\NettyClient.class
+com\seata\template\client\NettyClient$1.class
+com\seata\template\client\NettyClientHandler.class
+com\seata\template\model\GlobalTransaction.class
+com\seata\template\aspect\DataSourceAspect.class
+com\seata\template\aspect\GlobalTransactionAspect.class
+com\seata\template\transactional\GlobalTransactionController$1.class
+com\seata\template\model\MyTransaction.class
+com\seata\template\transactional\GlobalTransactionController.class
+com\seata\template\connection\MyConnection$1.class
