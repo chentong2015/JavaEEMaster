@@ -1,0 +1,15 @@
+
+p
+java:S2259_"NA "NullPointerException" could be thrown; "maxCurrentWeight" is nullable here.(ÿ…ù¶ýÿÿÿÿ8µý¦ÿº1
+T
+java:S1135"2Complete the task associated to this TODO comment.(Û¢ìëüÿÿÿÿ8Ãý¦ÿº1
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(Î£»±ûÿÿÿÿ8Æý¦ÿº1
+Z	java:S106'"9Replace this use of System.out or System.err by a logger.(Î£»±ûÿÿÿÿ8Æý¦ÿº1
+O
+java:S1135J"2Complete the task associated to this TODO comment.(µÖ¨‰8Òý¦ÿº1
+N
+java:S1602Q",Remove useless curly braces around statement(šÞ¾½ÿÿÿÿÿ8Óý¦ÿº1
+i
+java:S1871Z"LThis branch's code block is the same as the block for the branch on line 88.(óý—Ý8Ôý¦ÿº1
+V
+java:S1144"4Remove this unused private "getWeightServer" method.(¤¸ëŽüÿÿÿÿ8Õý¦ÿº1

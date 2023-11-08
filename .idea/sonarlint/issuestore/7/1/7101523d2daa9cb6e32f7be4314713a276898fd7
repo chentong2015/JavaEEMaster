@@ -1,8 +1,0 @@
-
-i
-java:S1192"NDefine a constant instead of duplicating this literal "preConfigured" 3 times.(±¤“üÿÿÿÿ
-W
-java:S1854"ARemove this useless assignment to local variable "preConfigured".(ûùüÜ
-H
-java:S1481"2Remove this unused "preConfigured" local variable.(ûùüÜ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(‚é€Şûÿÿÿÿ
