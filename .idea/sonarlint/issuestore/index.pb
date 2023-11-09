@@ -15,8 +15,6 @@ Sdistributed-systems/distributed-transaction-seata/src/main/java/分布式事务
 qdistributed-systems/distributed-transaction-seata/src/main/java/com/seata/template/Seata分布式事务框架.txt,f\9\f95ff51654db890a67c58a7068ce47be38fe5b10
 K
 distributed-systems/pom.xml,7\6\76b9663a7aa23e13255ef9602a6918df4878f405
-t
-Dremote-procedure-call/Remote Method Invocation/RMI XmlConnection.txt,4\b\4b6f6bb306169b6c2f8d5f380d2655b66a253e54
 S
 #caching-technology/缓存技术.txt,d\0\d0ad1c28e24046ec3f4818fb02a1ac4912ee406e
 |
@@ -25,8 +23,6 @@ Ldistributed-systems/load-balancer-nginx/src/main/java/NginxHTTP服务器.txt,2
 Ndistributed-systems/load-balancer-nginx/src/main/java/Nginx负载均衡器.txt,3\b\3b995224dd8a4429501e61e692e416d883bc519b
 k
 ;distributed-systems/distributed-search-index-engine/pom.xml,9\e\9ea63d3d984d105c367aeb0a9a3697aa539f1e0b
-
-Odistributed-systems/distributed-search-index-engine/src/main/java/Elasticsearch,d\2\d2cd9b6ff704a2c1b04681f89de0bc4b1d73e795
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 v
@@ -71,3 +67,11 @@ x
 Hdistributed-systems/load-balance-algo/src/main/java/model/RequestId.java,5\8\58e261005c7d645eff25e49034c9507d0e995b47
 w
 Gdistributed-systems/load-balance-algo/src/main/java/model/ServerIP.java,c\d\cd6858551fd58ca5ec2ab399efeb96da31a292eb
+k
+;distributed-systems/distributed-framework-zookeeper/pom.xml,a\2\a21ad468402c8aed4e6ca34a16e1561fe1ff1090
+w
+Gremote-procedure-call/rpc-dubbo/src/main/java/dubbo/Dubbo RPC设计.txt,d\e\dedffe2c1097b57eb0a9b9bc4e8b5707471bc9ce
+W
+'distributed-systems/分布式系统.txt,5\2\526469ba181721645f910332397fa0e3265367e9
+u
+Eremote-procedure-call/Remote Procedure Call/Remote Procedure Call.txt,0\b\0bf99c7d52ceb450f04b569c383ac421f3014d15

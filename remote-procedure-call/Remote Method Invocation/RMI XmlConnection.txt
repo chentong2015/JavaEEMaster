@@ -1,17 +1,19 @@
-TODO. RMI(Remote Method Invocation) 本质上是一个类似于HTTP的通讯协议，较老的技术
-https://docs.oracle.com/javase/7/docs/technotes/guides/rmi/hello/hello-world.html
-
 发送XML请求XmlRequest
 public static XmlDocument createXmlDocument(XmlSessionID xmlSessionID, String pkgName) throws Exception {
-   XmlRequest xmlRequest = new XmlRequest(XmlRequest.strREQUEST_TYPE_SESSION, "Standard", AssemblyConstants.GET_ASSEMBLY_EXECUTION_CONTEXTS, xmlSessionID);
-   GetAssemblyExecutionContextsRequest getAssemblyExecutionContextsRequest = new GetAssemblyExecutionContextsRequest(pkgName);
+   XmlRequest xmlRequest = new XmlRequest(XmlRequest.strREQUEST_TYPE_SESSION, "Standard",
+      AssemblyConstants.GET_ASSEMBLY_EXECUTION_CONTEXTS, xmlSessionID);
+   GetAssemblyExecutionContextsRequest getAssemblyExecutionContextsRequest =
+      new GetAssemblyExecutionContextsRequest(pkgName);
    XmlWriter xmlWriter = new XmlWriter();
    xmlRequest.toXml(xmlWriter, getAssemblyExecutionContextsRequest);
    return XmlDocument.create(xmlWriter);
 }
 
 接受XML请求, 返回XmlAnswer
-GetAssemblyExecutionContextsRequest getRequest = GetAssemblyExecutionContextsRequest.createFromXml(xmlReader);
-AssemblyExecutionContexts executionContexts = assemblyHome.getAssemblyExecutionContexts(getRequest.getPackageCode());
-XmlDocument xmlAnswer = GetAssemblyExecutionContextsReply.createXmlDocument(xmlRequestParser, getRequest.getPackageCode(), executionContexts);
+GetAssemblyExecutionContextsRequest getRequest = GetAssemblyExecutionContextsRequest
+   .createFromXml(xmlReader);
+AssemblyExecutionContexts executionContexts = assemblyHome
+   .getAssemblyExecutionContexts(getRequest.getPackageCode());
+XmlDocument xmlAnswer = GetAssemblyExecutionContextsReply
+   .createXmlDocument(xmlRequestParser, getRequest.getPackageCode(), executionContexts);
 pushXmlDocument(1, xmlAnswer);
