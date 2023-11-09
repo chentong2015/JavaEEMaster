@@ -71,7 +71,5 @@ k
 ;distributed-systems/distributed-framework-zookeeper/pom.xml,a\2\a21ad468402c8aed4e6ca34a16e1561fe1ff1090
 w
 Gremote-procedure-call/rpc-dubbo/src/main/java/dubbo/Dubbo RPC设计.txt,d\e\dedffe2c1097b57eb0a9b9bc4e8b5707471bc9ce
-W
-'distributed-systems/分布式系统.txt,5\2\526469ba181721645f910332397fa0e3265367e9
 u
 Eremote-procedure-call/Remote Procedure Call/Remote Procedure Call.txt,0\b\0bf99c7d52ceb450f04b569c383ac421f3014d15
