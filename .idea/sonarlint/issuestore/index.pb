@@ -73,3 +73,7 @@ w
 Gremote-procedure-call/rpc-dubbo/src/main/java/dubbo/Dubbo RPC设计.txt,d\e\dedffe2c1097b57eb0a9b9bc4e8b5707471bc9ce
 u
 Eremote-procedure-call/Remote Procedure Call/Remote Procedure Call.txt,0\b\0bf99c7d52ceb450f04b569c383ac421f3014d15
+
+Odistributed-systems/distributed-search-index-engine/src/main/java/Elasticsearch,d\2\d2cd9b6ff704a2c1b04681f89de0bc4b1d73e795
+t
+Dremote-procedure-call/Remote Method Invocation/RMI XmlConnection.txt,4\b\4b6f6bb306169b6c2f8d5f380d2655b66a253e54

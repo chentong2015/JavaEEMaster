@@ -16,7 +16,6 @@
         <module>distributed-framework-zookeeper</module>
         <module>distributed-transaction-seata</module>
         <module>load-balance-algo</module>
-        <module>load-balancer-nginx</module>
         <module>distributed-search-index-engine</module>
     </modules>
 

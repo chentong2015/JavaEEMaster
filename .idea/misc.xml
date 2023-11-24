@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/container-severless-framework/pom.xml" />
         <option value="$PROJECT_DIR$/database/pom.xml" />
         <option value="$PROJECT_DIR$/distributed-systems/distributed-load-balancing/pom.xml" />
+        <option value="$PROJECT_DIR$/distributed-systems/load-balancer-nginx/pom.xml" />
         <option value="$PROJECT_DIR$/docker-kubernetes/pom.xml" />
         <option value="$PROJECT_DIR$/high-concurrency/pom.xml" />
         <option value="$PROJECT_DIR$/io-netty-basic/pom.xml" />

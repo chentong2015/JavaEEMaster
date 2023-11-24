@@ -10,7 +10,6 @@
         <module name="rpc-dubbo" />
         <module name="ehcache" />
         <module name="distributed-transaction-seata" />
-        <module name="load-balancer-nginx" />
         <module name="distributed-search-index-engine" />
         <module name="distributed-framework-zookeeper" />
         <module name="redis" />
@@ -31,6 +30,7 @@
       <module name="http-web-server" target="15" />
       <module name="io-netty" target="15" />
       <module name="io-netty-basic" target="15" />
+      <module name="load-balancer-nginx" target="8" />
       <module name="message-middleware" target="15" />
       <module name="message-queue" target="15" />
       <module name="middleware" target="15" />

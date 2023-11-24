@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>caching-tech</artifactId>
+    <artifactId>caching-technology</artifactId>
     <packaging>pom</packaging>
 
     <modules>
