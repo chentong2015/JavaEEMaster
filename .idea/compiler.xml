@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-servlet-core" />
-        <module name="rpc-dubbo" />
         <module name="ehcache" />
         <module name="distributed-transaction-seata" />
+        <module name="dubbo-framework" />
         <module name="distributed-search-index-engine" />
+        <module name="rpc-client" />
+        <module name="rpc-server" />
         <module name="distributed-framework-zookeeper" />
         <module name="redis" />
         <module name="load-balance-algo" />

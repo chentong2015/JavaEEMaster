@@ -5,6 +5,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/remote-procedure-call/Remote Procedure Call/rpc-client/pom.xml" />
+        <option value="$PROJECT_DIR$/remote-procedure-call/Remote Procedure Call/rpc-server/pom.xml" />
+        <option value="$PROJECT_DIR$/remote-procedure-call/rpc-dubbo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
