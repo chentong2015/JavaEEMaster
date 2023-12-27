@@ -16,6 +16,7 @@
         <module name="distributed-framework-zookeeper" />
         <module name="redis" />
         <module name="load-balance-algo" />
+        <module name="rpc-framework" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

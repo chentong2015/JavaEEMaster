@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/remote-procedure-call/Remote Procedure Call/rpc-client/pom.xml" />
         <option value="$PROJECT_DIR$/remote-procedure-call/Remote Procedure Call/rpc-server/pom.xml" />
         <option value="$PROJECT_DIR$/remote-procedure-call/rpc-dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/remote-procedure-call/rpc-server/pom.xml" />
+        <option value="$PROJECT_DIR$/remote-procedure-call/rpc-client/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -38,8 +40,9 @@
         <option value="$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/pom.xml" />
       </set>
     </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
