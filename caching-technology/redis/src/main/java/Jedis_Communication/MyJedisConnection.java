@@ -1,6 +1,6 @@
-package Redis_Master.Jedis_Communication;
+package Jedis_Communication;
 
-import Redis_Master.Jedis_Communication.model.MyRedisCommand;
+import Jedis_Communication.model.MyRedisCommand;
 
 import java.io.*;
 import java.net.Socket;

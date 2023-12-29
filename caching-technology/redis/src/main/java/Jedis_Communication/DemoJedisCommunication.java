@@ -1,4 +1,4 @@
-package Redis_Master.Jedis_Communication;
+package Jedis_Communication;
 
 import redis.clients.jedis.Jedis;
 

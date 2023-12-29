@@ -1,4 +1,4 @@
-package Redis_Master.Jedis_Communication.socket_server;
+package Jedis_Communication.socket_server;
 
 import java.io.BufferedReader;
 import java.io.IOException;

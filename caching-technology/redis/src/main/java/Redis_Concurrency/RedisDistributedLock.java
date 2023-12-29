@@ -1,4 +1,4 @@
-package Redis_Master.Redis_Concurrency;
+package Redis_Concurrency;
 
 import Spring_Data_Redis.SpringJedisConnection;
 import org.springframework.data.redis.core.StringRedisTemplate;

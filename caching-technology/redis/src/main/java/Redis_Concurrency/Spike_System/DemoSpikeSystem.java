@@ -1,4 +1,4 @@
-package Redis_Master.Redis_Concurrency.Spike_System;
+package Redis_Concurrency.Spike_System;
 
 import java.util.concurrent.ConcurrentHashMap;
 

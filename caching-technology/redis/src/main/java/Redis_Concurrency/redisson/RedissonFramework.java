@@ -1,4 +1,4 @@
-package Redis_Master.Redis_Concurrency.redisson;
+package Redis_Concurrency.redisson;
 
 import Spring_Data_Redis.SpringJedisConnection;
 import org.redisson.Redisson;
