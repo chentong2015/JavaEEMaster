@@ -1,7 +1,7 @@
-algo\hash\HashConsistency.class
-model\RequestId.class
-algo\round_robin\Weight.class
-algo\hash\HashCircle.class
-algo\round_robin\WeightRoundRobin.class
-model\ServerIP.class
-algo\random\WeightRandom.class
+algo/random/WeightRandom.class
+model/ServerIP.class
+algo/hash/HashConsistency.class
+model/RequestId.class
+algo/round_robin/WeightRoundRobin.class
+algo/hash/HashCircle.class
+algo/round_robin/Weight.class

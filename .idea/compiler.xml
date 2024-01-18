@@ -6,20 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-servlet-core" />
         <module name="ehcache" />
         <module name="distributed-transaction-seata" />
+        <module name="rpc-dubbo" />
         <module name="dubbo-framework" />
-        <module name="distributed-search-index-engine" />
         <module name="rpc-client" />
         <module name="rpc-server" />
         <module name="distributed-framework-zookeeper" />
+        <module name="jee-servlet-core" />
         <module name="redis" />
         <module name="load-balance-algo" />
-        <module name="rpc-framework" />
+        <module name="design-caching-problems" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-servlet-core" target="1.8" />
       <module name="architect-system-design" target="15" />
       <module name="big-data-processing-system" target="15" />
       <module name="container-docker" target="15" />
@@ -28,6 +29,7 @@
       <module name="container-severless-framework" target="15" />
       <module name="database" target="15" />
       <module name="distributed-load-balancing" target="15" />
+      <module name="distributed-search-index-engine" target="1.8" />
       <module name="docker-kubernetes" target="15" />
       <module name="high-concurrency" target="15" />
       <module name="http-web-server" target="15" />

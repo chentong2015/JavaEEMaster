@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/api-servlet-core/src/main/resources/META-INF" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/api-servlet-core/src/main/resources/WEB-INF" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/api-servlet-core/src/main/resources/basic.jsp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/api-servlet-core/src/main/resources/home.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching-problems/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching-problems/src/main/java/org/caching/problem/CachingProblemsDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching-problems/src/main/java/org/caching/problem/CachingProblemsOther.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching-problems/src/main/java/org/caching/problem/bloom_filter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching-problems/src/main/java/org/caching/problem/bloom_filter/DistributedBloomFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching-problems/src/main/java/org/caching/problem/framework/OrderService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching-problems/src/main/java/org/caching/problem/model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching-problems/src/main/java/org/caching/problem/缓存三大问题.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching-problems/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/design-caching/缓存系统设计.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/caching-technology/redis/src/main/java/Redis_Distributed_Lock/RedisDistributedLock.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/caching-technology/redis/src/main/java/Redis_Distributed_Lock/SpringJedisConnection.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/caching-technology/redis/src/main/java/Redis_Distributed_Lock/redisson/RedissonFramework.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/cluster-system/集群系统设计.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cluster-system/高可用集群架构.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/design-distributed-system/Redundancy and Replication.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/design-distributed-system/分布式系统.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/distributed_id_generator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/distributed_id_generator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-algo/src/main/java/algo/hash/Hash一致性问题.JPG" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-nginx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-nginx/load balancer/Nginx负载均衡器.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/java/JEE Eclipse开发.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/java/JEE技术架构.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/java/com/servlet/main/inject/JEE Injection" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/java/com/servlet/main/servlet/BasicServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/java/com/servlet/main/servlet/HomeServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/java/com/servlet/main/servlet/RequestFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/java/com/servlet/main/sevice/BaseService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/resources/META-INF" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/resources/WEB-INF" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/resources/basic.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jee-servlet-core/src/main/resources/home.jsp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/remote-procedure-call/dubbo-framework/src/main/java/rmi/BaseJavaRMI.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../SystemNetworking/system-linux/src/main/java/Linux操作系统原理.JPG" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/bio" charset="UTF-8" />

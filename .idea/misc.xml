@@ -10,10 +10,12 @@
         <option value="$PROJECT_DIR$/remote-procedure-call/rpc-dubbo/pom.xml" />
         <option value="$PROJECT_DIR$/remote-procedure-call/rpc-server/pom.xml" />
         <option value="$PROJECT_DIR$/remote-procedure-call/rpc-client/pom.xml" />
+        <option value="$PROJECT_DIR$/remote-procedure-call/dubbo-framework/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/api-servlet-core/pom.xml" />
         <option value="$PROJECT_DIR$/architect-system-design/pom.xml" />
         <option value="$PROJECT_DIR$/big-data-processing-system/pom.xml" />
         <option value="$PROJECT_DIR$/container-docker-basic/pom.xml" />
@@ -22,6 +24,7 @@
         <option value="$PROJECT_DIR$/container-severless-framework/pom.xml" />
         <option value="$PROJECT_DIR$/database/pom.xml" />
         <option value="$PROJECT_DIR$/distributed-systems/distributed-load-balancing/pom.xml" />
+        <option value="$PROJECT_DIR$/distributed-systems/distributed-search-index-engine/pom.xml" />
         <option value="$PROJECT_DIR$/distributed-systems/load-balancer-nginx/pom.xml" />
         <option value="$PROJECT_DIR$/docker-kubernetes/pom.xml" />
         <option value="$PROJECT_DIR$/high-concurrency/pom.xml" />
@@ -42,7 +45,7 @@
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

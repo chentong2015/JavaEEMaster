@@ -1,7 +1,7 @@
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\load-balance-algo\src\main\java\model\ServerIP.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\load-balance-algo\src\main\java\algo\random\WeightRandom.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\load-balance-algo\src\main\java\algo\round_robin\Weight.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\load-balance-algo\src\main\java\algo\round_robin\WeightRoundRobin.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\load-balance-algo\src\main\java\algo\hash\HashCircle.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\load-balance-algo\src\main\java\algo\hash\HashConsistency.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\load-balance-algo\src\main\java\model\RequestId.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/load-balance-algo/src/main/java/algo/round_robin/WeightRoundRobin.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/load-balance-algo/src/main/java/algo/round_robin/Weight.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/load-balance-algo/src/main/java/algo/hash/HashConsistency.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/load-balance-algo/src/main/java/model/RequestId.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/load-balance-algo/src/main/java/algo/hash/HashCircle.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/load-balance-algo/src/main/java/algo/random/WeightRandom.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/load-balance-algo/src/main/java/model/ServerIP.java

@@ -1,30 +1,23 @@
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Data_Structure\RedisKVStructure.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Redis_Cache\model\NullOrder.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Redis_Cache\model\Order.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Jedis_Communication\socket_server\MockSocketServer.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Data_Structure\base\Redis2Hash.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Redis_Cache\Bloom_Filter\DistributedBloomFilter.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Redis_Performance\RedisPerformance.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Jedis_Communication\DemoJedisCommunication.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Spring_Data_Redis\SpringJedisConnection.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Redis_Memory\RedisMemoryOptimization.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Redis_Cache\Bloom_Filter\GoogleBloomFilter.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Jedis_Communication\MyJedisConnection.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Redis_Cache\OtherCacheProblems.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Redis_Cluster\ArchitectRedisCluster.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Jedis_Communication\JedisApplicationLayer.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Redis_Concurrency\redisson\RedissonFramework.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Data_Structure\base\Redis6Bitmap.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\BaseRedis.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Data_Structure\base\Redis5ZSet.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Jedis_Communication\model\MyRedisCommand.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Redis_Cache\service\OrderService.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Spring_Data_Redis\SpringLettuceConnection.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Data_Structure\base\Redis3List.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Redis_Cache\Top3CacheProblems.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Redis_Concurrency\DemoSpikeSystem.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Data_Structure\base\Redis4Set.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Redis_Concurrency\RedisDistributedLock.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Master\Jedis_Communication\JedisMessageProtocolLayer.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Data_Structure\base\Redis1String.java
-D:\Work Architect\JavaEEMaster\redis-basic\src\main\java\Redis_Basics\Data_Structure\RedisDataStructure.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Jedis_Communication/JedisApplicationLayer.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Redis_Performance/RedisIOEpoll.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Redis_Performance/RedisPerformance.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Data_Structure/base/Redis4Set.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Redis_Distributed_Lock/RedisDistributedLock.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Redis_Distributed_Lock/redisson/RedissonFramework.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Jedis_Communication/MyJedisConnection.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Data_Structure/base/Redis2Hash.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Jedis_Communication/socket_server/MockSocketServer.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Spike_System/DemoSpikeSystem.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Data_Structure/base/Redis5ZSet.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Jedis_Communication/DemoJedisCommunication.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Data_Structure/core_structure/BaseSkipList.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Data_Structure/base/Redis3List.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Redis_Cluster/ArchitectRedisCluster.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Redis_Distributed_Lock/SpringJedisConnection.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Data_Structure/base/Redis6Bitmap.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Data_Structure/CoreKVStructure.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Redis_Memory/MemoryOptimization.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Jedis_Communication/model/MyRedisCommand.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Data_Structure/core_structure/BaseZipList.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Core/Data_Structure/base/Redis1String.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/caching-technology/redis/src/main/java/Jedis_Communication/JedisMessageProtocolLayer.java

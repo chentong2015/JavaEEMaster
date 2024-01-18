@@ -1,8 +1,7 @@
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\distributed-framework-zookeeper\src\main\java\zookeeper\ZookeeperWatcher.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\distributed-framework-zookeeper\src\main\java\zookeeper\source_code\ZookeeperSourceCode.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\distributed-framework-zookeeper\src\main\java\zookeeper\consistency\LeaderSelection.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\distributed-framework-zookeeper\src\main\java\zookeeper\consistency\TwoPhaseCommit.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\distributed-framework-zookeeper\src\main\java\zookeeper\curator\BaseCuratorFramework.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\distributed-framework-zookeeper\src\main\java\zookeeper\BaseZookeeper.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\distributed-framework-zookeeper\src\main\java\zookeeper\ZkProjects.java
-D:\Work My Projects\Java EE Master\JavaEEMaster\distributed-systems\distributed-framework-zookeeper\src\main\java\zookeeper\cap\BaseCAP.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/distributed-framework-zookeeper/src/main/java/zookeeper/BaseZookeeper.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/distributed-framework-zookeeper/src/main/java/zookeeper/source_code/ZookeeperSourceCode.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/distributed-framework-zookeeper/src/main/java/zookeeper/ZookeeperWatcher.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/distributed-framework-zookeeper/src/main/java/zookeeper/curator/BaseCuratorFramework.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/distributed-framework-zookeeper/src/main/java/zookeeper/consistency/TwoPhaseCommit.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/distributed-framework-zookeeper/src/main/java/zookeeper/ZkProjects.java
+/Users/tongchen/Documents/Work My Projects/Java EE Master/JavaEEMaster/distributed-systems/distributed-framework-zookeeper/src/main/java/zookeeper/consistency/LeaderSelection.java
