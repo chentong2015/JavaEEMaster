@@ -1,6 +1,14 @@
-Leader Follower多线程场景:
-多个消费者线程从阻塞队列中取出任务，只有一个线程能够成为leader成功出队
-其他的follower消费者线程被阻塞，之后其中一个消费者可能被选成新的leader
+应用部署场景
+1. 一个tomcat单体中部署应用
+2. 多个tomcat分布式集群架构部署, 高可用
+            前端用户访问负载均衡设备
+       http://192.168.0.60/deduct_stock
+               nginx 负载均衡(设备)        ===> 分发请求到不同的部署上面
+        tomcat1            tomcat2       ===> Web引用部署在多个Web Container中
+     localhost:8080     localhost:8090   ===> 不同的部署会有不同的进程，不同的JVM
+                   Redis
+            Redis服务端单线程处理程序
+              按照先后优先依次处理
 
 TODO. Guard哨兵模式
 中小型企业

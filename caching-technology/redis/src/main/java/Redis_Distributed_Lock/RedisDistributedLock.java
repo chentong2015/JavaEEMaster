@@ -7,17 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RedisDistributedLock {
 
-    // 应用部署场景
-    // 1. 一个tomcat单体中部署应用
-    // 2. 多个tomcat分布式集群架构部署, 高可用
-    //             前端用户访问负载均衡设备
-    //        http://192.168.0.60/deduct_stock
-    //                nginx 负载均衡(设备)        ===> 分发请求到不同的部署上面
-    //         tomcat1            tomcat2       ===> Web引用部署在多个Web Container中
-    //      localhost:8080     localhost:8090   ===> 不同的部署会有不同的进程，不同的JVM
-    //                    Redis
-    //             Redis服务端单线程处理程序
-    //               按照先后优先依次处理
+
 
     // 在Spring层面封装了Redis的使用模板: StringRedisTemplate针对(Key->String)类型的数据结构进行存储
     String key = "lockKey";
@@ -28,7 +18,10 @@ public class RedisDistributedLock {
         // synchronized (this) { }
         // TODO: 使用SETNX来实现基本的分布式锁
         boolean isGetLocked = stringRedisTemplate.opsForValue().setIfAbsent(key, "myValue"); // jedis.setnx(key, value);
-        if (!isGetLocked) return "Error"; // 没拿到锁，则从后端返回，后端业务繁忙给出提示
+        if (!isGetLocked) {
+            // 没拿到锁，则从后端返回，后端业务繁忙给出提示
+            return "Error";
+        }
         int stock = Integer.parseInt(stringRedisTemplate.opsForValue().get("stock")); // jedis.get("stock");
         if (stock > 0) {
             stringRedisTemplate.opsForValue().set("stock", String.valueOf(stock - 1)); // jedis.set(key, value);
