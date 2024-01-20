@@ -17,6 +17,7 @@
         <module name="redis" />
         <module name="load-balance-algo" />
         <module name="design-caching-problems" />
+        <module name="design-lru-cache" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
