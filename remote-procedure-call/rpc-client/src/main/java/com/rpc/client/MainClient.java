@@ -22,6 +22,7 @@ public class MainClient {
         // 需要向Server端的进程发送封装的对象流
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         objectOutputStream.writeObject(rpcInfo);
+        objectOutputStream.flush();
         System.out.println("Send RPC request done!");
     }
 }

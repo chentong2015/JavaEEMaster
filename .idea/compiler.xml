@@ -13,7 +13,6 @@
         <module name="rpc-client" />
         <module name="rpc-server" />
         <module name="distributed-framework-zookeeper" />
-        <module name="jee-servlet-core" />
         <module name="redis" />
         <module name="load-balance-algo" />
         <module name="design-caching-problems" />
@@ -36,6 +35,7 @@
       <module name="http-web-server" target="15" />
       <module name="io-netty" target="15" />
       <module name="io-netty-basic" target="15" />
+      <module name="jee-servlet-core" target="17" />
       <module name="load-balancer-nginx" target="8" />
       <module name="message-middleware" target="15" />
       <module name="message-queue" target="15" />
