@@ -1,0 +1,28 @@
+缓存设计选型:
+1. 数据量小且不会频繁地增长又清空: 本地缓存
+2. 需要一些策略的支持(比如缓存Eviction逐出策略): Ehcache
+3. 如果不要缓存逐出: HashMap
+4. 多线程并发的场景: ConcurrentHashMap
+
+TODO. 如何解决缓存失效的问题 Cache Invalidation ？
+如果数据库的数据被修改，缓存中的数据将变成失效数据，会影响应用的一致性
+1. Write-through cache: 数据同时写入缓存和对应的数据库，实现缓存和DB数据完全一致
+2. Write-around cache: 数据绕过缓存直接写入永久存储，查询新数据将不会击中缓存
+3. Write-back cache: 数据单独写入缓存，指定的时间间隔后或在特定条件下再写入DB
+
+TODO. 如何解决缓存满的问题 Cache Eviction ？
+理论上随着缓存数据的日益增多，在容量有限的情况下缓存肯定会满
+1. 选择缓存逐出算法
+   FIFO(First In First Out) 不管缓存的使用频率
+   LIFO(Last In First Out)
+   LRU(Least Recently Used) 少使用的缓存应该被踢出
+   MRU(Most Recently Used)
+   LFU(Least Frequently Used)
+   Random Replacement
+2. 设置适当的警戒值，当缓存数据达到80%时Warning，提前排查问题或者扩容
+3. 设置过期时间Expiration，针对没有必要长期保存的key
+
+TODO. 缓存实际案例
+同一个软件的同一UI被不同的User更改，在数据刷新上如何变更Cache中的数据，
+如果在短时间内，缓存的数并没有变化会造成UI页面显示的数据出错
+- Invalid机制，在数据变更时废弃缓存中的错误数据 + 执行额外的request并发布通知事件
