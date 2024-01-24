@@ -1,4 +1,4 @@
-package algo.round_robin;
+package round_robin;
 
 public class Weight {
 

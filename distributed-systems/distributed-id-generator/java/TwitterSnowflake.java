@@ -1,5 +1,3 @@
-package distributed_system.distributed_id_generator;
-
 // 雪花算法: 保证每台机器每个毫秒内生成的ID不同
 // 分布式ID: long 64bits分段存储不同的信息
 //    1 bit: not used 符号位

@@ -1,4 +1,4 @@
-package algo.random;
+package random;
 
 import model.ServerIP;
 

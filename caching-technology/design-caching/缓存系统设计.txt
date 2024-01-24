@@ -4,13 +4,19 @@
 3. 如果不要缓存逐出: HashMap
 4. 多线程并发的场景: ConcurrentHashMap
 
-TODO. 如何解决缓存失效的问题 Cache Invalidation ？
-如果数据库的数据被修改，缓存中的数据将变成失效数据，会影响应用的一致性
-1. Write-through cache: 数据同时写入缓存和对应的数据库，实现缓存和DB数据完全一致
-2. Write-around cache: 数据绕过缓存直接写入永久存储，查询新数据将不会击中缓存
-3. Write-back cache: 数据单独写入缓存，指定的时间间隔后或在特定条件下再写入DB
+TODO. 1. 优化缓存的过期时间 Expiration policy
+通常需要设计缓存的数据在一定的时间后被移除
+- 如果不设置，则会造成大量的数据持久存储在内存
+- 如果设置过短，将会增加请求到DB的数量
+- 如果设置过长，将可能造成更都的缓存数据处于失效的状态
 
-TODO. 如何解决缓存满的问题 Cache Eviction ？
+TODO. 2. 解决缓存失效的问题 Cache Invalidation ？
+如果数据库的数据被修改，缓存中的数据将变成失效数据，会影响应用的一致性
+- Write-through cache: 数据同时写入缓存和对应的数据库，实现缓存和DB数据完全一致
+- Write-around cache: 数据绕过缓存直接写入永久存储，查询新数据将不会击中缓存
+- Write-back cache: 数据单独写入缓存，指定的时间间隔后或在特定条件下再写入DB
+
+TODO. 3. 解决缓存满的问题 Cache Eviction ？
 理论上随着缓存数据的日益增多，在容量有限的情况下缓存肯定会满
 1. 选择缓存逐出算法
    FIFO(First In First Out) 不管缓存的使用频率

@@ -1,4 +1,4 @@
-package algo.hash;
+package hash;
 
 import model.ServerIP;
 
@@ -9,7 +9,7 @@ import java.util.TreeMap;
 public class HashCircle {
 
     // hashcode -> server ip
-    private TreeMap<Integer, String> hashCircle = new TreeMap<>();
+    private final TreeMap<Integer, String> hashCircle = new TreeMap<>();
     private static final int VIRTUAL_NODES_NUM = 160;
 
     // 对每一个真实结点添加虚拟结点，结点会根据hash算法进行散列
