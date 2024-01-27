@@ -1,2 +1,0 @@
-Redis完整入门教程
-https://www.youtube.com/watch?v=WgpP7-XAI5Y

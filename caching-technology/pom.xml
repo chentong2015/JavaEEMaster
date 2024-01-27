@@ -14,7 +14,6 @@
 
     <modules>
         <module>ehcache</module>
-        <module>redis</module>
         <module>design-caching-problems</module>
         <module>design-lru-cache</module>
     </modules>
