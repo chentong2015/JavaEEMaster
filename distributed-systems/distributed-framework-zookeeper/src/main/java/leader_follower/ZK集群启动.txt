@@ -1,0 +1,16 @@
+集群启动的基本流程：逐个启动server，Java类QuorumPeerMain > main.initializeAndRun(args)
+1. 初始化配置(zoo.cfg)
+2. 根据日志+快照，初始化内存中的DataTree
+3. 开启对client客户端端口的监听
+4. 进行领导者选举
+5. 服务器其他的一些初始化...
+
+Server服务器在运行时候的状态: 代表处在不同身份状态, 不同的角色初始化有所区别
+1. LOOKING    正在寻找leader的状态
+2. OBSERVING  处于在观察的状态
+3. FOLLOWING  处于在跟随的状态
+4. LEADING    处于在领导的状态
+
+TODO: 使用Zookeeper集群架构来解决"主从结点失效"的问题
+1. 在请求主结点并获取锁的时候，主结点会将key"同步"到其余大部份的结点之后，才返回获得锁成功
+2. 如果主结点挂掉，则Zookeeper会保证使用新的同步过的结点来作为leader，保证(分布式)锁的有效性
