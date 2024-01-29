@@ -1,0 +1,19 @@
+两阶段提交: 预提交 -> 收到ack回复 -> 提交
+1. 什么时候进行第二次的提交 ?
+   当leader收到的ack回复超过半数(包括leader自己)
+
+2. 第二次提交之后是否需要等待 ?
+   异步提交: 不需要等所有的提交完成
+   LearnerHandler -> leader.processAck();
+
+TODO. 基本实现思路
+将包发送给所有的follower结点, follower提交并inform
+将包添加到队列中，然后提交自己的数据更新，再返回
+commit(zxid);
+inform(p);
+
+sendPacket(QuorumPacket qp) {
+   for(LearnerHandler f: forwardingFollowers) {
+      f.queuePacket(qp);
+   }
+}

@@ -1,0 +1,33 @@
+> tar -zxvf apache-zookeeper-3.6.3-bin.tar.gz 必须下载带bin的文件
+> mv zoo-sample.cfg zoo.cfg          修改配置文件名称
+> vim /conf/zoo.cfg
+  clientPort=2181                    默认客户端连接端口2181 => 开启云安全组端口
+  dataDir=/tmp/zookeeper             修改存储数据库快照位置, 使用自定义的目录
+  dataLogDir=/tmp/zookeeper          添加存放日志位置
+
+> ./zkServer.sh start                使用脚本启动服务端，默认运行Java类
+> ./zkServer.sh start conf/zoo.cfg   使用特定的配置文件启动
+> ps -ef | grep zookeeper
+
+> bin/zkCli.sh                        启动自带的客户端CLI(连接)
+  bin/zkCli.sh -server 127.0.0.1:2181 默认连接server，
+> create /tong 10                     创建指定的结点path和对应的数据data
+> ls /                                查询根节点下存储的全部结点(数据)
+> get /tong                           获取结点数据
+> del /tong
+> set /tong 100
+> quit
+> ./zkServer.sh stop
+
+集群启动的基本流程：逐个启动server，Java类QuorumPeerMain > main.initializeAndRun(args)
+1. 初始化配置(zoo.cfg)
+2. 根据日志+快照，初始化内存中的DataTree
+3. 开启对client客户端端口的监听
+4. 进行领导者选举
+5. 服务器其他的一些初始化...
+
+Server服务器在运行时候的状态: 代表处在不同身份状态, 不同的角色初始化有所区别
+1. LOOKING    正在寻找leader的状态
+2. OBSERVING  处于在观察的状态
+3. FOLLOWING  处于在跟随的状态
+4. LEADING    处于在领导的状态

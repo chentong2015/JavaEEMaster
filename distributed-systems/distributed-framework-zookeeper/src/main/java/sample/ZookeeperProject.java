@@ -1,9 +1,10 @@
-package zookeeper;
+package sample;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
+import sample.ZookeeperWatcher;
 
 import java.io.IOException;
 
@@ -13,7 +14,7 @@ import java.io.IOException;
 
 // TODO: 分布式场景下，同步多个JVM实例级别的缓存
 // 当key对应的value值发生变化，所有"监听"zookeeper的应用都将受到通知，执行相应的回调逻辑操作
-public class ZkProjects {
+public class ZookeeperProject {
 
     public void SyncJvmInstanceCaches(Long productId) throws IOException, KeeperException, InterruptedException {
         String zookeeperAddress = "192.168.0.60:2181";

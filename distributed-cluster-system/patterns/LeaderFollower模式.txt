@@ -1,5 +1,0 @@
-Leader-Follower模式的实现机制
-1. 需要leader: 选举机制
-2. 过半机制: 大多数机制
-3. 两阶段提交: 2PC(Two-phase commit)
-4. 数据同步

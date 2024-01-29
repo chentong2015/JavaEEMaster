@@ -13,7 +13,6 @@
         <module name="rpc-client" />
         <module name="rpc-server" />
         <module name="distributed-framework-zookeeper" />
-        <module name="redis" />
         <module name="load-balance-algo" />
         <module name="design-caching-problems" />
         <module name="design-lru-cache" />
@@ -45,6 +44,7 @@
       <module name="multi-threads-concurrency" target="15" />
       <module name="mybatis-basic" target="15" />
       <module name="orm-hibernate" target="15" />
+      <module name="redis" target="15" />
       <module name="redis-master" target="15" />
       <module name="serverless-framework" target="15" />
     </bytecodeTargetLevel>

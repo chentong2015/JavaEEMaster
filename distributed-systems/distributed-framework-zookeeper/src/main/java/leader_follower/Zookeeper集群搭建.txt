@@ -1,0 +1,63 @@
+Zookeeper集群搭建
+伪集群：相同的ip，配置不同的端口，指定配置文件监听的端口
+conf/zoo1.cfg 集群模式下配置
+    # 集群中每一个server的dataDir都必须不一样
+    # 必须在每一个目录下面创建一个myid文件，然后在文件中注明server的id !!!
+       > touch myid
+       > echo 1 > myid  So myid of server 1 would contain the text "1" and nothing else.
+                        The id must be unique within the ensemble and should have a value between 1 and 255.
+    dataDir=/home/zookeeper/tmp1
+    clientPort=2181
+
+    # 定义集群中有多少个server，需要在这里直接配置 !!!
+    server.1=localhost:2887:3887  这个端口用来沟通的，投票机制
+    server.2=localhost:2888:3888  参与者，参与选举
+    server.3=localhost:2889:3889
+    # server.4=localhost:2890:3890
+    # server.5=localhost:2891:3891
+    # server.6=localhost:2892:3892:observer 非参与者，不参与选举
+
+conf/zoo2.cfg
+    dataDir=/home/zookeeper/tmp2
+    clientPort=2182
+    server.1=localhost:2887:3887
+    server.2=localhost:2888:3888
+    server.3=localhost:2889:3889
+    # server.4=localhost:2890:3890
+    # server.5=localhost:2891:3891
+    # server.6=localhost:2892:3892:observer
+
+conf/zoo3.cfg
+    dataDir=/home/zookeeper/tmp3
+    clientPort=2183
+    server.1=localhost:2887:3887
+    server.2=localhost:2888:3888
+    server.3=localhost:2889:3889
+    # server.4=localhost:2890:3890
+    # server.5=localhost:2891:3891
+    # server.6=localhost:2892:3892:observer
+
+> ./zkServer.sh start conf/zoo1.cfg  启动集群中一个服务器
+> ./zkServer.sh start conf/zoo2.cfg
+> ./zkServer.sh status 查看集群运行情况
+
+> ./zkCli.sh -server localhost:2181 客户端1，连接同一个集群中其中一个服务器
+  > create /node 1  在其中一个server中创建的数据，自动"同步"到集群中的其他server
+> ./zkCli.sh -server localhost:2182 客户端2
+> get /
+> [zookeeper, node] 拿到自动同步数据
+
+# 确定集群中的server角色
+> bin/zkServer.sh status conf/zoo1.cfg
+  /usr/bin/java
+  ZooKeeper JMX enabled by default
+  Using config: conf/zoo1.cfg
+  Client port found: 2181. Client address: localhost. Client SSL: false.
+  Mode: follower
+
+> bin/zkServer.sh status conf/zoo2.cfg
+  /usr/bin/java
+  ZooKeeper JMX enabled by default
+  Using config: conf/zoo2.cfg
+  Client port found: 2182. Client address: localhost. Client SSL: false.
+  Mode: leader

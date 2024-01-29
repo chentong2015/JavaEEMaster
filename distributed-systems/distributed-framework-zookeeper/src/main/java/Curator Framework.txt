@@ -1,0 +1,6 @@
+Curator Framework 优化于ZK的使用
+A high-level API that greatly simplifies using ZooKeeper
+1. add many features that build on ZooKeeper
+2. handle the complexity of managing connections to ZooKeeper cluster and retrying operations.
+
+https://curator.apache.org/getting-started.html

@@ -1,0 +1,21 @@
+TODO: Zookeeper distributed applications
+分布式服务框架，解决分布式系统一些数据管理问题：统一命名服务，集群管理，应用配置等
+1. 具有文件系统(Path路径结点)的数据库：统一命名服务，定义资源(保证名称不冲突)
+2. 能解决数据一致性问题的分布式数据库：集群中数据自动同步
+3. 具有分布和订阅工具：watch机制，watcher回调
+
+Zookeeper机制:
+1. zookeeper启动时会自动同步数据，会发生领导者选择
+2. 所有的写请求都会交给leader来处理
+3. 必须要集群中大多数都处理了请求，请求才是有效的
+
+Zookeeper处理请求的机制：
+  集群中接收请求的类型
+  1. 非事务性请求: get, exs
+  2. 事务性请求: create, set, del
+     生成事务日志: 事务id:zxid(自增的id)(对于刚搭建的集群，启动没有id，运行一段时间后便有)
+  处理请求的过程
+  1. 持久化事务日志，处理文件，可用顺序添加，速度更慢  ==> 可以通过事务日志来恢复数据
+  2. 更新内存，DataTree，数结构修改速度更慢
+
+https://zookeeper.apache.org/doc/current/index.html
