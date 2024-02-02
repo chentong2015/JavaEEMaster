@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ehcache" />
         <module name="distributed-transaction-seata" />
-        <module name="rpc-dubbo" />
+        <module name="dubbo-rpc" />
         <module name="dubbo-framework" />
         <module name="rpc-client" />
         <module name="rpc-server" />
