@@ -1,8 +1,0 @@
-TODO. 缓存问题案例及解决方案
-Case 1. 在缓存失效的短暂时间中，如何保证UI用户的体验? (前端显示了错误的缓存数据)
-
-Case 2. 同一个软件的同一UI被不同的User更改，在短时间内缓存的数据没有变化会造成UI页面显示的数据出错
-
-- Invalid机制：在数据变更时废弃缓存中的错误数据，执行额外的request变更缓存数据
-- Notification: 发布通知event事件，用于表面缓存中指定数据的更新
-- UI端通过刷新来获取最新的数据(Reload page to get the latest data)

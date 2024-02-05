@@ -13,9 +13,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>ehcache</module>
         <module>design-caching-problems</module>
         <module>design-lru-cache</module>
+        <module>ehcache</module>
     </modules>
 
     <properties>

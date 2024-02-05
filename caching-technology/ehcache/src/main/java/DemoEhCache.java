@@ -1,5 +1,3 @@
-package com.ehcache.main;
-
 import org.ehcache.Cache;
 import org.ehcache.CacheManager;
 import org.ehcache.config.builders.CacheConfigurationBuilder;

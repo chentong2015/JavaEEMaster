@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/distributed-systems/distributed-systems.iml" filepath="$PROJECT_DIR$/distributed-systems/distributed-systems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/remote-procedure-call/dubbo-framework/dubbo-rpc.iml" filepath="$PROJECT_DIR$/remote-procedure-call/dubbo-framework/dubbo-rpc.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/jee-servlet-core/jee-servlet-core.iml" filepath="$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/jee-servlet-core/jee-servlet-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/caching-technology/redis/redis.iml" filepath="$PROJECT_DIR$/caching-technology/redis/redis.iml" />
     </modules>

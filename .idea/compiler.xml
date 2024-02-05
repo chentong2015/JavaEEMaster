@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ehcache" />
         <module name="distributed-transaction-seata" />
-        <module name="dubbo-rpc" />
         <module name="dubbo-framework" />
         <module name="rpc-client" />
         <module name="rpc-server" />
@@ -30,10 +29,12 @@
       <module name="distributed-load-balancing" target="15" />
       <module name="distributed-search-index-engine" target="1.8" />
       <module name="docker-kubernetes" target="15" />
+      <module name="dubbo-rpc" target="15" />
       <module name="high-concurrency" target="15" />
       <module name="http-web-server" target="15" />
       <module name="io-netty" target="15" />
       <module name="io-netty-basic" target="15" />
+      <module name="java-cache-manager" target="17" />
       <module name="jee-servlet-core" target="17" />
       <module name="load-balancer-nginx" target="8" />
       <module name="message-middleware" target="15" />
