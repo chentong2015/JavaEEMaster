@@ -1,0 +1,5 @@
+Curator Framework: high-level API that greatly simplifies using ZooKeeper
+1. Many features that build on ZooKeeper
+2. Handle the complexity of managing connections to ZooKeeper cluster and retrying operations.
+
+https://curator.apache.org/getting-started.html

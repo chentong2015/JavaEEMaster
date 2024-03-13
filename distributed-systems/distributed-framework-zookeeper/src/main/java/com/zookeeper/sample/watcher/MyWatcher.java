@@ -1,4 +1,4 @@
-package sample.watcher;
+package com.zookeeper.sample.watcher;
 
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;

@@ -1,4 +1,4 @@
-package sample.monitor;
+package com.zookeeper.sample.monitor;
 
 import java.util.Arrays;
 

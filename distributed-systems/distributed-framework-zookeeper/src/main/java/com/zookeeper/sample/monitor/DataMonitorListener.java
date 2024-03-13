@@ -1,4 +1,4 @@
-package sample.monitor;
+package com.zookeeper.sample.monitor;
 
 /**
  * Other classes use the DataMonitor by implementing this method

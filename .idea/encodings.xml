@@ -23,10 +23,11 @@
     <file url="file://$PROJECT_DIR$/distributed-system-design/分布式系统.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/distributed-system-design/集群系统设计.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/2. 数据库多主模式.JPG" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/3. 号段模式.JPG" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/3. 号段模式架构实现.JPG" charset="GBK" />
     <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/java/MysqlAutoIncrementId.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/号段模式.JPG" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/号段模式架构实现.JPG" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/数据库多主模式(分布式ID生成器).JPG" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/elastic-search-indexing/Elasticsearch弹性搜索.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-algo/src/main/java/hash/1. Hash一致性问题.JPG" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-nginx" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-nginx/NginxHTTP服务器.txt" charset="GBK" />

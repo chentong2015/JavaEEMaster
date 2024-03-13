@@ -1,6 +1,6 @@
-package sample;
+package com.zookeeper.sample;
 
-import sample.monitor.DataMonitorListenerImpl;
+import com.zookeeper.sample.monitor.DataMonitorListenerImpl;
 
 public class DemoZookeeperMonitor {
 

@@ -1,9 +1,9 @@
-package sample;
+package com.zookeeper.sample;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
-import sample.watcher.MyWatcher;
+import com.zookeeper.sample.watcher.MyWatcher;
 
 // TODO. 分布式场景下，同步多个JVM实例级别的缓存
 // 当key对应的value值发生变化，所有"监听"ZK的应用都将受到通知，执行相应的回调逻辑操作

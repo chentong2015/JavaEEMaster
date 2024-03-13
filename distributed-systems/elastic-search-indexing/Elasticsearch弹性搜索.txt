@@ -1,4 +1,5 @@
-Elasticsearch 分布式 数据的索引和搜索
+Elasticsearch 分布式 数据索引和搜索
 https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html
 https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/current/getting-started-java.html
+
 https://spring.io/projects/spring-data-elasticsearch

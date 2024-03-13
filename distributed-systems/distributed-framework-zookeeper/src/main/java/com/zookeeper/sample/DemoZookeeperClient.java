@@ -1,4 +1,4 @@
-package sample;
+package com.zookeeper.sample;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
