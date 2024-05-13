@@ -13,17 +13,22 @@ TODO. 分布式系统核心概念 Key Points:
   冗余是有成本的，可靠的系统必须付出代价才能通过消除每个单点故障(Single Point Failure)
   系统必须具有宽错性，能够应对突发的incident(不可控因素)
 
-- High Consistent
-  分布式系统中不同节点的数据保证一致性(Share same data on all devices)
-  通过“两阶段提交”来同步/拷贝数据到另一个节点 ！
+- High Consistent/Share data between replicas
+  分布式系统中不同节点的数据保证一致性
+  通过“两阶段提交”来同步/拷贝数据到另一个节点
 
-- high performance/high concurrency
-  搭建LB + Cache + Lock来实现高效并发且安全 ！
+- High performance/High concurrency
+  搭建LB + Cache + Lock来实现高效并发且安全
   通过搭建高可用的分布式集群来实现高性能和高并发
 
 - Serviceability/Manageability可维护性和可操作性(修复性)
+
 - Sustainable 系统的可持续性
+
 - Efficiency 有效性
+
 - Cost 花销成本
+
 - Security 安全
+
 - Monitoring 监控
