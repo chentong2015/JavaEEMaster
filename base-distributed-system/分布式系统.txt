@@ -1,4 +1,4 @@
-TODO. 分布式系统核心概念 Key Points:
+TODO. 分布式系统核心概念
 - Scalability
   可扩展性能满足不断增长的work需求，在没有系统损失情况下进行扩展
   - Vertical Scaling 提高每个server的capacity
