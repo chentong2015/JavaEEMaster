@@ -22,29 +22,29 @@
     <file url="file://$PROJECT_DIR$/caching-technology/redis/src/main/java/Redis_Distributed_Lock/RedisDistributedLock.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/caching-technology/redis/src/main/java/Redis_Distributed_Lock/SpringJedisConnection.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/caching-technology/redis/src/main/java/Redis_Distributed_Lock/redisson/RedissonFramework.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/2. 数据库多主模式.JPG" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/3. 号段模式.JPG" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/3. 号段模式架构实现.JPG" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/distributed-systems/distributed-id-generator/java/MysqlAutoIncrementId.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/distributed-systems/elastic-search-indexing/Elasticsearch弹性搜索.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/id-generator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/id-generator/3. 号段模式.JPG" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/id-generator/3. 号段模式架构实现.JPG" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/id-generator/database/数据库多主模式.JPG" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/distributed-systems/id-generator/snowflake/MysqlAutoIncrementId.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-algo/src/main/java/hash/1. Hash一致性问题.JPG" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-nginx" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-nginx/NginxHTTP服务器.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/distributed-systems/load-balance-nginx/load balancer/Nginx负载均衡器.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/indexing-elasticsearch/Elasticsearch弹性搜索.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/remote-procedure-call/dubbo-rpc/src/main/java/rmi/BaseJavaRMI.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/remote-procedure-call/rpc-server/src/main/java/com/rpc/server/MainServer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/bio" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/BaseNioServerSelector.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/EpollSourceCode.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/Epoll核心三个函数.JPG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/NIO多路复用模型.JPG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/多路复用三函数区别.JPG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/netty/basic/NettyServer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../JavaMasterApplications/networking-web-services/io-netty/src/main/java/netty/thread_model/NettyThreadModel.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../SystemNetworking/system-linux/src/main/java/Linux操作系统原理.JPG" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/bio" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/BaseNioServerSelector.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/EpollSourceCode.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/Epoll核心三个函数.JPG" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/NIO多路复用模型.JPG" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/base" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/io_network/nio_selector/多路复用三函数区别.JPG" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/netty/basic/NettyServer.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../Java Master/JavaMasterApplications/networking-web-services/io-netty/src/main/java/netty/thread_model/NettyThreadModel.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../../Software System Architect/SoftwareSystemArchitect/system-design/src/main/java/interviews/caching_system/Web缓存设计.png" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
